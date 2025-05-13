@@ -1,9 +1,9 @@
 /* Core palette */
 :root {
-    /* Futuristic-minimal palette */
-    --bg: #0d1117;   /* deep charcoal */
-    --fg: #eceeef;   /* near-white for high contrast */
-    --accent: #64ffda; /* soft neon-mint accent */
+    /* Dark neutral palette */
+    --bg: #1b1d21;  /* warm charcoal */
+    --fg: #d0d3d6;  /* light grey */
+    --accent: #7c8ca8; /* subtle steel blue-grey */
 }
 
 /* Reset */
@@ -141,7 +141,7 @@ section {
 }
 
 .tag {
-    background: rgba(100, 255, 218, 0.15);
+    background: rgba(124, 140, 168, 0.15);
     color: var(--accent);
     border-radius: 3px;
     padding: 0 0.4em;
