@@ -1,8 +1,9 @@
 /* Core palette */
 :root {
-    --bg: #0a0d0f;
-    --fg: #d7d7d7;
-    --accent: #1ebcff;        /* neon-ish blue from the logo */
+    /* Futuristic-minimal palette */
+    --bg: #0d1117;   /* deep charcoal */
+    --fg: #eceeef;   /* near-white for high contrast */
+    --accent: #64ffda; /* soft neon-mint accent */
 }
 
 /* Reset */
@@ -140,7 +141,7 @@ section {
 }
 
 .tag {
-    background: rgba(30, 188, 255, 0.15);
+    background: rgba(100, 255, 218, 0.15);
     color: var(--accent);
     border-radius: 3px;
     padding: 0 0.4em;
@@ -149,13 +150,13 @@ section {
 }
 
 .tag--planned {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
     color: #888;
 }
 
 /* Careers Section */
 .careers {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
     padding: 2rem;
     border-radius: 6px;
 }
