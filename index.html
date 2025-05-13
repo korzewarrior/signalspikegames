@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Signal Spike Games</title>
+
+    <!-- Meta -->
+    <meta name="description" content="Indie game studio crafting focused, flavorful experiences." />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="inner">
+            <!--<img src="img/logo.png" alt="Signal Spike Games logo" class="logo" />-->
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Signal Spike Games</h1>
+            <p>Making games we love playing.</p>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About</h2>
+            <p>Signal&nbsp;Spike&nbsp;Games is a small studio focused on crafting tight, replay-worthy experiences. The goal: build games with zero fluff and 100% punch.</p>
+            <p>Signal&nbsp;Spike operates as a nimble, distributed crew. A tight senior core stays on every project, while seasoned specialists rotate in when their expertise can push the craft further.</p>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+
+            <article class="project">
+                <header>
+                    <h3>Starboys <span class="tag">working title</span></h3>
+                </header>
+                <p>The first public release from Signal&nbsp;Spike—an arcade-scale competitive shooter being built in lock-step with a bespoke netcode stack. It's the proving ground for the tech that will power our bigger titles.</p>
+            </article>
+
+            <article class="project">
+                <header>
+                    <h3>Star&nbsp;Tournament <span class="tag">alpha&nbsp;build</span></h3>
+                </header>
+                <p>An arena shooter with a fully playable core build that's already a blast. We're rebuilding from the ground up on brand-new netcode, adding fresh levels, and overhauling the art pipeline to get it ship-ready.</p>
+            </article>
+        </section>
+
+        <section id="careers" class="careers">
+            <h2>Careers</h2>
+            <p>Signal&nbsp;Spike isn't hiring today, but that will change once funding and scope align. If you're an experienced network engineer, gameplay programmer, or technical artist interested in a future role, feel free to reach out and introduce yourself.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>The fastest way to get in touch is email:</p>
+            <p><a href="mailto:hello@signalspike.games">hello@signalspike.games</a></p>
+            <p>For updates, follow the studio on <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener">Discord</a>.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="inner">
+            <small>© <span id="year"></span> Signal&nbsp;Spike&nbsp;Games — All&nbsp;rights&nbsp;reserved.</small>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
