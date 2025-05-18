@@ -1,7 +1,7 @@
 // Signal Spike Games Website Scripts
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scroll for anchor links
+    // Enhanced smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -11,10 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             if (!targetElement) return;
             
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            // Smooth scroll animation with easing
             window.scrollTo({
-                top: targetElement.offsetTop - 80,
+                top: offsetPosition,
                 behavior: 'smooth'
             });
+            
+            // Update active nav state
+            document.querySelectorAll('.main-nav a').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            this.classList.add('active');
         });
     });
 
@@ -40,15 +51,46 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('scrolled');
         }
         
+        // Update active nav based on scroll position
+        updateActiveNavOnScroll();
+        
         lastScrollTop = scrollTop;
         
         // Reveal elements on scroll
         revealElements();
     });
     
+    // Update active nav based on scroll position
+    function updateActiveNavOnScroll() {
+        const scrollPosition = window.scrollY;
+        
+        // Get all sections and corresponding nav items
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.main-nav a');
+        
+        // Determine which section is currently in view
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Remove active class from all nav items
+                navItems.forEach(item => item.classList.remove('active'));
+                
+                // Add active class to corresponding nav item
+                const correspondingNavItem = document.querySelector(`.main-nav a[href="#${sectionId}"]`);
+                if(correspondingNavItem) {
+                    correspondingNavItem.classList.add('active');
+                }
+            }
+        });
+    }
+    
     // Initialize section reveals
     initRevealElements();
     revealElements(); // Initial check for elements in view
+    updateActiveNavOnScroll(); // Initial active nav state
     
     // Form submission handlers
     const forms = document.querySelectorAll('form');
