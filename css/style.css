@@ -34,44 +34,26 @@ body {
     line-height: 1.6;
     padding-top: 80px;
     overflow-x: hidden;
-    scroll-snap-type: y proximity;
 }
 
 section {
-    scroll-snap-align: start;
-    scroll-margin-top: 80px;
-    transition: background-color 0.5s ease;
     position: relative;
 }
 
+/* Remove the problematic gradient effects */
 section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--section-bg) 100%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: none;
 }
 
 section.about::after,
 section.projects::after,
 section.newsletter::after,
 section.contact::after {
-    background: linear-gradient(to bottom, rgba(245,245,245,0) 0%, var(--bg-color) 100%);
-    opacity: 1;
+    display: none;
 }
 
 .section-transition-top {
-    height: 50px;
-    margin-top: -50px;
-    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-    position: relative;
-    z-index: 2;
-    pointer-events: none;
+    display: none;
 }
 
 .container {

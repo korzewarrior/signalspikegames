@@ -126,32 +126,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const sections = document.querySelectorAll('section');
         sections.forEach(section => {
             section.classList.add('reveal-element');
-            section.style.opacity = "0";
-            section.style.transform = "translateY(30px)";
+            section.style.opacity = "0.95"; // Starting almost fully visible
+            section.style.transform = "translateY(10px)"; // Smaller transform
         });
         
         const projectCards = document.querySelectorAll('.project-card');
         projectCards.forEach((card, index) => {
             card.classList.add('reveal-element');
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.dataset.delay = index * 150; // Staggered reveal
+            card.style.opacity = "0.95";
+            card.style.transform = "translateY(10px)";
+            card.dataset.delay = index * 100; // Shorter delay
         });
         
         const featuredImage = document.querySelector('.featured-image');
         if (featuredImage) {
             featuredImage.classList.add('reveal-element');
             featuredImage.classList.add('reveal-right');
-            featuredImage.style.opacity = "0";
-            featuredImage.style.transform = "translateX(30px)";
+            featuredImage.style.opacity = "0.95";
+            featuredImage.style.transform = "translateX(10px)";
         }
         
         const featuredText = document.querySelector('.featured-text');
         if (featuredText) {
             featuredText.classList.add('reveal-element');
             featuredText.classList.add('reveal-left');
-            featuredText.style.opacity = "0";
-            featuredText.style.transform = "translateX(-30px)";
+            featuredText.style.opacity = "0.95";
+            featuredText.style.transform = "translateX(-10px)";
         }
     }
     
@@ -164,11 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const elementTop = element.getBoundingClientRect().top;
             const delay = element.dataset.delay || 0;
             
-            if (elementTop < windowHeight - 100) {
+            if (elementTop < windowHeight - 50) {
                 setTimeout(() => {
                     element.style.opacity = "1";
                     element.style.transform = "translate(0)";
-                    element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+                    element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
                 }, delay);
             }
         });
