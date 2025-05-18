@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Add shadow and change background opacity when scrolling down
         if (scrollTop > 10) {
             header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
             header.style.padding = '10px 0';
@@ -30,19 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const successMessage = formParent.querySelector('.form-success');
             
             if (successMessage) {
-                // Hide the form
                 this.style.display = 'none';
-                // Show success message
                 successMessage.style.display = 'block';
                 
-                // Reset after 3 seconds
                 setTimeout(() => {
                     this.style.display = 'block';
                     successMessage.style.display = 'none';
                 }, 3000);
             }
             
-            // Reset form after submission
             this.reset();
         });
     });
