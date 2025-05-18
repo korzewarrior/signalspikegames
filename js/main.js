@@ -40,15 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Enhanced header transformation
         if (scrollTop > scrollThreshold) {
             header.classList.add('scrolled');
-            
-            // Hide header when scrolling down, show when scrolling up
-            if (scrollTop > lastScrollTop && scrollTop > 150) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-            }
+            // Remove the hiding behavior
+            header.style.transform = 'translateY(0)';
         } else {
             header.classList.remove('scrolled');
+            header.style.transform = 'translateY(0)';
         }
         
         // Update active nav based on scroll position
