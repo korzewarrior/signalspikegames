@@ -1,18 +1,42 @@
 // Signal Spike Games Website Scripts
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Direct home link handler
+    const homeLink = document.getElementById('home-link');
+    if (homeLink) {
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Update active state
+            document.querySelectorAll('.main-nav a').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    }
+
     // Enhanced smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             
-            // Special case for home link
+            // Special case for home link - more direct approach
             if (targetId === '#') {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
+                
+                // Update active nav state for home
+                document.querySelectorAll('.main-nav a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
                 return;
             }
             
@@ -77,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if at the top of the page - activate Home
         if (scrollPosition < 100) {
             navItems.forEach(item => item.classList.remove('active'));
-            const homeLink = document.querySelector('.main-nav a[href="#"]');
+            const homeLink = document.querySelector('#home-link');
             if (homeLink) {
                 homeLink.classList.add('active');
             }
