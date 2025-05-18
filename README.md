@@ -1,52 +1,38 @@
-# Signal Spike Games - Website Redesign
+# Industry Games Website Recreation
 
-This is a redesigned version of the Signal Spike Games website, merging the existing style with elements inspired by Industry Games.
+This is a recreation of the Industry Games website based on the available information. This version is for reference and educational purposes only.
 
-## Features
+## Structure
 
-- Modern, responsive design 
-- Maintains the distinctive green terminal theme from the original
-- Enhanced layout with fullscreen hero section
-- Improved project displays with images
-- Contact form and newsletter subscription
-- Social media integration
-- Expanded footer with navigation and legal links
+The site includes:
 
-## Missing Assets to Add
+- Home page with hero section
+- About section
+- Newsletter signup
+- Contact form
+- Social media links
 
-The following image assets are referenced in the HTML but need to be created:
+## Missing Assets
 
-- `img/hero-bg.jpg` - A dark, tech-themed background image for the hero section
-- `img/project1.jpg` - Thumbnail image for the Starboys project
-- `img/project2.jpg` - Thumbnail image for the Star Tournament project
+The following assets would need to be created:
+
+- `img/logo.png` - Industry Games logo
+- `img/hero-bg.jpg` - Background image for the hero section
 
 ## Implementation
 
 The website is built with:
 
 - HTML5
-- CSS3 
+- CSS3
 - Vanilla JavaScript
-- Font Awesome for icons
-- Google Fonts (Spline Sans Mono)
+- Font Awesome icons
+- Google Fonts (Montserrat)
 
-## Original Style Elements Preserved
+## Notes
 
-- Green terminal-inspired color scheme
-- Monospace font
-- Scanline visual effects
-- Minimalist aesthetic
+This is a simplified version of the Industry Games website, created based on available information. The original website may contain additional features and content not reproduced here.
 
-## New Style Elements Added
+## Viewing the Site
 
-- Full-width sections
-- Grid-based project display
-- Contact form
-- Newsletter signup
-- Enhanced footer with multiple columns
-- Social media icons
-- Header scroll effect
-
-## Getting Started
-
-To view the site locally, simply open the `index.html` file in a web browser. 
+To view the site, open `index.html` in a web browser. 
