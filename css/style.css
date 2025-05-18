@@ -495,43 +495,7 @@ header.scrolled {
     margin: 0 auto 30px;
 }
 
-/* Newsletter Section */
-.newsletter {
-    background-color: var(--section-bg);
-    padding: 80px 0;
-    text-align: center;
-}
-
-.newsletter h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.newsletter p {
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-
-.newsletter-form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    gap: 10px;
-}
-
-.newsletter-form input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 1px solid var(--border-color);
-    background: var(--input-bg);
-    color: var(--text-color);
-    border-radius: 3px;
-}
-
-.newsletter-form button {
-    padding-left: 25px;
-    padding-right: 25px;
-}
+/* Newsletter Section - Styles have been moved to Contact section */
 
 /* Contact Section */
 .contact {
@@ -551,6 +515,36 @@ header.scrolled {
     font-size: 1.1rem;
 }
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info, .newsletter-signup {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3, .newsletter-signup h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.newsletter-signup p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
 .contact p a {
     font-weight: 700;
     padding: 2px 6px;
@@ -562,6 +556,28 @@ header.scrolled {
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
+}
+
+.newsletter-form {
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-color);
+    border-radius: 3px;
+}
+
+.newsletter-form button {
+    padding-left: 25px;
+    padding-right: 25px;
+    white-space: nowrap;
 }
 
 /* Footer */
@@ -668,6 +684,11 @@ footer p {
     
     .main-nav ul {
         flex-wrap: wrap;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
