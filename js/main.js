@@ -59,28 +59,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active nav based on scroll position
     function updateActiveNavOnScroll() {
         const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
         
         // Get all sections and corresponding nav items
         const sections = document.querySelectorAll('section[id]');
         const navItems = document.querySelectorAll('.main-nav a');
         
-        // Determine which section is currently in view
+        // Check if at the top of the page - activate Home
+        if (scrollPosition < 100) {
+            navItems.forEach(item => item.classList.remove('active'));
+            const homeLink = document.querySelector('.main-nav a[href="#"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
+            return;
+        }
+        
+        // Check if at the bottom of the page - activate Contact
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
+            navItems.forEach(item => item.classList.remove('active'));
+            const contactLink = document.querySelector('.main-nav a[href="#contact"]');
+            if (contactLink) {
+                contactLink.classList.add('active');
+            }
+            return;
+        }
+        
+        // Determine which section is currently in view for all other sections
+        let currentSection = null;
+        
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
             
             if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                // Remove active class from all nav items
-                navItems.forEach(item => item.classList.remove('active'));
-                
-                // Add active class to corresponding nav item
-                const correspondingNavItem = document.querySelector(`.main-nav a[href="#${sectionId}"]`);
-                if(correspondingNavItem) {
-                    correspondingNavItem.classList.add('active');
-                }
+                currentSection = sectionId;
             }
         });
+        
+        // Remove active class from all nav items
+        navItems.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to corresponding nav item
+        if (currentSection) {
+            const correspondingNavItem = document.querySelector(`.main-nav a[href="#${currentSection}"]`);
+            if(correspondingNavItem) {
+                correspondingNavItem.classList.add('active');
+            }
+        }
     }
     
     // Initialize section reveals
