@@ -180,7 +180,7 @@ a:hover {
 }
 
 .loading-logo .signal { color: var(--text-inverse); }
-.loading-logo .spike { color: var(--primary-red); }
+.loading-logo .spike { color: white; background-color: var(--primary-red); padding: 0 10px; }
 .loading-logo .games { color: var(--gray-400); }
 
 .loading-bar {
@@ -239,7 +239,7 @@ a:hover {
 }
 
 .nav-logo .signal { color: var(--text-primary); }
-.nav-logo .spike { color: var(--primary-red); }
+.nav-logo .spike { color: white; background-color: var(--primary-red); padding: 0 4px; }
 
 .nav-menu {
     display: flex;
@@ -379,7 +379,7 @@ a:hover {
     background-repeat: repeat;
     opacity: 0.7;
     pointer-events: none;
-    transform: translateZ(0);
+    transform: none !important;
 }
 
 .gradient-overlay {
@@ -425,27 +425,29 @@ a:hover {
 
 .hero-title .signal,
 .hero-title .games {
-    color: var(--text-inverse);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title .signal {
+    color: var(--text-inverse);
+}
+
+.hero-title .games {
+    color: var(--gray-400);
+    display: block;
+    margin-top: 20px;
 }
 
 .hero-title .spike {
-    color: var(--primary-red);
+    color: white;
+    background-color: var(--primary-red);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: relative;
+    padding: 0 25px;
 }
 
 .hero-title .spike::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    content: none;
 }
 
 .hero-subtitle {
@@ -710,134 +712,6 @@ section {
     font-size: 0.9rem;
 }
 
-/* Featured Project Section */
-.featured-project {
-    background: var(--bg-primary);
-    overflow: hidden;
-}
-
-.featured-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4xl);
-    align-items: center;
-}
-
-.featured-text h2 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    margin-bottom: var(--spacing-lg);
-}
-
-.project-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    margin: var(--spacing-xl) 0;
-}
-
-.feature-tag {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--bg-tertiary);
-    border-radius: 20px;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-}
-
-.feature-tag i {
-    color: var(--primary-red);
-}
-
-.project-actions {
-    display: flex;
-    gap: var(--spacing-lg);
-    flex-wrap: wrap;
-}
-
-.featured-image {
-    position: relative;
-}
-
-.image-container {
-    position: relative;
-    border-radius: var(--border-radius-xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-2xl);
-}
-
-.project-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform var(--transition-slow);
-}
-
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-}
-
-.image-container:hover .image-overlay {
-    opacity: 1;
-}
-
-.image-container:hover .project-image {
-    transform: scale(1.05);
-}
-
-.play-button {
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: var(--text-inverse);
-    transform: scale(0.8);
-    transition: transform var(--transition-bounce);
-}
-
-.image-container:hover .play-button {
-    transform: scale(1);
-}
-
-.image-glow {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    background: var(--gradient-primary);
-    border-radius: var(--border-radius-xl);
-    filter: blur(20px);
-    opacity: 0.3;
-    z-index: -1;
-}
-
-@media (max-width: 768px) {
-    .featured-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
-    }
-    
-    .featured-image {
-        order: -1;
-    }
-}
-
 /* Projects Section */
 .projects {
     background: var(--bg-secondary);
@@ -887,7 +761,6 @@ section {
 .project-card[data-project="star-tournament"] .card-image img {
     object-fit: contain;
     padding: var(--spacing-md);
-    background: var(--bg-secondary);
 }
 
 .placeholder-image {
@@ -915,31 +788,25 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: transparent;
     opacity: 0;
     transition: opacity var(--transition-normal);
 }
 
 .card-header:hover .card-overlay {
-    opacity: 1;
+    opacity: 0;
 }
 
 .card-header:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .overlay-content {
-    color: var(--text-inverse);
-    font-size: 2rem;
-    transform: scale(0.8);
-    transition: transform var(--transition-bounce);
+    display: none;
 }
 
 .card-header:hover .overlay-content {
-    transform: scale(1);
+    transform: none;
 }
 
 .project-status {
@@ -1303,7 +1170,7 @@ section {
 }
 
 .footer-logo .signal { color: var(--text-inverse); }
-.footer-logo .spike { color: var(--primary-red); }
+.footer-logo .spike { color: white; background-color: var(--primary-red); padding: 0 4px; }
 .footer-logo .games { color: var(--gray-400); }
 
 .footer-brand p {
@@ -2018,11 +1885,13 @@ section {
 
 @media (max-width: 768px) {
     .game-hero {
-        padding: var(--spacing-2xl) 0;
+        padding-top: calc(var(--nav-height) + var(--spacing-xl));
+        padding-bottom: var(--spacing-xl);
     }
     
     .game-title {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: var(--spacing-lg);
     }
     
     .game-actions {
@@ -2051,5 +1920,25 @@ section {
     
     .highlight-card {
         padding: var(--spacing-lg);
+    }
+    
+    .hero {
+        padding-top: calc(var(--nav-height) + var(--spacing-xl));
+        padding-bottom: var(--spacing-xl);
+    }
+    
+    .hero-content {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-xl);
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
     }
 } 

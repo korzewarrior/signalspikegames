@@ -268,11 +268,17 @@
                     </div>
                     
                     <div class="careers-info">
-                        <p>Signal Spike Games is focused on our current projects, with a tight-knit team of industry veterans driving development. While we are not actively expanding our core team at this moment, we are always attentive to exceptional talent that could elevate our craft.</p>
-                        <p>If you are an accomplished <strong>network engineer</strong>, <strong>gameplay programmer</strong>, or <strong>technical artist</strong> with a portfolio that speaks volumes, and you feel your expertise would be the perfect complement to our vision, we would be interested in starting a conversation.</p>
+                    <div class="careers-info">
+                        <p>Signal Spike Games is focused on our current projects, with a tight-knit team of industry veterans driving development. While we're not actively expanding our core team at this moment, we're always attentive to exceptional talent that could elevate our craft.</p>
+                        <p>If you're an accomplished <strong>network engineer</strong>, <strong>gameplay programmer</strong>, or <strong>technical artist</strong> with a portfolio that speaks volumes, and you feel your expertise would be the perfect complement to our vision, we'd be interested in starting a conversation.</p>
                     </div>
                     
                     <div class="careers-info">
+                        <p>Signal Spike Games is focused on our current projects, with a tight-knit team of industry veterans driving development. While we're not actively expanding our core team at this moment, we're always attentive to exceptional talent that could elevate our craft.</p>
+                        <p>If you're an accomplished <strong>network engineer</strong>, <strong>gameplay programmer</strong>, or <strong>technical artist</strong> with a portfolio that speaks volumes, and you feel your expertise would be the perfect complement to our vision, we'd be interested in starting a conversation.</p>
+                    </div>
+                    
+                    <div class="careers-roles">
                         <h3>Future Opportunities</h3>
                         <div class="roles-list">
                             <div class="role">
@@ -419,7 +425,7 @@
             <div class="footer-bottom">
                 <p>&copy; <span id="currentYear">2025</span> Signal Spike Games — All rights reserved.</p>
                 <div class="footer-social">
-                    <span class="social-tagline">Play ⋅ Wishlist ⋅ Connect ⋅ Share</span>
+                    <span class="social-tagline">Join ⋅ Follow ⋅ Watch ⋅ Subscribe</span>
                 </div>
             </div>
         </div>

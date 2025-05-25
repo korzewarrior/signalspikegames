@@ -3,12 +3,6 @@
  * Modern, performant, and accessible interactions
  */
 
-// URL cleanup - remove index.html from URL
-if (window.location.pathname.endsWith('index.html')) {
-    const newPath = window.location.pathname.replace('index.html', '');
-    window.history.replaceState({}, document.title, newPath);
-}
-
 class SignalSpikeWebsite {
     constructor() {
         this.init();
@@ -572,13 +566,12 @@ class AccessibilityEnhancer {
         skipLink.className = 'skip-link';
         skipLink.style.cssText = `
             position: absolute;
-            top: -100px;
+            top: -100px; /* Move it further up to ensure it's completely off-screen */
             left: 0;
-            width: 1px;
+            width: 1px; /* Make it invisible when off-screen */
             height: 1px;
             overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
+            clip: rect(0, 0, 0, 0); /* Hide it visually */
             background: var(--primary-red);
             color: white;
             padding: 8px;
@@ -588,26 +581,48 @@ class AccessibilityEnhancer {
             transition: all 0.3s;
         `;
         
-        // Only add one set of event listeners
+        skipLink.addEventListener('focus', () => {
+            skipLink.style.top = '6px';
+        });
+        
+        skipLink.addEventListener('blur', () => {
+            skipLink.style.top = '-40px';
+        });
+        
         skipLink.addEventListener('focus', () => {
             skipLink.style.clip = 'auto';
-            skipLink.style.clipPath = 'none';
             skipLink.style.width = 'auto';
             skipLink.style.height = 'auto';
             skipLink.style.top = '6px';
             skipLink.style.left = '6px';
             skipLink.style.overflow = 'visible';
-            skipLink.style.whiteSpace = 'normal';
         });
         
         skipLink.addEventListener('blur', () => {
             skipLink.style.clip = 'rect(0, 0, 0, 0)';
-            skipLink.style.clipPath = 'inset(50%)';
             skipLink.style.width = '1px';
             skipLink.style.height = '1px';
             skipLink.style.top = '-100px';
+            skipLink.style.left = '0';
             skipLink.style.overflow = 'hidden';
-            skipLink.style.whiteSpace = 'nowrap';
+        });
+        
+        skipLink.addEventListener('focus', () => {
+            skipLink.style.clip = 'auto';
+            skipLink.style.width = 'auto';
+            skipLink.style.height = 'auto';
+            skipLink.style.top = '6px';
+            skipLink.style.left = '6px';
+            skipLink.style.overflow = 'visible';
+        });
+        
+        skipLink.addEventListener('blur', () => {
+            skipLink.style.clip = 'rect(0, 0, 0, 0)';
+            skipLink.style.width = '1px';
+            skipLink.style.height = '1px';
+            skipLink.style.top = '-100px';
+            skipLink.style.left = '0';
+            skipLink.style.overflow = 'hidden';
         });
         
         document.body.insertBefore(skipLink, document.body.firstChild);
