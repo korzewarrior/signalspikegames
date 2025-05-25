@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starboys - Signal Spike Games</title>
+    <meta name="description" content="Starboys - Signal Spike's debut cooperative top-down roguelike shooter with bespoke netcode technology.">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">
+                        <span class="signal">SIGNAL</span>
+                        <span class="spike">SPIKE</span>
+                    </span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#careers" class="nav-link">Careers</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Hero Section -->
+    <section class="game-hero" style="padding-top: 120px;">
+        <div class="container">
+            <div class="game-header">
+                <div class="breadcrumb">
+                    <a href="index.html">Projects</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Starboys</span>
+                </div>
+                
+                <div class="game-title-section">
+                    <h1 class="game-title">Starboys</h1>
+                    <div class="game-status">
+                        <span class="status-badge alpha">Alpha</span>
+                        <span class="game-genre">Cooperative Roguelike Shooter</span>
+                    </div>
+                </div>
+                
+                <p class="game-description">
+                    Signal Spike's debut title: an arcade-scale cooperative top down roguelike shooter built in Unity with FishNetworking. 
+                    Fast-paced, tactical, and endlessly replayable. It's our proving ground for game design principles that will drive our larger projects.
+                </p>
+                
+                <div class="game-actions">
+                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fab fa-discord"></i>
+                        <span>Join Discord for Updates</span>
+                    </a>
+                    <a href="index.html#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Details -->
+    <section class="game-details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="game-image-section">
+                    <div class="main-image">
+                        <img src="img/starboy.png" alt="Starboys gameplay screenshot" class="game-screenshot">
+                        <div class="image-overlay">
+                            <div class="coming-soon-badge">
+                                <i class="fas fa-clock"></i>
+                                <span>More Screenshots Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-info-section">
+                    <div class="info-card">
+                        <h3>Game Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-gamepad"></i>
+                                <div>
+                                    <strong>Unity Engine</strong>
+                                    <p>Built with Unity for cross-platform compatibility and optimized performance.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-wifi"></i>
+                                <div>
+                                    <strong>FishNetworking</strong>
+                                    <p>Reliable multiplayer networking solution powering seamless cooperative gameplay.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-sync"></i>
+                                <div>
+                                    <strong>Roguelike Elements</strong>
+                                    <p>Procedural levels with permanent progression</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-crosshairs"></i>
+                                <div>
+                                    <strong>Top-Down Shooter</strong>
+                                    <p>Fast-paced arcade-style combat</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Technical Specifications</h3>
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">Unity 6</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Networking</span>
+                                <span class="spec-value">FishNetworking</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Platforms:</span>
+                                <span class="spec-value">PC (More TBA)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Players:</span>
+                                <span class="spec-value">1-4 Cooperative</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Status:</span>
+                                <span class="spec-value">Alpha Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Progress -->
+    <section class="development-progress">
+        <div class="container">
+            <div class="section-header">
+                <h2>Development Progress</h2>
+                <p>Starboys is currently in active alpha development. Here's what we're working on:</p>
+            </div>
+            
+            <div class="progress-grid">
+                <div class="progress-item completed">
+                    <div class="progress-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="progress-content">
+                        <h4>Core Gameplay</h4>
+                        <p>Basic shooting mechanics and player movement</p>
+                    </div>
+                </div>
+                
+                <div class="progress-item completed">
+                    <div class="progress-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="progress-content">
+                        <h4>Networking Foundation</h4>
+                        <p>Initial netcode implementation for multiplayer</p>
+                    </div>
+                </div>
+                
+                <div class="progress-item in-progress">
+                    <div class="progress-icon">
+                        <i class="fas fa-cog fa-spin"></i>
+                    </div>
+                    <div class="progress-content">
+                        <h4>Roguelike Systems</h4>
+                        <p>Procedural generation and progression mechanics</p>
+                    </div>
+                </div>
+                
+                <div class="progress-item upcoming">
+                    <div class="progress-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="progress-content">
+                        <h4>Art & Polish</h4>
+                        <p>Visual effects, UI improvements, and audio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+        <div class="container">
+            <div class="coming-soon-content">
+                <div class="coming-soon-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2>More Information Coming Soon</h2>
+                <p>We're still deep in development and will be sharing more details about Starboys as we progress. Stay tuned for:</p>
+                
+                <div class="upcoming-content">
+                    <div class="upcoming-item">
+                        <i class="fas fa-images"></i>
+                        <span>Gameplay Screenshots & Videos</span>
+                    </div>
+                    <div class="upcoming-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Release Timeline Updates</span>
+                    </div>
+                    <div class="upcoming-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Alpha Testing Opportunities</span>
+                    </div>
+                    <div class="upcoming-item">
+                        <i class="fas fa-list"></i>
+                        <span>Detailed Feature Breakdown</span>
+                    </div>
+                </div>
+                
+                <div class="coming-soon-actions">
+                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fab fa-discord"></i>
+                        <span>Join Discord for Latest Updates</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="signal">SIGNAL</span>
+                        <span class="spike">SPIKE</span>
+                        <span class="games">GAMES</span>
+                    </div>
+                    <p>Making games we love playing.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Studio</h4>
+                        <a href="index.html#about">About</a>
+                        <a href="index.html#projects">Projects</a>
+                        <a href="index.html#careers">Careers</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="mailto:hello@signalspike.games">Email</a>
+                        <a href="https://discord.gg/signalspikegames" target="_blank">Discord</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2025</span> Signal Spike Games — All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
