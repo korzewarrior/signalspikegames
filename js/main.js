@@ -414,7 +414,8 @@ class SignalSpikeWebsite {
     // Preload critical images
     preloadCriticalImages() {
         const criticalImages = [
-            'img/starboy.png'
+            'img/starboy.png',
+            'img/bloodrust-portrait.png'
         ];
 
         criticalImages.forEach(src => {

@@ -757,8 +757,8 @@ section {
     transition: transform var(--transition-slow);
 }
 
-/* Star Tournament specific styling to show full star */
-.project-card[data-project="star-tournament"] .card-image img {
+/* Bloodrust specific styling (uses placeholder star for now) */
+.project-card[data-project="bloodrust"] .card-image img {
     object-fit: contain;
     padding: var(--spacing-md);
 }

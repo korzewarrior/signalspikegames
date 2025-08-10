@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Tournament - Signal Spike Games</title>
-    <meta name="description" content="Star Tournament - An arena shooter with a fully playable core, rebuilt on new netcode with fresh levels and overhauled art.">
+    <title>Bloodrust - Signal Spike Games</title>
+    <meta name="description" content="Bloodrust — a minimalist microgame blobber inspired by Wizardry and Dragon Ruins. Grid-based party dungeon crawling distilled to its essentials.">
     
     <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +15,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="icon" type="image/png" href="img/star-favicon.png">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- JS -->
+    <script defer src="js/main.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -56,20 +58,19 @@
                 <div class="breadcrumb">
                     <a href="index.html">Projects</a>
                     <i class="fas fa-chevron-right"></i>
-                    <span>Star Tournament</span>
+                    <span>Bloodrust</span>
                 </div>
                 
                 <div class="game-title-section">
-                    <h1 class="game-title">Star Tournament</h1>
+                    <h1 class="game-title">Bloodrust</h1>
                     <div class="game-status">
                         <span class="status-badge alpha">Alpha</span>
-                        <span class="game-genre">Arena Shooter</span>
+                        <span class="game-genre">Microgame Blobber</span>
                     </div>
                 </div>
                 
                 <p class="game-description">
-                    An arena shooter with a fully playable core that's already a blast. Originally built in Unity 2019, 
-                    we're rebuilding it in Unity 6 with FishNetworking, implementing fresh levels and overhauled art while perfecting the competitive multiplayer experience.
+                    A minimalist microgame blobber inspired by Wizardry and Dragon Ruins. Grid-based party dungeon crawling, tight loops, zero bloat.
                 </p>
                 
                 <div class="game-actions">
@@ -92,7 +93,7 @@
             <div class="details-grid">
                 <div class="game-image-section">
                     <div class="main-image">
-                        <img src="img/star.png" alt="Star Tournament" class="game-screenshot">
+                        <img src="img/bloodrust-portrait.png" alt="Bloodrust" class="game-screenshot">
                         <div class="image-overlay">
                             <div class="coming-soon-badge">
                                 <i class="fas fa-images"></i>
@@ -107,38 +108,31 @@
                         <h3>Game Features</h3>
                         <div class="features-list">
                             <div class="feature-item">
-                                <i class="fas fa-crosshairs"></i>
+                                <i class="fas fa-dungeon"></i>
                                 <div>
-                                    <strong>Arena Combat</strong>
-                                    <p>Fast-paced competitive battles in designed arenas</p>
+                                    <strong>Grid-Based Dungeon Crawling</strong>
+                                    <p>Classic step-by-step traversal through compact, hand-authored mazes.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-users"></i>
                                 <div>
-                                    <strong>PvP Focused</strong>
-                                    <p>Player vs player combat with skill-based matchmaking</p>
+                                    <strong>Party-Driven Play</strong>
+                                    <p>Manage a tight party with meaningful roles and tradeoffs.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-map"></i>
+                                <i class="fas fa-skull-crossbones"></i>
                                 <div>
-                                    <strong>Multiple Arenas</strong>
-                                    <p>Diverse battlegrounds with unique layouts and strategies</p>
+                                    <strong>Lean Turn-Based Combat</strong>
+                                    <p>Snappy encounters focused on clarity, positioning, and risk.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-gamepad"></i>
+                                <i class="fas fa-hourglass-half"></i>
                                 <div>
-                                    <strong>Unity Engine</strong>
-                                    <p>Built with Unity for optimal performance and cross-platform support.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-wifi"></i>
-                                <div>
-                                    <strong>FishNetworking</strong>
-                                    <p>Robust multiplayer networking ensuring smooth competitive gameplay.</p>
+                                    <strong>Micro-Sessions</strong>
+                                    <p>Designed for short, satisfying runs that respect your time.</p>
                                 </div>
                             </div>
                         </div>
@@ -149,23 +143,23 @@
                         <div class="tech-specs">
                             <div class="spec-item">
                                 <span class="spec-label">Engine</span>
-                                <span class="spec-value">Unity 6 (rebuilt from 2019)</span>
+                                <span class="spec-value">Unity 6</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Networking</span>
-                                <span class="spec-value">FishNetworking</span>
+                                <span class="spec-value">Single-Player</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Platforms:</span>
+                                <span class="spec-label">Platforms</span>
                                 <span class="spec-value">PC (More TBA)</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Players:</span>
-                                <span class="spec-value">Multiplayer Arena</span>
+                                <span class="spec-label">Players</span>
+                                <span class="spec-value">Single-Player</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Status:</span>
-                                <span class="spec-value">Rebuild in Progress</span>
+                                <span class="spec-label">Status</span>
+                                <span class="spec-value">Alpha Development</span>
                             </div>
                         </div>
                     </div>
@@ -178,8 +172,8 @@
     <section class="development-progress">
         <div class="container">
             <div class="section-header">
-                <h2>Rebuild Progress</h2>
-                <p>Star Tournament already has a playable core, but we're rebuilding everything to make it truly exceptional:</p>
+                <h2>Development Progress</h2>
+                <p>Bloodrust is in active alpha development. Current focus areas:</p>
             </div>
             
             <div class="progress-grid">
@@ -188,8 +182,8 @@
                         <i class="fas fa-check"></i>
                     </div>
                     <div class="progress-content">
-                        <h4>Original Prototype</h4>
-                        <p>Fully playable core that's already fun</p>
+                        <h4>Core Movement</h4>
+                        <p>Grid-based traversal and interaction loop.</p>
                     </div>
                 </div>
                 
@@ -198,18 +192,8 @@
                         <i class="fas fa-cog fa-spin"></i>
                     </div>
                     <div class="progress-content">
-                        <h4>Netcode Overhaul</h4>
-                        <p>Brand-new networking architecture for competitive play</p>
-                    </div>
-                </div>
-                
-                <div class="progress-item in-progress">
-                    <div class="progress-icon">
-                        <i class="fas fa-cog fa-spin"></i>
-                    </div>
-                    <div class="progress-content">
-                        <h4>Fresh Level Design</h4>
-                        <p>New arenas with improved layouts and balance</p>
+                        <h4>Combat Iteration</h4>
+                        <p>Turn economy, formation, and enemy behaviors.</p>
                     </div>
                 </div>
                 
@@ -218,8 +202,8 @@
                         <i class="fas fa-clock"></i>
                     </div>
                     <div class="progress-content">
-                        <h4>Art Pipeline Overhaul</h4>
-                        <p>Complete visual redesign with modern standards</p>
+                        <h4>Content & Progression</h4>
+                        <p>Monsters, loot tables, and run meta-structure.</p>
                     </div>
                 </div>
             </div>
@@ -230,33 +214,33 @@
     <section class="game-highlights">
         <div class="container">
             <div class="section-header">
-                <h2>What Makes Star Tournament Special</h2>
-                <p>Building on a proven foundation with next-generation technology:</p>
+                <h2>Why Bloodrust</h2>
+                <p>Minimal friction. Maximum signal. Designed for clarity and replayability.</p>
             </div>
             
             <div class="highlights-grid">
                 <div class="highlight-card">
                     <div class="highlight-icon">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-compass"></i>
                     </div>
-                    <h3>Proven Core</h3>
-                    <p>Unlike most projects in development, Star Tournament already has a fully playable and fun core experience that players enjoy.</p>
+                    <h3>Readable Systems</h3>
+                    <p>Every mechanic serves the crawl. No noise, no filler.</p>
                 </div>
                 
                 <div class="highlight-card">
                     <div class="highlight-icon">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-chess-knight"></i>
                     </div>
-                    <h3>Complete Rebuild</h3>
-                    <p>We're not just polishing - we're rebuilding everything from the ground up using lessons learned and modern technology.</p>
+                    <h3>Decisions Over Grind</h3>
+                    <p>Sharp choices and dangerous dungeons beat stat inflation.</p>
                 </div>
                 
                 <div class="highlight-card">
                     <div class="highlight-icon">
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-repeat"></i>
                     </div>
-                    <h3>Competitive Ready</h3>
-                    <p>The new netcode and balance improvements are designed specifically for competitive arena combat.</p>
+                    <h3>Built to Replay</h3>
+                    <p>Compact runs that invite one-more-try loops.</p>
                 </div>
             </div>
         </div>
@@ -269,32 +253,32 @@
                 <div class="coming-soon-icon">
                     <i class="fas fa-hammer"></i>
                 </div>
-                <h2>Rebuild in Progress</h2>
-                <p>Star Tournament is getting a complete makeover. We'll be sharing updates as the rebuild progresses:</p>
+                <h2>More Details Soon</h2>
+                <p>We're shaping Bloodrust in tight iterations. Expect updates on combat, classes, and dungeon sets.</p>
                 
                 <div class="upcoming-content">
                     <div class="upcoming-item">
                         <i class="fas fa-images"></i>
-                        <span>New Art & Visual Design</span>
+                        <span>Art Direction & UI</span>
                     </div>
                     <div class="upcoming-item">
-                        <i class="fas fa-map"></i>
-                        <span>Arena Redesigns & New Levels</span>
+                        <i class="fas fa-dungeon"></i>
+                        <span>Dungeon Variants</span>
                     </div>
                     <div class="upcoming-item">
                         <i class="fas fa-gamepad"></i>
-                        <span>Beta Testing Opportunities</span>
+                        <span>Public Playtests</span>
                     </div>
                     <div class="upcoming-item">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Performance & Balance Updates</span>
+                        <i class="fas fa-list"></i>
+                        <span>Feature Deep Dives</span>
                     </div>
                 </div>
                 
                 <div class="coming-soon-actions">
                     <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-primary">
                         <i class="fab fa-discord"></i>
-                        <span>Join Discord for Rebuild Updates</span>
+                        <span>Join Discord for Updates</span>
                     </a>
                 </div>
             </div>
@@ -341,8 +325,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
+
