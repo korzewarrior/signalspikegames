@@ -83,8 +83,28 @@ class SignalSpikeWebsite {
             if (!res.ok) return;
             const html = await res.text();
             mount.innerHTML = html;
+
+            // Adjust internal Studio links when not on homepage
+            this.fixFooterLinks(mount);
         } catch (err) {
             console.error('Footer injection failed:', err);
+        }
+    }
+
+    fixFooterLinks(footerRoot) {
+        try {
+            const isHomePage = !!document.querySelector('#projects');
+            if (isHomePage) return;
+
+            const internalAnchors = ['#about', '#projects', '#careers'];
+            internalAnchors.forEach(hash => {
+                const link = footerRoot.querySelector(`a[href="${hash}"]`);
+                if (link) {
+                    link.setAttribute('href', `index.html${hash}`);
+                }
+            });
+        } catch (err) {
+            console.error('Footer link adjustment failed:', err);
         }
     }
 
