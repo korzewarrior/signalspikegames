@@ -757,10 +757,11 @@ section {
     transition: transform var(--transition-slow);
 }
 
-/* Bloodrust specific styling (uses placeholder star for now) */
+/* Bloodrust card image: fill frame with tasteful crop */
 .project-card[data-project="bloodrust"] .card-image img {
-    object-fit: contain;
-    padding: var(--spacing-md);
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
 }
 
 .placeholder-image {
