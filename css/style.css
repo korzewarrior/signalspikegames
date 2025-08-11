@@ -1542,6 +1542,17 @@ section {
     display: block;
 }
 
+/* Bloodrust page: ensure hero image fills frame */
+.page-bloodrust .main-image {
+    aspect-ratio: 16 / 9;
+}
+
+.page-bloodrust .game-screenshot {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .placeholder-game-image {
     aspect-ratio: 16 / 9;
     background: var(--gradient-hero);
