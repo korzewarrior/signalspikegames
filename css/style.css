@@ -1553,6 +1553,17 @@ section {
     object-position: center;
 }
 
+/* Starboys page: ensure hero image fills frame */
+.page-starboys .main-image {
+    aspect-ratio: 16 / 9;
+}
+
+.page-starboys .game-screenshot {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .placeholder-game-image {
     aspect-ratio: 16 / 9;
     background: var(--gradient-hero);
