@@ -21,7 +21,9 @@ class SignalSpikeWebsite {
         this.initScrollAnimations();
         this.initFormHandlers();
         this.initParallax();
-        this.updateCopyright();
+        this.injectSharedFooter().then(() => {
+            this.updateCopyright();
+        });
         
         // Initialize after DOM is ready
         if (document.readyState === 'loading') {
@@ -70,6 +72,20 @@ class SignalSpikeWebsite {
         
         // Initial scroll position handling
         this.handleScroll();
+    }
+
+    async injectSharedFooter() {
+        try {
+            const mountSelector = '#shared-footer-mount';
+            const mount = document.querySelector(mountSelector);
+            if (!mount) return;
+            const res = await fetch('footer.html', { cache: 'no-cache' });
+            if (!res.ok) return;
+            const html = await res.text();
+            mount.innerHTML = html;
+        } catch (err) {
+            console.error('Footer injection failed:', err);
+        }
     }
 
     // Loading Screen
