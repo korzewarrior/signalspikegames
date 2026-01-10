@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog — Signal Spike Games</title>
+    <meta name="description" content="Development updates from Signal Spike Games. Follow along as we build Starboys and Bloodrust.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/star-favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span class="announcement-badge">2026</span>
+        <span>We'll be at <strong>GameOn Expo</strong></span>
+        <a href="gameon-expo.html" class="announcement-link">Details</a>
+        <a href="https://gameonexpo.com" target="_blank" rel="noopener" class="announcement-link">Event Site <i class="fas fa-external-link-alt"></i></a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                SIGNAL<span class="spike">SPIKE</span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="/#games" class="nav-link">Games</a>
+                <a href="devlog.html" class="nav-link">Devlog</a>
+                <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-discord btn-sm">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Devlog Header -->
+    <section class="devlog-header">
+        <div class="container">
+            <h1>Devlog</h1>
+            <p>Updates on what we're building.</p>
+        </div>
+    </section>
+
+    <!-- Devlog Entries -->
+    <section class="devlog-entries">
+        <div class="container">
+            
+            <!-- Entry Template (copy this for new entries) -->
+            <!--
+            <article class="devlog-entry" id="entry-YYYY-MM-DD">
+                <div class="entry-meta">
+                    <time datetime="YYYY-MM-DD">Month DD, YYYY</time>
+                    <span class="entry-tag">Starboys</span>
+                </div>
+                <h2>Entry Title Here</h2>
+                <div class="entry-content">
+                    <p>Your content here...</p>
+                </div>
+            </article>
+            -->
+
+            <!-- Expo Prep -->
+            <article class="devlog-entry" id="entry-2026-01-09">
+                <div class="entry-meta">
+                    <time datetime="2026-01-09">January 9, 2026</time>
+                    <span class="entry-tag">Studio</span>
+                </div>
+                <h2>Getting Ready for GameOn</h2>
+                <div class="entry-content">
+                    <p>We're going to GameOn Expo this year, which means we need an actual booth. Spent the last few weeks buying TVs, figuring out how to transport everything, and making sure we have enough controllers.</p>
+                    <p>Building a booth from scratch is its own kind of project. Cable management, signage, making sure the systems don't overheat in a convention hall. We're learning as we go.</p>
+                    <p>The goal is simple: show up, let people play Starboys, and see what happens. If you're at GameOn, come find us.</p>
+                </div>
+            </article>
+
+            <!-- Starboys Dev History -->
+            <article class="devlog-entry" id="entry-2026-01-01">
+                <div class="entry-meta">
+                    <time datetime="2026-01-01">January 1, 2026</time>
+                    <span class="entry-tag">Starboys</span>
+                </div>
+                <h2>How We Got Here</h2>
+                <div class="entry-content">
+                    <p>Figured the new year was a good time to look back at where Starboys started and where it's at now.</p>
+                    <p>The core of the game is the gravity system — walk on walls, ceilings, flip mid-fight. Getting that to feel right took a while. We went with FishNetworking for multiplayer, rebuilt the player controller more times than we'd like to admit, and eventually landed on something that feels good.</p>
+                    <p>From there: new character model, basic level design, a few game types, and interactables like jump pads, bounce walls, gravity zones. The kind of stuff that makes arena shooters fun to mess around in.</p>
+                    <p>Lots of playtesting — in person, online, yelling at each other, finding bugs. It's been a good way to figure out what works and what doesn't.</p>
+                    <p>Still a lot to do, but it's playable and it's fun. That's the part that matters.</p>
+                </div>
+            </article>
+
+            <!-- Placeholder for when there are no entries -->
+            <!--
+            <div class="devlog-empty">
+                <p>No entries yet. Check back soon!</p>
+            </div>
+            -->
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    SIGNAL<span class="spike">SPIKE</span>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://www.twitch.tv/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@SignalSpikeGames" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Signal Spike Games</p>
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms-of-service.html">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

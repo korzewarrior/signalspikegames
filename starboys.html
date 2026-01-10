@@ -3,42 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starboys - Signal Spike Games</title>
-    <meta name="description" content="Starboys - Signal Spike's debut cooperative top-down roguelike shooter with bespoke netcode technology.">
+    <title>Starboys — Signal Spike Games</title>
+    <meta name="description" content="Starboys — a kid-friendly arena shooter where you can walk on walls and flip gravity.">
     
-    <!-- Preload critical fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="icon" type="image/png" href="img/star-favicon.png">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-starboys">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span class="announcement-badge">2026</span>
+        <span>We'll be at <strong>GameOn Expo</strong></span>
+        <a href="gameon-expo.html" class="announcement-link">Details</a>
+        <a href="https://gameonexpo.com" target="_blank" rel="noopener" class="announcement-link">Event Site <i class="fas fa-external-link-alt"></i></a>
+    </div>
+
     <!-- Navigation -->
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-text">
-                        <span class="signal">SIGNAL</span>
-                        <span class="spike">SPIKE</span>
-                    </span>
-                </a>
-            </div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                SIGNAL<span class="spike">SPIKE</span>
+            </a>
             
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#projects" class="nav-link">Projects</a>
-                <a href="index.html#careers" class="nav-link">Careers</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#games" class="nav-link">Games</a>
+                <a href="devlog.html" class="nav-link">Devlog</a>
+                <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-discord btn-sm">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
             </div>
             
             <div class="nav-toggle" id="navToggle">
@@ -49,37 +53,40 @@
         </div>
     </nav>
 
-    <!-- Game Hero Section -->
-    <section class="game-hero" style="padding-top: 120px;">
+    <!-- Game Hero -->
+    <section class="game-hero">
+        <div class="game-hero-bg">
+            <img src="img/starboys/starboys.png" alt="" aria-hidden="true">
+        </div>
+        
         <div class="container">
-            <div class="game-header">
-                <div class="breadcrumb">
-                    <a href="index.html">Projects</a>
+            <div class="game-hero-content">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>Starboys</span>
+                </nav>
+                
+                <div class="game-title-row">
+                    <h1 class="game-title">STARBOYS</h1>
+                    <span class="badge badge-alpha">Alpha</span>
                 </div>
                 
-                <div class="game-title-section">
-                    <h1 class="game-title">Starboys</h1>
-                    <div class="game-status">
-                        <span class="status-badge alpha">Alpha</span>
-                        <span class="game-genre">Cooperative Roguelike Shooter</span>
-                    </div>
-                </div>
+                <p class="game-genre">Third-Person Arena Shooter</p>
                 
                 <p class="game-description">
-                    Signal Spike's debut title: an arcade-scale cooperative top down roguelike shooter built in Unity with FishNetworking. 
-                    Fast-paced, tactical, and endlessly replayable. It's our proving ground for game design principles that will drive our larger projects.
+                    Arena shooter where you can walk on walls and ceilings. 
+                    Flip gravity, get the drop on your friends.
                 </p>
                 
                 <div class="game-actions">
-                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-primary">
+                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-discord">
                         <i class="fab fa-discord"></i>
-                        <span>Join Discord for Updates</span>
+                        <span>Discord</span>
                     </a>
-                    <a href="index.html#contact" class="btn btn-outline">
+                    <a href="mailto:hello@signalspike.games" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i>
-                        <span>Contact Us</span>
+                        <span>Contact</span>
                     </a>
                 </div>
             </div>
@@ -90,75 +97,87 @@
     <section class="game-details">
         <div class="container">
             <div class="details-grid">
-                <div class="game-image-section">
-                    <div class="main-image">
-                        <img src="img/starboy.png" alt="Starboys gameplay screenshot" class="game-screenshot">
-                        <div class="image-overlay">
-                            <div class="coming-soon-badge">
-                                <i class="fas fa-clock"></i>
-                                <span>More Screenshots Coming Soon</span>
-                            </div>
+                <div class="game-media">
+                    <div class="game-screenshot main-screenshot">
+                        <img src="img/starboys/starboys.png" alt="Starboys gameplay screenshot" data-lightbox>
+                    </div>
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb">
+                            <img src="img/starboys/dev1.png" alt="Starboys screenshot 2" data-lightbox>
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/starboys/dev2.png" alt="Starboys screenshot 3" data-lightbox>
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/starboys/dev3.png" alt="Starboys screenshot 4" data-lightbox>
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/starboys/dev4.png" alt="Starboys screenshot 5" data-lightbox>
                         </div>
                     </div>
                 </div>
                 
-                <div class="game-info-section">
+                <div class="game-info">
                     <div class="info-card">
-                        <h3>Game Features</h3>
+                        <h3>Features</h3>
                         <div class="features-list">
                             <div class="feature-item">
-                                <i class="fas fa-gamepad"></i>
+                                <i class="fas fa-globe"></i>
                                 <div>
-                                    <strong>Unity Engine</strong>
-                                    <p>Built with Unity for cross-platform compatibility and optimized performance.</p>
+                                    <strong>Gravity mechanics</strong>
+                                    <p>Walk on any surface. Flip gravity mid-fight.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-users"></i>
                                 <div>
-                                    <strong>FishNetworking</strong>
-                                    <p>Reliable multiplayer networking solution powering seamless cooperative gameplay.</p>
+                                    <strong>1v1 to 4v4</strong>
+                                    <p>Solo, duos, trios, squads. All game types.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-sync"></i>
+                                <i class="fas fa-palette"></i>
                                 <div>
-                                    <strong>Roguelike Elements</strong>
-                                    <p>Procedural levels with permanent progression</p>
+                                    <strong>Deep customization</strong>
+                                    <p>Skins, colors, helmets, gloves, armor, boots.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-crosshairs"></i>
+                                <i class="fas fa-hammer"></i>
                                 <div>
-                                    <strong>Top-Down Shooter</strong>
-                                    <p>Fast-paced arcade-style combat</p>
+                                    <strong>Level builder</strong>
+                                    <p>Build your own arenas in-game.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="info-card">
-                        <h3>Technical Specifications</h3>
-                        <div class="tech-specs">
-                            <div class="spec-item">
+                        <h3>Tech Specs</h3>
+                        <div class="specs-list">
+                            <div class="spec-row">
                                 <span class="spec-label">Engine</span>
                                 <span class="spec-value">Unity 6</span>
                             </div>
-                            <div class="spec-item">
+                            <div class="spec-row">
                                 <span class="spec-label">Networking</span>
                                 <span class="spec-value">FishNetworking</span>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Platforms:</span>
-                                <span class="spec-value">PC (More TBA)</span>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform</span>
+                                <span class="spec-value">PC (more TBA)</span>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Players:</span>
-                                <span class="spec-value">1-4 Cooperative</span>
+                            <div class="spec-row">
+                                <span class="spec-label">Players</span>
+                                <span class="spec-value">1v1 up to 4v4</span>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Status:</span>
-                                <span class="spec-value">Alpha Development</span>
+                            <div class="spec-row">
+                                <span class="spec-label">Match Length</span>
+                                <span class="spec-value">5–15 min</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Status</span>
+                                <span class="spec-value">Alpha</span>
                             </div>
                         </div>
                     </div>
@@ -167,101 +186,107 @@
         </div>
     </section>
 
-    <!-- Development Progress -->
-    <section class="development-progress">
+    <!-- About the Game -->
+    <section class="game-about">
         <div class="container">
             <div class="section-header">
-                <h2>Development Progress</h2>
-                <p>Starboys is currently in active alpha development. Here's what we're working on:</p>
+                <h2>What is Starboys?</h2>
             </div>
             
-            <div class="progress-grid">
-                <div class="progress-item completed">
-                    <div class="progress-icon">
-                        <i class="fas fa-check"></i>
+            <div class="about-text">
+                <p>Starboys is an arena shooter where gravity is a weapon. You're not stuck on the floor — you can run up walls, fight on ceilings, and flip your gravity mid-air to get the drop on people. Different star types, jump pads, bounce walls, gravity zones — fights happen above, below, and sideways. Matches run 5 to 15 minutes depending on the mode.</p>
+                
+                <p>When the kids get going it's absolute chaos — customizing characters for way too long, ambushing each other from the ceiling, screaming when someone pulls off a gravity flip kill. It's a wild party. That's what we're making: something our family actually wants to play together.</p>
+                
+                <p>Customization goes deep. Skins, colors, helmets, gloves, armor, boots — the kids go nuts with it. There's also a bespoke level builder so you can craft your own arenas in-game. Build something weird, share it, play on it.</p>
+                
+                <p>The game is cross-platform. Host your own match, invite friends, or jump into public servers. We went with FishNetworking because it's robust, hyper-efficient, and integrates well into our stack. Getting gravity to work properly in multiplayer has been a challenge, but we're getting there.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Level Builder -->
+    <section class="game-feature-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Level Builder</h2>
+            </div>
+            
+            <div class="feature-showcase">
+                <div class="feature-images">
+                    <div class="feature-image">
+                        <img src="img/starboys/levelbuilder1.jpg" alt="Starboys level builder" data-lightbox>
                     </div>
-                    <div class="progress-content">
-                        <h4>Core Gameplay</h4>
-                        <p>Basic shooting mechanics and player movement</p>
+                    <div class="feature-image">
+                        <img src="img/starboys/levelbuilder2.png" alt="Starboys level builder" data-lightbox>
                     </div>
                 </div>
-                
-                <div class="progress-item completed">
-                    <div class="progress-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="progress-content">
-                        <h4>Networking Foundation</h4>
-                        <p>Initial netcode implementation for multiplayer</p>
-                    </div>
-                </div>
-                
-                <div class="progress-item in-progress">
-                    <div class="progress-icon">
-                        <i class="fas fa-cog fa-spin"></i>
-                    </div>
-                    <div class="progress-content">
-                        <h4>Roguelike Systems</h4>
-                        <p>Procedural generation and progression mechanics</p>
-                    </div>
-                </div>
-                
-                <div class="progress-item upcoming">
-                    <div class="progress-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="progress-content">
-                        <h4>Art & Polish</h4>
-                        <p>Visual effects, UI improvements, and audio</p>
-                    </div>
+                <div class="feature-description">
+                    <p>Starboys ships with a full level builder. Place platforms, walls, jump pads, gravity zones, spawn points — whatever you want. The same tools we use to build official arenas are in your hands.</p>
+                    <p>Build arenas that take advantage of the gravity system. Vertical fights, ceiling ambush spots, maze-like corridors where "up" changes every room. Want a map where every surface is a floor? Do it. Want a floating island with gravity zones that flip you between platforms? Go for it.</p>
+                    <p>The interface is simple: select a piece, place it, rotate it, done. No scripting, no external tools. Everything happens in-game. You can test your arena instantly — jump in solo to walk through it, or invite friends to playtest before you publish.</p>
+                    <p>Sharing is built in. Browse community maps, download ones you like, rate them. The best stuff floats to the top. We're excited to see what people come up with that we never would have thought of.</p>
+                    <p>The kids have already built some wild stuff. Arenas that make no spatial sense, death traps everywhere, spawn points in dumb places. It's great.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon">
+    <!-- Development Status -->
+    <section class="dev-status">
         <div class="container">
-            <div class="coming-soon-content">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-rocket"></i>
+            <div class="section-header">
+                <h2>Development</h2>
+            </div>
+            
+            <div class="status-grid">
+                <div class="status-item">
+                    <h3>Done</h3>
+                    <p>Movement, gravity, star types, multiplayer, customization, level builder. Core game works.</p>
                 </div>
-                <h2>More Information Coming Soon</h2>
-                <p>We're still deep in development and will be sharing more details about Starboys as we progress. Stay tuned for:</p>
-                
-                <div class="upcoming-content">
-                    <div class="upcoming-item">
-                        <i class="fas fa-images"></i>
-                        <span>Gameplay Screenshots & Videos</span>
-                    </div>
-                    <div class="upcoming-item">
-                        <i class="fas fa-calendar"></i>
-                        <span>Release Timeline Updates</span>
-                    </div>
-                    <div class="upcoming-item">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Alpha Testing Opportunities</span>
-                    </div>
-                    <div class="upcoming-item">
-                        <i class="fas fa-list"></i>
-                        <span>Detailed Feature Breakdown</span>
-                    </div>
+                <div class="status-item current">
+                    <h3>Working on now</h3>
+                    <p>Match length tuning, server browser, more arenas. Player controller is constant iteration.</p>
+                </div>
+                <div class="status-item">
+                    <h3>Up next</h3>
+                    <p>Public playtests, more star types, polish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    SIGNAL<span class="spike">SPIKE</span>
                 </div>
                 
-                <div class="coming-soon-actions">
-                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-primary">
+                <div class="footer-social">
+                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
                         <i class="fab fa-discord"></i>
-                        <span>Join Discord for Latest Updates</span>
+                    </a>
+                    <a href="https://www.twitch.tv/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@SignalSpikeGames" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Signal Spike Games</p>
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms-of-service.html">Terms</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- Footer (shared) -->
-    <div id="shared-footer-mount"></div>
-
-    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>

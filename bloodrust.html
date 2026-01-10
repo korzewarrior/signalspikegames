@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloodrust - Signal Spike Games</title>
-    <meta name="description" content="Bloodrust — a minimalist microgame blobber inspired by Wizardry and Dragon Ruins. Grid-based party dungeon crawling distilled to its essentials.">
+    <title>Bloodrust — Signal Spike Games</title>
+    <meta name="description" content="Bloodrust — a minimal first-person dungeon crawler. Lead the Ferric Wardens into the Ashwoods to clear the Blood Rust.">
     
-    <!-- Preload critical fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,28 +19,30 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- JS -->
-    <script defer src="js/main.js"></script>
 </head>
 <body class="page-bloodrust">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span class="announcement-badge">2026</span>
+        <span>We'll be at <strong>GameOn Expo</strong></span>
+        <a href="gameon-expo.html" class="announcement-link">Details</a>
+        <a href="https://gameonexpo.com" target="_blank" rel="noopener" class="announcement-link">Event Site <i class="fas fa-external-link-alt"></i></a>
+    </div>
+
     <!-- Navigation -->
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-text">
-                        <span class="signal">SIGNAL</span>
-                        <span class="spike">SPIKE</span>
-                    </span>
-                </a>
-            </div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                SIGNAL<span class="spike">SPIKE</span>
+            </a>
             
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#projects" class="nav-link">Projects</a>
-                <a href="index.html#careers" class="nav-link">Careers</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#games" class="nav-link">Games</a>
+                <a href="devlog.html" class="nav-link">Devlog</a>
+                <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-discord btn-sm">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
             </div>
             
             <div class="nav-toggle" id="navToggle">
@@ -51,36 +53,40 @@
         </div>
     </nav>
 
-    <!-- Game Hero Section -->
-    <section class="game-hero" style="padding-top: 120px;">
+    <!-- Game Hero -->
+    <section class="game-hero">
+        <div class="game-hero-bg">
+            <img src="img/bloodrust/bloodrust-portrait.png" alt="" aria-hidden="true">
+        </div>
+        
         <div class="container">
-            <div class="game-header">
-                <div class="breadcrumb">
-                    <a href="index.html">Projects</a>
+            <div class="game-hero-content">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>Bloodrust</span>
+                </nav>
+                
+                <div class="game-title-row">
+                    <h1 class="game-title">BLOODRUST</h1>
+                    <span class="badge badge-alpha">Alpha</span>
                 </div>
                 
-                <div class="game-title-section">
-                    <h1 class="game-title">Bloodrust</h1>
-                    <div class="game-status">
-                        <span class="status-badge alpha">Alpha</span>
-                        <span class="game-genre">Microgame Blobber</span>
-                    </div>
-                </div>
+                <p class="game-genre">Minimalist Dungeon Crawler</p>
                 
                 <p class="game-description">
-                    A minimalist microgame blobber inspired by Wizardry and Dragon Ruins. Grid-based party dungeon crawling, tight loops, zero bloat.
+                    Old-school first-person dungeon crawler. 
+                    Lead the Ferric Wardens from Ashwood Outpost into the Ashwoods. Clear the Blood Rust.
                 </p>
                 
                 <div class="game-actions">
-                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-primary">
+                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-discord">
                         <i class="fab fa-discord"></i>
-                        <span>Join Discord for Updates</span>
+                        <span>Discord</span>
                     </a>
-                    <a href="index.html#contact" class="btn btn-outline">
+                    <a href="mailto:hello@signalspike.games" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i>
-                        <span>Contact Us</span>
+                        <span>Contact</span>
                     </a>
                 </div>
             </div>
@@ -91,75 +97,83 @@
     <section class="game-details">
         <div class="container">
             <div class="details-grid">
-                <div class="game-image-section">
-                    <div class="main-image">
-                        <img src="img/bloodrust-portrait.png" alt="Bloodrust" class="game-screenshot">
-                        <div class="image-overlay">
-                            <div class="coming-soon-badge">
-                                <i class="fas fa-images"></i>
-                                <span>More Screenshots Coming Soon</span>
-                            </div>
+                <div class="game-media">
+                    <div class="game-screenshot main-screenshot">
+                        <img src="img/bloodrust/bloodrust-portrait.png" alt="Bloodrust gameplay screenshot" data-lightbox>
+                    </div>
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb">
+                            <img src="img/bloodrust/dev1.png" alt="Bloodrust screenshot 2" data-lightbox>
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/bloodrust/dev2.png" alt="Bloodrust screenshot 3" data-lightbox>
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/bloodrust/dev3.png" alt="Bloodrust screenshot 4" data-lightbox>
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/bloodrust/dev4.png" alt="Bloodrust screenshot 5" data-lightbox>
                         </div>
                     </div>
                 </div>
                 
-                <div class="game-info-section">
+                <div class="game-info">
                     <div class="info-card">
-                        <h3>Game Features</h3>
+                        <h3>Features</h3>
                         <div class="features-list">
                             <div class="feature-item">
                                 <i class="fas fa-dungeon"></i>
                                 <div>
-                                    <strong>Grid-Based Dungeon Crawling</strong>
-                                    <p>Classic step-by-step traversal through compact, hand-authored mazes.</p>
+                                    <strong>Grid movement</strong>
+                                    <p>Step-by-step dungeon crawling.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-users"></i>
                                 <div>
-                                    <strong>Party-Driven Play</strong>
-                                    <p>Manage a tight party with meaningful roles and tradeoffs.</p>
+                                    <strong>Party system</strong>
+                                    <p>Four characters, distinct roles.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-skull-crossbones"></i>
                                 <div>
-                                    <strong>Lean Turn-Based Combat</strong>
-                                    <p>Snappy encounters focused on clarity, positioning, and risk.</p>
+                                    <strong>Active combat</strong>
+                                    <p>Real-time fights. Resources are tight.</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-hourglass-half"></i>
+                                <i class="fas fa-map"></i>
                                 <div>
-                                    <strong>Micro-Sessions</strong>
-                                    <p>Designed for short, satisfying runs that respect your time.</p>
+                                    <strong>One dungeon</strong>
+                                    <p>The Ashwoods. One map, one goal.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="info-card">
-                        <h3>Technical Specifications</h3>
-                        <div class="tech-specs">
-                            <div class="spec-item">
+                        <h3>Tech Specs</h3>
+                        <div class="specs-list">
+                            <div class="spec-row">
                                 <span class="spec-label">Engine</span>
                                 <span class="spec-value">Unity 6</span>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Networking</span>
+                            <div class="spec-row">
+                                <span class="spec-label">Mode</span>
                                 <span class="spec-value">Single-Player</span>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Platforms</span>
-                                <span class="spec-value">PC (More TBA)</span>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform</span>
+                                <span class="spec-value">PC (more TBA)</span>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Players</span>
-                                <span class="spec-value">Single-Player</span>
+                            <div class="spec-row">
+                                <span class="spec-label">Playthroughs</span>
+                                <span class="spec-value">One and done</span>
                             </div>
-                            <div class="spec-item">
+                            <div class="spec-row">
                                 <span class="spec-label">Status</span>
-                                <span class="spec-value">Alpha Development</span>
+                                <span class="spec-value">Alpha</span>
                             </div>
                         </div>
                     </div>
@@ -168,125 +182,156 @@
         </div>
     </section>
 
-    <!-- Development Progress -->
-    <section class="development-progress">
+    <!-- The Story -->
+    <section class="game-about game-story">
         <div class="container">
             <div class="section-header">
-                <h2>Development Progress</h2>
-                <p>Bloodrust is in active alpha development. Current focus areas:</p>
+                <h2>The Story</h2>
             </div>
             
-            <div class="progress-grid">
-                <div class="progress-item completed">
-                    <div class="progress-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="progress-content">
-                        <h4>Core Movement</h4>
-                        <p>Grid-based traversal and interaction loop.</p>
+            <div class="story-panels">
+                <div class="story-panel">
+                    <h3>The Fall</h3>
+                    <p>They said the sky grew a seam and bled. Comets tore through cloud and choir, burying themselves in the world like barbs. Where a shard fell, the land learned a new wrongness. Here, the wrongness has a taste — iron on the tongue, pennies on prayer. Nails weep. Hinges clot. Swords hum lullabies for the hurt.</p>
+                </div>
+                <div class="story-panel">
+                    <h3>The Call</h3>
+                    <p>We are the Ferric Wardens, called when metal turns traitor. We bind, we brace, and when we must, we break things that cannot be mended. Our road ends at Ashwood Outpost — a line of palisades held together by rope and spite, watching the Ashwoods where the shard is said to sleep and make everything else wake.</p>
+                </div>
+                <div class="story-panel">
+                    <h3>The Charge</h3>
+                    <p>Find the shard. Unmake it. Bring the bleeding to stillness. There will be no banners when we're done, only hinges that swing, plowshares that don't scream, and a quiet forge's breath. That is enough.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The World -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>The World</h2>
+            </div>
+            
+            <div class="about-text">
+                <p>Dragons rule from distant dynasties. Metal itself has begun to bleed and sing since the comets fell. Ordinary people barter with ashed-iron nails while holding the line against the Blood Rust — a curse that softens steel to red vapor and births tireless envoys from what it devours.</p>
+                
+                <p>The Ashwood Outpost stands silent. Lanterns stay doused after dark — light draws the things in the woods. The bell tower drips rust onto the palisades below, its ring long forgotten. Signal beacons leap ridge to ridge to prove the line still stands.</p>
+                
+                <p>All metals sing in overtones now. Trained ears can answer — mending softly with rope, wax, and song before tools. The Cantorsmiths work their forges with quiet songs instead of bellows, risking red vaporization if they push too hard. The inn still serves hot food when supplies allow. And occasional stragglers still come through — never more than a handful, never well-equipped, but headstrong and charging in nevertheless.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Game -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>What is Bloodrust?</h2>
+            </div>
+            
+            <div class="about-text">
+                <p>Bloodrust is a first-person dungeon crawler. You control a party of four Ferric Wardens — soldiers sent from Ashwood Outpost to clear the Blood Rust, a curse that's spreading through the Ashwoods. Grid movement, active combat, the whole old-school thing.</p>
+                
+                <p>This isn't a roguelike. There's no meta-progression, no unlocking stuff between runs. You start, you play through, you finish. One dungeon, one story, done. We wanted to make something that respects your time — a complete experience you can get through in a few sessions, not a game that asks you to grind for 50 hours.</p>
+                
+                <p>The gameplay is simple on purpose. Move through the grid, manage your party's health and resources, fight enemies that hit hard. Positioning matters. There's no grinding to overlevel encounters — you have to actually pay attention to what you're doing.</p>
+                
+                <p>If you grew up on Wizardry, Might and Magic, or any of those old blobbers, this is that. If you didn't, it's still a straightforward dungeon crawler that doesn't waste your time. We're building it for people who want a complete game, not a service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborators -->
+    <section class="game-collaborators">
+        <div class="container">
+            <div class="section-header">
+                <h2>Collaborators</h2>
+            </div>
+            
+            <div class="collaborators-grid">
+                <div class="collaborator-card">
+                    <div class="collaborator-info">
+                        <h3>Stained Karbon Maps</h3>
+                        <p class="collaborator-role">Dungeon Cartography</p>
+                        <p>The Ashwoods map is being designed by Stained Karbon, known for intricate dungeon maps that tell stories through their layouts. Over 4,000 patrons support his work.</p>
+                        <a href="https://www.patreon.com/StainedKarbonMaps" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                            <i class="fab fa-patreon"></i>
+                            <span>Patreon</span>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="progress-item in-progress">
-                    <div class="progress-icon">
-                        <i class="fas fa-cog fa-spin"></i>
-                    </div>
-                    <div class="progress-content">
-                        <h4>Combat Iteration</h4>
-                        <p>Turn economy, formation, and enemy behaviors.</p>
-                    </div>
-                </div>
-                
-                <div class="progress-item upcoming">
-                    <div class="progress-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="progress-content">
-                        <h4>Content & Progression</h4>
-                        <p>Monsters, loot tables, and run meta-structure.</p>
+                <div class="collaborator-card">
+                    <div class="collaborator-info">
+                        <h3>akamikeb</h3>
+                        <p class="collaborator-role">Soundtrack</p>
+                        <p>The Bloodrust soundtrack is being composed by akamikeb, a San Francisco-based musician blending industrial, drum & bass, and electronic into something that fits a world where metal bleeds.</p>
+                        <a href="https://akamikeb.bandcamp.com/album/godflation" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                            <i class="fab fa-bandcamp"></i>
+                            <span>Bandcamp</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What Makes It Special -->
-    <section class="game-highlights">
+    <!-- Development Status -->
+    <section class="dev-status">
         <div class="container">
             <div class="section-header">
-                <h2>Why Bloodrust</h2>
-                <p>Minimal friction. Maximum signal. Designed for clarity and replayability.</p>
+                <h2>Development</h2>
             </div>
             
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-compass"></i>
-                    </div>
-                    <h3>Readable Systems</h3>
-                    <p>Every mechanic serves the crawl. No noise, no filler.</p>
+            <div class="status-grid">
+                <div class="status-item">
+                    <h3>Done</h3>
+                    <p>Grid movement, combat, the Ashwoods map, party system. All working.</p>
                 </div>
-                
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-chess-knight"></i>
-                    </div>
-                    <h3>Decisions Over Grind</h3>
-                    <p>Sharp choices and dangerous dungeons beat stat inflation.</p>
+                <div class="status-item current">
+                    <h3>Working on now</h3>
+                    <p>Enemy variety. Loot and gear. Balancing the single playthrough.</p>
                 </div>
-                
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-repeat"></i>
-                    </div>
-                    <h3>Built to Replay</h3>
-                    <p>Compact runs that invite one-more-try loops.</p>
+                <div class="status-item">
+                    <h3>Up next</h3>
+                    <p>Final polish, Ashwood Outpost hub, end state.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="coming-soon-content">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-hammer"></i>
-                </div>
-                <h2>More Details Soon</h2>
-                <p>We're shaping Bloodrust in tight iterations. Expect updates on combat, classes, and dungeon sets.</p>
-                
-                <div class="upcoming-content">
-                    <div class="upcoming-item">
-                        <i class="fas fa-images"></i>
-                        <span>Art Direction & UI</span>
-                    </div>
-                    <div class="upcoming-item">
-                        <i class="fas fa-dungeon"></i>
-                        <span>Dungeon Variants</span>
-                    </div>
-                    <div class="upcoming-item">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Public Playtests</span>
-                    </div>
-                    <div class="upcoming-item">
-                        <i class="fas fa-list"></i>
-                        <span>Feature Deep Dives</span>
-                    </div>
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    SIGNAL<span class="spike">SPIKE</span>
                 </div>
                 
-                <div class="coming-soon-actions">
-                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="btn btn-primary">
+                <div class="footer-social">
+                    <a href="https://discord.gg/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
                         <i class="fab fa-discord"></i>
-                        <span>Join Discord for Updates</span>
+                    </a>
+                    <a href="https://www.twitch.tv/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@SignalSpikeGames" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Signal Spike Games</p>
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms-of-service.html">Terms</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- Footer (shared) -->
-    <div id="shared-footer-mount"></div>
+    <script src="js/main.js"></script>
 </body>
 </html>
-
