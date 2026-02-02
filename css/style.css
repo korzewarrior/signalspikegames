@@ -776,6 +776,14 @@ section {
     font-size: 0.7rem;
 }
 
+.game-logo-banner {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-md);
+}
+
 .game-title-row {
     display: flex;
     align-items: center;
