@@ -140,4 +140,102 @@
         });
     }
 
+    // Character modal
+    const characterCards = document.querySelectorAll('.character-card');
+    const characterModal = document.getElementById('characterModal');
+    
+    if (characterCards.length > 0 && characterModal) {
+        const modalImg = document.getElementById('modalImg');
+        const modalName = document.getElementById('modalName');
+        const modalBio = document.getElementById('modalBio');
+        const modalClose = characterModal.querySelector('.character-modal-close');
+
+        // Character data - edit bios here
+        const characterData = {
+            arcadia: {
+                name: 'Arcadia',
+                bio: 'A natural leader with an unshakeable sense of justice. Arcadia fights to protect those who cannot protect themselves.'
+            },
+            antheia: {
+                name: 'Antheia',
+                bio: 'Graceful and swift, Antheia moves like the wind. Her agility makes her nearly impossible to pin down.'
+            },
+            athena: {
+                name: 'Athena',
+                bio: 'The strategist of the group. Athena approaches every battle with a plan and always stays three steps ahead.'
+            },
+            astraea: {
+                name: 'Astraea',
+                bio: 'Guided by the stars, Astraea brings balance to chaos. Her cosmic intuition is unmatched.'
+            },
+            apollo: {
+                name: 'Apollo',
+                bio: 'Radiant and confident, Apollo lights up every arena. His precision and timing are legendary.'
+            },
+            artemis: {
+                name: 'Artemis',
+                bio: 'A lone hunter who thrives in the shadows. Artemis strikes from unexpected angles with deadly accuracy.'
+            },
+            asteria: {
+                name: 'Asteria',
+                bio: 'Born from stardust, Asteria harnesses celestial energy. Her powers grow stronger under the night sky.'
+            },
+            atlas: {
+                name: 'Atlas',
+                bio: 'The immovable force. Atlas can take hits that would flatten anyone else and keep on fighting.'
+            },
+            ares: {
+                name: 'Ares',
+                bio: 'Pure aggression channeled into combat. Ares lives for the thrill of battle and never backs down.'
+            },
+            aether: {
+                name: 'Aether',
+                bio: 'Mysterious and ethereal, Aether phases between dimensions. Now you see them, now you don\'t.'
+            },
+            aion: {
+                name: 'Aion',
+                bio: 'Master of time itself. Aion bends moments to their will, creating openings where none existed.'
+            },
+            alastor: {
+                name: 'Alastor',
+                bio: 'The wild card. Unpredictable and relentless, Alastor keeps opponents guessing until it\'s too late.'
+            }
+        };
+
+        function openCharacterModal(characterId) {
+            const card = document.querySelector(`[data-character="${characterId}"]`);
+            const data = characterData[characterId];
+            
+            if (card && data) {
+                modalImg.src = card.querySelector('img').src;
+                modalImg.alt = data.name;
+                modalName.textContent = data.name;
+                modalBio.textContent = data.bio;
+                characterModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeCharacterModal() {
+            characterModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        characterCards.forEach(card => {
+            card.addEventListener('click', () => {
+                openCharacterModal(card.dataset.character);
+            });
+        });
+
+        modalClose.addEventListener('click', closeCharacterModal);
+        characterModal.addEventListener('click', (e) => {
+            if (e.target === characterModal) closeCharacterModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && characterModal.classList.contains('active')) {
+                closeCharacterModal();
+            }
+        });
+    }
+
 })();

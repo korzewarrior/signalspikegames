@@ -1692,6 +1692,157 @@ section {
 .delay-3 { animation-delay: 0.3s; }
 
 /* ============================================
+   CHARACTERS SECTION
+   ============================================ */
+
+.characters-section {
+    padding: var(--space-4xl) 0;
+    background: var(--bg-secondary);
+}
+
+.characters-group {
+    margin-bottom: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.characters-group-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+@media (max-width: 800px) {
+    .characters-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+}
+
+.character-card {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    background: var(--bg-surface);
+}
+
+.character-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.character-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.character-name {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+}
+
+/* Character Modal */
+.character-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+}
+
+.character-modal.active {
+    display: flex;
+}
+
+.character-modal-content {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    animation: modalFadeIn 0.2s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.character-modal-close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background var(--transition-fast);
+}
+
+.character-modal-close:hover {
+    background: var(--border-visible);
+}
+
+.character-modal-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.character-modal-info {
+    padding: var(--space-xl);
+}
+
+.character-modal-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+}
+
+.character-modal-info p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 
