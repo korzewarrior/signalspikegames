@@ -479,6 +479,19 @@ section {
     flex-wrap: wrap;
 }
 
+/* Compact hero for homepage */
+.hero-compact {
+    padding: calc(var(--nav-height) + var(--announcement-height) + var(--space-2xl)) 0 var(--space-xl);
+}
+
+.hero-compact .hero-title {
+    margin-bottom: var(--space-sm);
+}
+
+.hero-compact .hero-subtitle {
+    margin-bottom: 0;
+}
+
 /* ============================================
    GAMES SECTION
    ============================================ */
@@ -487,9 +500,18 @@ section {
     background: var(--bg-secondary);
 }
 
+.games-section-flush {
+    background: transparent;
+    padding-top: 0;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: var(--space-3xl);
+}
+
+.games-section-flush .section-header {
+    display: none;
 }
 
 .section-header h2 {
@@ -631,8 +653,8 @@ section {
 
 .about-section {
     text-align: center;
-    padding: var(--space-4xl) 0;
-    border-top: 1px solid var(--border-subtle);
+    padding: var(--space-3xl) 0;
+    border-top: none;
 }
 
 .about-content {
@@ -670,7 +692,7 @@ section {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-subtle);
     padding: var(--space-2xl) 0 var(--space-xl);
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-lg);
 }
 
 .footer-inner {
