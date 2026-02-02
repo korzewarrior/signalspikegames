@@ -841,6 +841,12 @@ section {
     position: relative;
 }
 
+.game-intro {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border-subtle);
+}
+
 .game-screenshot {
     border-radius: var(--radius-lg);
     overflow: hidden;
