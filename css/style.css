@@ -90,6 +90,55 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Starfield background */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+        /* Bright stars */
+        radial-gradient(1.5px 1.5px at 10% 15%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1.5px 1.5px at 45% 8%, rgba(255,255,255,0.75), transparent),
+        radial-gradient(2px 2px at 33% 72%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1.5px 1.5px at 82% 95%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1.5px 1.5px at 70% 35%, rgba(255,255,255,0.65), transparent),
+        radial-gradient(2px 2px at 15% 85%, rgba(255,255,255,0.75), transparent),
+        radial-gradient(1.5px 1.5px at 92% 22%, rgba(255,255,255,0.7), transparent),
+        /* Medium stars */
+        radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.55), transparent),
+        radial-gradient(1px 1px at 78% 42%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 55% 62%, rgba(255,255,255,0.55), transparent),
+        radial-gradient(1px 1px at 88% 75%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 12% 48%, rgba(255,255,255,0.55), transparent),
+        radial-gradient(1px 1px at 42% 88%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 65% 12%, rgba(255,255,255,0.55), transparent),
+        radial-gradient(1px 1px at 95% 55%, rgba(255,255,255,0.5), transparent),
+        /* Dim stars */
+        radial-gradient(0.5px 0.5px at 62% 28%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(0.5px 0.5px at 88% 12%, rgba(255,255,255,0.35), transparent),
+        radial-gradient(0.5px 0.5px at 15% 58%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(0.5px 0.5px at 52% 65%, rgba(255,255,255,0.35), transparent),
+        radial-gradient(0.5px 0.5px at 70% 78%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(0.5px 0.5px at 5% 88%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(0.5px 0.5px at 28% 22%, rgba(255,255,255,0.35), transparent),
+        radial-gradient(0.5px 0.5px at 38% 48%, rgba(255,255,255,0.3), transparent);
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Subtle warm nebula glow */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse 80% 50% at 50% 20%, rgba(232, 160, 0, 0.04), transparent),
+        radial-gradient(ellipse 60% 40% at 70% 80%, rgba(232, 160, 0, 0.03), transparent);
+    pointer-events: none;
+    z-index: -1;
 }
 
 
@@ -182,6 +231,7 @@ section {
     border-bottom: 1px solid var(--border-subtle);
     z-index: 1000;
     transition: background var(--transition-normal);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .nav-inner {
@@ -315,11 +365,13 @@ section {
 .btn-primary {
     background: var(--accent-primary);
     color: var(--bg-primary);
+    box-shadow: 0 0 20px rgba(232, 160, 0, 0.2);
 }
 
 .btn-primary:hover {
     background: var(--accent-primary-hover);
     color: var(--bg-primary);
+    box-shadow: 0 0 30px rgba(232, 160, 0, 0.35);
 }
 
 .btn-secondary {
@@ -464,10 +516,13 @@ section {
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: all var(--transition-normal);
+    box-shadow: 0 0 20px rgba(232, 160, 0, 0.03);
 }
 
 .game-card:hover {
     border-color: var(--accent-primary);
+    box-shadow: 0 0 30px rgba(232, 160, 0, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
 }
 
 .game-card-image {
@@ -503,6 +558,7 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-radius: var(--radius-sm);
+    box-shadow: 0 0 10px rgba(232, 160, 0, 0.1);
 }
 
 .badge-alpha {
@@ -548,13 +604,19 @@ section {
 
 .tag {
     padding: 4px 8px;
-    background: transparent;
+    background: rgba(232, 160, 0, 0.03);
     color: var(--text-muted);
     font-family: var(--font-mono);
     font-size: 0.7rem;
     font-weight: 400;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.tag:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
 }
 
 .game-card-actions {
@@ -665,11 +727,13 @@ section {
     color: var(--text-secondary);
     font-size: 1.25rem;
     transition: all var(--transition-fast);
+    box-shadow: 0 0 10px rgba(232, 160, 0, 0.03);
 }
 
 .social-link:hover {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(232, 160, 0, 0.15);
 }
 
 .footer-bottom {
@@ -850,7 +914,8 @@ section {
 .game-screenshot {
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 40px rgba(232, 160, 0, 0.08), 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-subtle);
 }
 
 .game-screenshot img {
@@ -872,12 +937,15 @@ section {
     overflow: hidden;
     cursor: pointer;
     opacity: 0.8;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
 }
 
 .gallery-thumb:hover {
     opacity: 1;
     transform: scale(1.02);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 15px rgba(232, 160, 0, 0.15);
 }
 
 .gallery-thumb img {
@@ -905,6 +973,7 @@ section {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: var(--space-lg);
+    box-shadow: 0 0 20px rgba(232, 160, 0, 0.04);
 }
 
 .info-card h3 {
@@ -1037,6 +1106,13 @@ section {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: var(--space-lg);
+    box-shadow: 0 0 15px rgba(232, 160, 0, 0.04);
+    transition: all var(--transition-normal);
+}
+
+.story-panel:hover {
+    border-color: var(--border-visible);
+    box-shadow: 0 0 25px rgba(232, 160, 0, 0.08);
 }
 
 .story-panel h3 {
@@ -1101,6 +1177,7 @@ section {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: var(--space-2xl);
+    box-shadow: 0 0 20px rgba(232, 160, 0, 0.04);
 }
 
 .legal-text h2 {
@@ -1397,6 +1474,12 @@ section {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: var(--space-lg);
+    box-shadow: 0 0 15px rgba(232, 160, 0, 0.03);
+    transition: all var(--transition-normal);
+}
+
+.status-item:hover {
+    border-color: var(--border-visible);
 }
 
 .status-item h3 {
@@ -1453,6 +1536,13 @@ section {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: var(--space-lg);
+    box-shadow: 0 0 15px rgba(232, 160, 0, 0.04);
+    transition: all var(--transition-normal);
+}
+
+.collaborator-card:hover {
+    border-color: var(--border-visible);
+    box-shadow: 0 0 25px rgba(232, 160, 0, 0.08);
 }
 
 .collaborator-info h3 {
@@ -1516,7 +1606,8 @@ section {
 .feature-image {
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 0 30px rgba(232, 160, 0, 0.06), 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .feature-image img {
@@ -1563,7 +1654,8 @@ section {
     max-width: 100%;
     max-height: 90vh;
     border-radius: var(--radius-md);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 0 60px rgba(232, 160, 0, 0.1), 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-close {
@@ -1704,6 +1796,8 @@ section {
     margin-bottom: var(--space-2xl);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 0 40px rgba(232, 160, 0, 0.08);
 }
 
 .characters-group-img {
@@ -1738,11 +1832,14 @@ section {
     cursor: pointer;
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 0 15px rgba(232, 160, 0, 0.04);
 }
 
 .character-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 25px rgba(232, 160, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .character-card img {
@@ -1784,9 +1881,11 @@ section {
     max-width: 500px;
     width: 100%;
     background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     overflow: hidden;
     animation: modalFadeIn 0.2s ease;
+    box-shadow: 0 0 60px rgba(232, 160, 0, 0.15), 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes modalFadeIn {
