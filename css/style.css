@@ -472,7 +472,7 @@ section {
 
 .game-card-image {
     position: relative;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--bg-elevated);
 }
