@@ -584,13 +584,13 @@ section {
 }
 
 .badge-alpha {
-    background: var(--accent-glow);
+    background: var(--bg-primary);
     color: var(--accent-primary);
     border: 1px solid var(--accent-primary);
 }
 
 .badge-beta {
-    background: rgba(124, 179, 66, 0.15);
+    background: var(--bg-primary);
     color: var(--success);
     border: 1px solid var(--success);
 }
