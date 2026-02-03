@@ -2091,6 +2091,29 @@ section {
     100% { opacity: 0; transform: rotate(140deg) translate(calc(70vw + 200px), 0); }
 }
 
+/* Remove opaque backgrounds on Starboys page to show space background */
+.page-starboys .game-hero {
+    background: transparent;
+}
+
+.page-starboys .game-hero-bg {
+    display: none;
+}
+
+.page-starboys .characters-section {
+    background: transparent;
+}
+
+.page-starboys .footer {
+    background: rgba(20, 19, 16, 0.8);
+}
+
+.page-starboys .info-card,
+.page-starboys .story-panel,
+.page-starboys .status-item {
+    background: rgba(28, 26, 23, 0.85);
+}
+
 /* ============================================
    REDUCED MOTION
    ============================================ */
