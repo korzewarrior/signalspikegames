@@ -888,6 +888,13 @@ section {
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    margin-bottom: var(--space-sm);
+}
+
+.game-platforms {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 600;
     margin-bottom: var(--space-lg);
 }
 
