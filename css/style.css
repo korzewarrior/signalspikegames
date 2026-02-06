@@ -314,6 +314,15 @@ section {
 
 /* Mobile nav */
 @media (max-width: 768px) {
+    .announcement-bar {
+        font-size: 0.75rem;
+        gap: var(--space-xs);
+    }
+
+    .announcement-badge {
+        display: none;
+    }
+
     .nav-toggle {
         display: flex;
     }
@@ -726,7 +735,7 @@ section {
     opacity: 0.7;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .roadmap {
         flex-direction: column;
         align-items: flex-start;
@@ -746,6 +755,7 @@ section {
         flex-direction: row;
         gap: var(--space-md);
         max-width: none;
+        align-items: center;
     }
 
     .roadmap-dot {
@@ -755,6 +765,10 @@ section {
 
     .roadmap-step h3 {
         text-align: left;
+    }
+
+    .roadmap-section {
+        padding: var(--space-xl) 0 var(--space-2xl);
     }
 }
 
@@ -1398,7 +1412,7 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    height: var(--announcement-height);
+    min-height: var(--announcement-height);
     background: var(--accent-primary);
     color: var(--bg-primary);
     text-align: center;
@@ -1408,6 +1422,7 @@ section {
     justify-content: center;
     gap: var(--space-sm);
     flex-wrap: wrap;
+    padding: var(--space-xs) var(--space-md);
     z-index: 1001;
 }
 
