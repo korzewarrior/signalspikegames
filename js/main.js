@@ -43,14 +43,6 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <div class="footer-bottom">
-                    <p>&copy; ${new Date().getFullYear()} Signal Spike Games</p>
-                    <div class="footer-legal">
-                        <a href="/privacy-policy/">Privacy</a>
-                        <a href="/terms-of-service/">Terms</a>
-                        <a href="mailto:hello@signalspike.games">Contact</a>
-                    </div>
-                </div>
                 <div class="footer-social">
                     <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
                         <i class="fab fa-discord"></i>
@@ -61,6 +53,14 @@
                     <a href="https://www.youtube.com/@SignalSpikeGames" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a> -->
+                </div>
+                <p class="footer-copy">&copy; ${new Date().getFullYear()} Signal Spike Games</p>
+                <div class="footer-links">
+                    <a href="/about/">About</a>
+                    <a href="/faq/">FAQ</a>
+                    <a href="/privacy-policy/">Privacy</a>
+                    <a href="/terms-of-service/">Terms</a>
+                    <a href="mailto:hello@signalspike.games">Contact</a>
                 </div>
             </div>
         </div>
