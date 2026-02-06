@@ -47,6 +47,9 @@
                     <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
                         <i class="fab fa-discord"></i>
                     </a>
+                    <a href="mailto:hello@signalspike.games" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                     <!-- <a href="https://www.twitch.tv/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Twitch">
                         <i class="fab fa-twitch"></i>
                     </a>
@@ -58,9 +61,7 @@
                 <div class="footer-links">
                     <a href="/about/">About</a>
                     <a href="/faq/">FAQ</a>
-                    <a href="/privacy-policy/">Privacy</a>
-                    <a href="/terms-of-service/">Terms</a>
-                    <a href="mailto:hello@signalspike.games">Contact</a>
+                    <a href="/legal/">Legal</a>
                 </div>
             </div>
         </div>
