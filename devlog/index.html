@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devlog — Signal Spike Games</title>
-    <meta name="description" content="Development updates from Signal Spike Games. Follow along as we build Starboys and Bloodrust.">
+    <meta name="description" content="Development updates from Signal Spike Games. Follow along as we build Starboys, Bloodrust, and Null Online.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,37 +21,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        <span class="announcement-badge">2026</span>
-        <span>We'll be at <strong>GameOn Expo</strong></span>
-        <a href="/gameon-expo/" class="announcement-link">Details</a>
-        <a href="https://gameonexpo.com" target="_blank" rel="noopener" class="announcement-link">Event Site <i class="fas fa-external-link-alt"></i></a>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">
-                SIGNAL<span class="spike">SPIKE</span>
-            </a>
-            
-            <div class="nav-links" id="navLinks">
-                <a href="/#games" class="nav-link">Games</a>
-                <a href="devlog.html" class="nav-link">Devlog</a>
-                <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="btn btn-discord btn-sm">
-                    <i class="fab fa-discord"></i>
-                    <span>Discord</span>
-                </a>
-            </div>
-            
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <div id="site-header"></div>
 
     <!-- Devlog Header -->
     <section class="devlog-header">
@@ -79,6 +49,32 @@
             </article>
             -->
 
+            <!-- Null Online Launch -->
+            <article class="devlog-entry" id="entry-2026-02-05">
+                <div class="entry-meta">
+                    <time datetime="2026-02-05">February 5, 2026</time>
+                    <span class="entry-tag null">Null Online</span>
+                </div>
+                <h2>We Made an MMO in a Day</h2>
+                <div class="entry-content">
+                    <p>Every few weeks another indie studio announces their "revolutionary MMO." There's a Kickstarter with a $500K goal and 47 stretch goals, concept art of a vast open world, a roadmap that goes to 2029, and a Discord with 50,000 people waiting for a game that doesn't exist yet. It's one of the weirdest patterns in the industry and it never stops being funny.</p>
+                    
+                    <p>So we made an actual MMO. In one day. It's called <a href="/nullonline/">Null Online</a>.</p>
+                    
+                    <p>You're a single pixel in an infinite 3D void. You can move, see nearby players on a proximity radar, and chat. That's the whole game. You cannot fight, trade, quest, or do anything else. The feature list is four items long and one of them is "exist."</p>
+                    
+                    <p>Here's the thing though — it actually works. Persistent accounts. Real-time sync. Your position saves between sessions. It's a real, functioning MMO that you can play right now, for free, in your browser. It's 2.7 MB. Technically it delivers on more launch-day promises than most crowdfunded MMOs ever do.</p>
+                    
+                    <p>There's no battle pass, no premium currency, no season pass. The game is free. But — and this is important — there is a $3 Supporter Pack. It turns your pixel gold. And your name. That's the entire microtransaction. One cosmetic, three dollars, gold pixel. We figured if every MMO needs a cash shop, ours should have exactly one item in it. It's our love letter to the premium cosmetics industry.</p>
+                    
+                    <p>The joke aside, we actually did want to see what the minimum viable shared world feels like. Turns out a dot, a direction, and the knowledge that the other dots are real people is enough to make a space feel alive.</p>
+                    
+                    <p>People have already found each other out there in the void, talked for a while, and drifted off. Some just float alone. Both feel right.</p>
+                    
+                    <p>Null Online is a finished game. No roadmap, no early access, no season passes. It does exactly what it's supposed to do and nothing more. You can play it at <a href="https://nullonline.com" target="_blank" rel="noopener">nullonline.com</a>.</p>
+                </div>
+            </article>
+
             <!-- Expo Prep -->
             <article class="devlog-entry" id="entry-2026-01-09">
                 <div class="entry-meta">
@@ -97,7 +93,7 @@
             <article class="devlog-entry" id="entry-2026-01-01">
                 <div class="entry-meta">
                     <time datetime="2026-01-01">January 1, 2026</time>
-                    <span class="entry-tag">Starboys</span>
+                    <span class="entry-tag starboys">Starboys</span>
                 </div>
                 <h2>How We Got Here</h2>
                 <div class="entry-content">
@@ -119,36 +115,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-logo">
-                    SIGNAL<span class="spike">SPIKE</span>
-                </div>
-                
-                <div class="footer-social">
-                    <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="https://www.twitch.tv/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Twitch">
-                        <i class="fab fa-twitch"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@SignalSpikeGames" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-                
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Signal Spike Games</p>
-                    <div class="footer-legal">
-                        <a href="/privacy-policy/">Privacy</a>
-                        <a href="/terms-of-service/">Terms</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
 </body>

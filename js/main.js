@@ -1,12 +1,126 @@
 /**
  * Signal Spike Games — Main JS
- * Minimal, functional, no fluff
+ * Shared components + interactions
  */
 
 (function() {
     'use strict';
 
-    // Mobile nav toggle
+    // ==========================================
+    // SHARED COMPONENTS
+    // ==========================================
+
+    // Announcement bar + nav
+    const headerHTML = `
+    <div class="announcement-bar">
+        <span class="announcement-badge">2026</span>
+        <span>We'll be at <strong>GameOn Expo</strong></span>
+        <a href="/gameon-expo/" class="announcement-link">Details</a>
+        <a href="https://gameonexpo.com" target="_blank" rel="noopener" class="announcement-link">Event Site <i class="fas fa-external-link-alt"></i></a>
+    </div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                SIGNAL<span class="spike">SPIKE</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/starboys/" class="nav-link">Starboys</a>
+                <a href="/bloodrust/" class="nav-link">Bloodrust</a>
+                <a href="/nullonline/" class="nav-link">Null Online</a>
+                <a href="/devlog/" class="nav-link">Devlog</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>`;
+
+    // Footer
+    const footerHTML = `
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-bottom">
+                    <p>&copy; ${new Date().getFullYear()} Signal Spike Games</p>
+                    <div class="footer-legal">
+                        <a href="/privacy-policy/">Privacy</a>
+                        <a href="/terms-of-service/">Terms</a>
+                        <a href="mailto:hello@signalspike.games">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <!-- <a href="https://www.twitch.tv/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@SignalSpikeGames" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </footer>`;
+
+    // Roadmap
+    const roadmapHTML = `
+    <section class="roadmap-section">
+        <div class="container">
+            <p class="roadmap-label">Roadmap</p>
+            <div class="roadmap">
+                <div class="roadmap-step roadmap-step--done">
+                    <div class="roadmap-dot"></div>
+                    <h3><a href="/nullonline/">Null Online</a></h3>
+                    <span class="roadmap-status">Released</span>
+                </div>
+                <div class="roadmap-step roadmap-step--active">
+                    <div class="roadmap-dot"></div>
+                    <h3><a href="/bloodrust/">Bloodrust</a></h3>
+                    <span class="roadmap-status">In Development</span>
+                </div>
+                <div class="roadmap-step roadmap-step--active">
+                    <div class="roadmap-dot"></div>
+                    <h3><a href="/starboys/">Starboys</a></h3>
+                    <span class="roadmap-status">Alpha</span>
+                </div>
+                <div class="roadmap-step roadmap-step--next">
+                    <div class="roadmap-dot"></div>
+                    <h3>KNVGHT</h3>
+                    <span class="roadmap-status">Up Next</span>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-dot"></div>
+                    <h3>The Magic Ring</h3>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-dot"></div>
+                    <h3>Moonfall</h3>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-dot"></div>
+                    <h3>Wanderer</h3>
+                </div>
+            </div>
+        </div>
+    </section>`;
+
+    // Inject shared components
+    const siteHeader = document.getElementById('site-header');
+    const siteFooter = document.getElementById('site-footer');
+    const siteRoadmap = document.getElementById('site-roadmap');
+
+    if (siteHeader) siteHeader.innerHTML = headerHTML;
+    if (siteRoadmap) siteRoadmap.innerHTML = roadmapHTML;
+    if (siteFooter) siteFooter.innerHTML = footerHTML;
+
+    // ==========================================
+    // MOBILE NAV TOGGLE
+    // ==========================================
+
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
 
@@ -16,7 +130,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close nav when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
@@ -24,7 +137,6 @@
             });
         });
 
-        // Close nav when clicking outside
         document.addEventListener('click', (e) => {
             if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
                 navToggle.classList.remove('active');
@@ -33,7 +145,10 @@
         });
     }
 
-    // Smooth scroll for anchor links (fallback for older browsers)
+    // ==========================================
+    // SMOOTH SCROLL
+    // ==========================================
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -50,14 +165,44 @@
         });
     });
 
-    // Lightbox for game page images
-    const lightboxImages = document.querySelectorAll('[data-lightbox]');
-    
-    if (lightboxImages.length > 0) {
-        let currentIndex = 0;
-        const images = Array.from(lightboxImages);
+    // ==========================================
+    // SCREENSHOT GALLERY + LIGHTBOX
+    // ==========================================
 
-        // Create lightbox elements
+    const mainScreenshot = document.querySelector('.main-screenshot img');
+    const galleryThumbs = document.querySelectorAll('.gallery-thumb');
+
+    if (mainScreenshot && galleryThumbs.length > 0) {
+        // Build image list from thumbnails (first thumb = initial main image)
+        const allImages = Array.from(galleryThumbs).map(thumb => {
+            const img = thumb.querySelector('img');
+            return { src: img.src, alt: img.alt };
+        });
+
+        let currentIndex = 0;
+
+        function setActiveThumb(index) {
+            galleryThumbs.forEach(t => t.classList.remove('gallery-thumb--active'));
+            if (galleryThumbs[index]) {
+                galleryThumbs[index].classList.add('gallery-thumb--active');
+            }
+        }
+
+        function showInMain(index) {
+            currentIndex = index;
+            mainScreenshot.src = allImages[index].src;
+            mainScreenshot.alt = allImages[index].alt;
+            setActiveThumb(index);
+        }
+
+        // Thumbnail click: swap into main image
+        galleryThumbs.forEach((thumb, i) => {
+            thumb.addEventListener('click', () => {
+                showInMain(i);
+            });
+        });
+
+        // Lightbox setup
         const lightbox = document.createElement('div');
         lightbox.className = 'lightbox';
         lightbox.innerHTML = `
@@ -75,48 +220,34 @@
         const lightboxNext = lightbox.querySelector('.lightbox-next');
         const lightboxCounter = lightbox.querySelector('.lightbox-counter');
 
-        // Update lightbox display
-        function showImage(index) {
+        function showLightboxImage(index) {
             currentIndex = index;
-            const img = images[index];
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightboxCounter.textContent = `${index + 1} / ${images.length}`;
-            
-            // Hide nav if only one image
-            if (images.length <= 1) {
-                lightboxPrev.style.display = 'none';
-                lightboxNext.style.display = 'none';
-                lightboxCounter.style.display = 'none';
-            } else {
-                lightboxPrev.style.display = '';
-                lightboxNext.style.display = '';
-                lightboxCounter.style.display = '';
-            }
+            lightboxImg.src = allImages[index].src;
+            lightboxImg.alt = allImages[index].alt;
+            lightboxCounter.textContent = `${index + 1} / ${allImages.length}`;
         }
 
         function nextImage() {
-            showImage((currentIndex + 1) % images.length);
+            showLightboxImage((currentIndex + 1) % allImages.length);
         }
 
         function prevImage() {
-            showImage((currentIndex - 1 + images.length) % images.length);
+            showLightboxImage((currentIndex - 1 + allImages.length) % allImages.length);
         }
 
-        // Open lightbox
-        images.forEach((img, index) => {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-                showImage(index);
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+        // Main image click: open lightbox at current image
+        mainScreenshot.style.cursor = 'zoom-in';
+        mainScreenshot.addEventListener('click', () => {
+            showLightboxImage(currentIndex);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
 
-        // Close lightbox
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
+            // Sync main image + active thumb with where lightbox ended
+            showInMain(currentIndex);
         }
 
         lightboxClose.addEventListener('click', closeLightbox);
@@ -133,14 +264,99 @@
         });
         document.addEventListener('keydown', (e) => {
             if (!lightbox.classList.contains('active')) return;
-            
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowRight') nextImage();
             if (e.key === 'ArrowLeft') prevImage();
         });
     }
 
-    // Character modal
+    // ==========================================
+    // STANDALONE IMAGE LIGHTBOX (for images outside the main gallery)
+    // ==========================================
+
+    const standaloneImages = document.querySelectorAll('[data-lightbox], .characters-group-img');
+
+    if (standaloneImages.length > 0) {
+        const standaloneSrcs = Array.from(standaloneImages).map(img => ({ src: img.src, alt: img.alt }));
+        let standaloneIndex = 0;
+
+        // Reuse existing lightbox if available, otherwise create one
+        let sLightbox = document.querySelector('.lightbox');
+        if (!sLightbox) {
+            sLightbox = document.createElement('div');
+            sLightbox.className = 'lightbox';
+            sLightbox.innerHTML = `
+                <button class="lightbox-close" aria-label="Close">&times;</button>
+                <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+                <img class="lightbox-img" src="" alt="">
+                <button class="lightbox-next" aria-label="Next">&#8250;</button>
+                <div class="lightbox-counter"></div>
+            `;
+            document.body.appendChild(sLightbox);
+
+            const sClose = sLightbox.querySelector('.lightbox-close');
+            const sPrev = sLightbox.querySelector('.lightbox-prev');
+            const sNext = sLightbox.querySelector('.lightbox-next');
+
+            sClose.addEventListener('click', () => {
+                sLightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            sPrev.addEventListener('click', (e) => { e.stopPropagation(); standaloneNav(-1); });
+            sNext.addEventListener('click', (e) => { e.stopPropagation(); standaloneNav(1); });
+            sLightbox.addEventListener('click', (e) => {
+                if (e.target === sLightbox) {
+                    sLightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (!sLightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') { sLightbox.classList.remove('active'); document.body.style.overflow = ''; }
+                if (e.key === 'ArrowRight') standaloneNav(1);
+                if (e.key === 'ArrowLeft') standaloneNav(-1);
+            });
+        }
+
+        const sImg = sLightbox.querySelector('.lightbox-img');
+        const sCounter = sLightbox.querySelector('.lightbox-counter');
+        const sPrevBtn = sLightbox.querySelector('.lightbox-prev');
+        const sNextBtn = sLightbox.querySelector('.lightbox-next');
+
+        function showStandalone(index) {
+            standaloneIndex = index;
+            sImg.src = standaloneSrcs[index].src;
+            sImg.alt = standaloneSrcs[index].alt;
+            if (standaloneSrcs.length <= 1) {
+                sPrevBtn.style.display = 'none';
+                sNextBtn.style.display = 'none';
+                sCounter.style.display = 'none';
+            } else {
+                sPrevBtn.style.display = '';
+                sNextBtn.style.display = '';
+                sCounter.style.display = '';
+                sCounter.textContent = `${index + 1} / ${standaloneSrcs.length}`;
+            }
+        }
+
+        function standaloneNav(dir) {
+            showStandalone((standaloneIndex + dir + standaloneSrcs.length) % standaloneSrcs.length);
+        }
+
+        standaloneImages.forEach((img, i) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                showStandalone(i);
+                sLightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+    }
+
+    // ==========================================
+    // CHARACTER MODAL
+    // ==========================================
+
     const characterCards = document.querySelectorAll('.character-card');
     const characterModal = document.getElementById('characterModal');
     
@@ -150,7 +366,6 @@
         const modalBio = document.getElementById('modalBio');
         const modalClose = characterModal.querySelector('.character-modal-close');
 
-        // Character data - edit bios here
         const characterData = {
             arcadia: {
                 name: 'Arcadia',

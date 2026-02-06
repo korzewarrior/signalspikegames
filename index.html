@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signal Spike Games — Making games we love playing</title>
-    <meta name="description" content="Signal Spike Games — a small studio making Starboys and Bloodrust.">
+    <meta name="description" content="Signal Spike Games — a small studio making Starboys, Bloodrust, and Null Online.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,135 +21,72 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        <span class="announcement-badge">2026</span>
-        <span>We'll be at <strong>GameOn Expo</strong></span>
-        <a href="/gameon-expo/" class="announcement-link">Details</a>
-        <a href="https://gameonexpo.com" target="_blank" rel="noopener" class="announcement-link">Event Site <i class="fas fa-external-link-alt"></i></a>
+    <div id="site-header"></div>
+
+    <!-- Games -->
+    <div class="games-showcase" id="games">
+
+        <!-- Starboys -->
+        <section class="game-row">
+            <div class="container">
+                <div class="game-row-inner">
+                    <div class="game-row-media game-row-media--logo">
+                        <a href="/starboys/">
+                            <img src="img/starboys/logo.png" alt="Starboys">
+                        </a>
+                    </div>
+                    <div class="game-row-details">
+                        <p class="game-row-meta">Third-Person Arena Shooter <span class="game-row-status">Alpha</span></p>
+                        <h2><a href="/starboys/">Starboys</a></h2>
+                        <p class="game-row-desc">Arena shooter where you can walk on walls and flip gravity. Kid-friendly, easy to pick up. 1v1 to 4v4 with deep customization and a built-in level editor.</p>
+                        <a href="/starboys/" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloodrust -->
+        <section class="game-row">
+            <div class="container">
+                <div class="game-row-inner">
+                    <div class="game-row-media game-row-media--logo">
+                        <a href="/bloodrust/">
+                            <img src="img/bloodrust/logo.png" alt="Bloodrust">
+                        </a>
+                    </div>
+                    <div class="game-row-details">
+                        <p class="game-row-meta">Dungeon Crawler <span class="game-row-status">In Development</span></p>
+                        <h2><a href="/bloodrust/">Bloodrust</a></h2>
+                        <p class="game-row-desc">Old-school first-person dungeon crawler. Lead the Ferric Wardens into the Ashwoods. Grid movement, active combat, one dungeon, one playthrough.</p>
+                        <a href="/bloodrust/" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Null Online -->
+        <section class="game-row game-row--null">
+            <div class="container">
+                <div class="game-row-inner">
+                    <div class="game-row-media game-row-media--logo">
+                        <a href="/nullonline/">
+                            <img src="img/nullonline/logo-transparent.png" alt="Null Online">
+                        </a>
+                    </div>
+                    <div class="game-row-details">
+                        <p class="game-row-meta">MMO <span class="game-row-status game-row-status--released">Released</span></p>
+                        <h2><a href="/nullonline/">Null Online</a></h2>
+                        <p class="game-row-desc">A minimalist MMO. One pixel. Infinite space. You can move, see nearby players, chat, and exist. That's the entire game. Free, runs in a browser or as a lightweight download.</p>
+                        <a href="/nullonline/" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">
-                SIGNAL<span class="spike">SPIKE</span>
-            </a>
-            
-            <div class="nav-links" id="navLinks">
-                <a href="#games" class="nav-link">Games</a>
-                <a href="/devlog/" class="nav-link">Devlog</a>
-                <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="btn btn-discord btn-sm">
-                    <i class="fab fa-discord"></i>
-                    <span>Discord</span>
-                </a>
-            </div>
-            
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero hero-compact">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                SIGNAL<span class="spike">SPIKE</span>
-            </h1>
-            <p class="hero-subtitle">Making games we love playing.</p>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section class="games-section games-section-flush" id="games">
-        <div class="container">
-            
-            <div class="games-grid">
-                <!-- Starboys -->
-                <article class="game-card" data-game="starboys">
-                    <div class="game-card-image">
-                        <img src="img/starboys/hero.png" alt="Starboys">
-                        <div class="game-card-badge">
-                            <span class="badge badge-alpha">Alpha</span>
-                        </div>
-                    </div>
-                    <div class="game-card-content">
-                        <h3>Starboys</h3>
-                        <p class="game-card-genre">Third-Person Arena Shooter</p>
-                        <p>Arena shooter with gravity tricks. Kid-friendly, easy to pick up.</p>
-                        <div class="game-card-actions">
-                            <a href="/starboys/" class="btn btn-primary btn-sm">Learn More</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Bloodrust -->
-                <article class="game-card" data-game="bloodrust">
-                    <div class="game-card-image">
-                        <img src="img/bloodrust/bloodrust-portrait.png" alt="Bloodrust gameplay">
-                        <div class="game-card-badge">
-                            <span class="badge badge-alpha">Alpha</span>
-                        </div>
-                    </div>
-                    <div class="game-card-content">
-                        <h3>Bloodrust</h3>
-                        <p class="game-card-genre">Dungeon Crawler</p>
-                        <p>Minimal first-person dungeon crawler. One dungeon, one playthrough.</p>
-                        <div class="game-card-actions">
-                            <a href="/bloodrust/" class="btn btn-primary btn-sm">Learn More</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section (Brief) -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <p>
-                    We're a few devs making games we actually want to play.
-                    <br>
-                    Say hi on <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener">Discord</a> or drop us a line at <a href="mailto:hello@signalspike.games">hello@signalspike.games</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-logo">
-                    SIGNAL<span class="spike">SPIKE</span>
-                </div>
-                
-                <div class="footer-social">
-                    <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="https://www.twitch.tv/signalspikegames" target="_blank" rel="noopener" class="social-link" aria-label="Twitch">
-                        <i class="fab fa-twitch"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@SignalSpikeGames" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-                
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Signal Spike Games</p>
-                    <div class="footer-legal">
-                        <a href="/privacy-policy/">Privacy</a>
-                        <a href="/terms-of-service/">Terms</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
 
     <!-- Minimal JS -->
     <script src="js/main.js"></script>
