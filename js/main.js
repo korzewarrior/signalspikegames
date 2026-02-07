@@ -399,7 +399,8 @@
             { name: 'Metal Circles',  folder: 'METAL CIRCLES' },
         ];
 
-        let activeSkin = 0;
+        const defaultSkin = 5; // Galaxy + Glass
+        let activeSkin = defaultSkin;
 
         function skinImagePath(folder, colorFile) {
             return `${basePath}/${folder}/${colorFile}.png`;
@@ -408,7 +409,7 @@
         // Render tabs
         skins.forEach((skin, i) => {
             const tab = document.createElement('button');
-            tab.className = 'skins-tab' + (i === 0 ? ' skins-tab--active' : '');
+            tab.className = 'skins-tab' + (i === defaultSkin ? ' skins-tab--active' : '');
             tab.textContent = skin.name;
             tab.addEventListener('click', () => showSkin(i));
             skinsTabs.appendChild(tab);
@@ -450,7 +451,7 @@
             });
         }
 
-        showSkin(0);
+        showSkin(defaultSkin);
     }
 
 })();
