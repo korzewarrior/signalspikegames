@@ -358,103 +358,99 @@
     }
 
     // ==========================================
-    // CHARACTER MODAL
+    // CHARACTERS, SKINS & CHARACTER MODAL
     // ==========================================
 
-    const characterCards = document.querySelectorAll('.character-card');
-    const characterModal = document.getElementById('characterModal');
-    
-    if (characterCards.length > 0 && characterModal) {
-        const modalImg = document.getElementById('modalImg');
-        const modalName = document.getElementById('modalName');
-        const modalBio = document.getElementById('modalBio');
-        const modalClose = characterModal.querySelector('.character-modal-close');
+    const skinsTabs = document.getElementById('skinsTabs');
+    const skinsGrid = document.getElementById('skinsGrid');
 
-        const characterData = {
-            arcadia: {
-                name: 'Arcadia',
-                bio: 'A natural leader with an unshakeable sense of justice. Arcadia fights to protect those who cannot protect themselves.'
-            },
-            antheia: {
-                name: 'Antheia',
-                bio: 'Graceful and swift, Antheia moves like the wind. Her agility makes her nearly impossible to pin down.'
-            },
-            athena: {
-                name: 'Athena',
-                bio: 'The strategist of the group. Athena approaches every battle with a plan and always stays three steps ahead.'
-            },
-            astraea: {
-                name: 'Astraea',
-                bio: 'Guided by the stars, Astraea brings balance to chaos. Her cosmic intuition is unmatched.'
-            },
-            apollo: {
-                name: 'Apollo',
-                bio: 'Radiant and confident, Apollo lights up every arena. His precision and timing are legendary.'
-            },
-            artemis: {
-                name: 'Artemis',
-                bio: 'A lone hunter who thrives in the shadows. Artemis strikes from unexpected angles with deadly accuracy.'
-            },
-            asteria: {
-                name: 'Asteria',
-                bio: 'Born from stardust, Asteria harnesses celestial energy. Her powers grow stronger under the night sky.'
-            },
-            atlas: {
-                name: 'Atlas',
-                bio: 'The immovable force. Atlas can take hits that would flatten anyone else and keep on fighting.'
-            },
-            ares: {
-                name: 'Ares',
-                bio: 'Pure aggression channeled into combat. Ares lives for the thrill of battle and never backs down.'
-            },
-            aether: {
-                name: 'Aether',
-                bio: 'Mysterious and ethereal, Aether phases between dimensions. Now you see them, now you don\'t.'
-            },
-            aion: {
-                name: 'Aion',
-                bio: 'Master of time itself. Aion bends moments to their will, creating openings where none existed.'
-            },
-            alastor: {
-                name: 'Alastor',
-                bio: 'The wild card. Unpredictable and relentless, Alastor keeps opponents guessing until it\'s too late.'
-            }
-        };
+    if (skinsTabs && skinsGrid) {
+        const basePath = '../img/starboys/StarboySkins';
 
-        function openCharacterModal(characterId) {
-            const card = document.querySelector(`[data-character="${characterId}"]`);
-            const data = characterData[characterId];
-            
-            if (card && data) {
-                modalImg.src = card.querySelector('img').src;
-                modalImg.alt = data.name;
-                modalName.textContent = data.name;
-                modalBio.textContent = data.bio;
-                characterModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+        const characters = [
+            { name: 'Arcadia',  file: 'forestgreen', bio: 'A natural leader with an unshakeable sense of justice. Arcadia fights to protect those who cannot protect themselves.' },
+            { name: 'Antheia',  file: 'teal',        bio: 'Graceful and swift, Antheia moves like the wind. Her agility makes her nearly impossible to pin down.' },
+            { name: 'Athena',   file: 'yellow',      bio: 'The strategist of the group. Athena approaches every battle with a plan and always stays three steps ahead.' },
+            { name: 'Astraea',  file: 'orange',      bio: 'Guided by the stars, Astraea brings balance to chaos. Her cosmic intuition is unmatched.' },
+            { name: 'Apollo',   file: 'green',       bio: 'Radiant and confident, Apollo lights up every arena. His precision and timing are legendary.' },
+            { name: 'Artemis',  file: 'pink',        bio: 'A lone hunter who thrives in the shadows. Artemis strikes from unexpected angles with deadly accuracy.' },
+            { name: 'Asteria',  file: 'purple',      bio: 'Born from stardust, Asteria harnesses celestial energy. Her powers grow stronger under the night sky.' },
+            { name: 'Atlas',    file: 'blue',        bio: 'The immovable force. Atlas can take hits that would flatten anyone else and keep on fighting.' },
+            { name: 'Ares',     file: 'red',         bio: 'Pure aggression channeled into combat. Ares lives for the thrill of battle and never backs down.' },
+            { name: 'Aether',   file: 'white',       bio: 'Mysterious and ethereal, Aether phases between dimensions. Now you see them, now you don\'t.' },
+            { name: 'Aion',     file: 'grey',        bio: 'Master of time itself. Aion bends moments to their will, creating openings where none existed.' },
+            { name: 'Alastor',  file: 'black',       bio: 'The wild card. Unpredictable and relentless, Alastor keeps opponents guessing until it\'s too late.' },
+        ];
+
+        const skins = [
+            { name: 'Matte',          folder: 'MATTE' },
+            { name: 'Flat',           folder: 'FLAT' },
+            { name: 'Ceramic',        folder: 'CERAMIC' },
+            { name: 'Chrome',         folder: 'CHROME' },
+            { name: 'Galaxy',         folder: 'Characters (GALAXY)' },
+            { name: 'Galaxy + Glass', folder: 'GALAXY + GLASS' },
+            { name: 'Matcap Core',    folder: 'MATCAP CORE' },
+            { name: 'Grid',           folder: 'GRID' },
+            { name: 'Goopy',          folder: 'GOOPY' },
+            { name: 'Potion',         folder: 'POTION' },
+            { name: 'Potion + Glass', folder: 'POTION + GLASS' },
+            { name: 'Asphalt',        folder: 'ASPHALT' },
+            { name: 'Brick',          folder: 'BRICK' },
+            { name: 'Metal Circles',  folder: 'METAL CIRCLES' },
+        ];
+
+        let activeSkin = 0;
+
+        function skinImagePath(folder, colorFile) {
+            return `${basePath}/${folder}/${colorFile}.png`;
         }
 
-        function closeCharacterModal() {
-            characterModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+        // Render tabs
+        skins.forEach((skin, i) => {
+            const tab = document.createElement('button');
+            tab.className = 'skins-tab' + (i === 0 ? ' skins-tab--active' : '');
+            tab.textContent = skin.name;
+            tab.addEventListener('click', () => showSkin(i));
+            skinsTabs.appendChild(tab);
+        });
 
-        characterCards.forEach(card => {
-            card.addEventListener('click', () => {
-                openCharacterModal(card.dataset.character);
+        function showSkin(index) {
+            activeSkin = index;
+            const skin = skins[index];
+
+            skinsTabs.querySelectorAll('.skins-tab').forEach((t, i) => {
+                t.classList.toggle('skins-tab--active', i === index);
             });
-        });
 
-        modalClose.addEventListener('click', closeCharacterModal);
-        characterModal.addEventListener('click', (e) => {
-            if (e.target === characterModal) closeCharacterModal();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && characterModal.classList.contains('active')) {
-                closeCharacterModal();
-            }
-        });
+            skinsGrid.innerHTML = '';
+            characters.forEach(char => {
+                const card = document.createElement('div');
+                card.className = 'character-card';
+
+                const imgWrap = document.createElement('div');
+                imgWrap.className = 'character-skin-img';
+                const img = document.createElement('img');
+                img.src = skinImagePath(skin.folder, char.file);
+                img.alt = `${char.name} — ${skin.name}`;
+                img.loading = 'lazy';
+                imgWrap.appendChild(img);
+
+                const name = document.createElement('span');
+                name.className = 'character-name';
+                name.textContent = char.name;
+
+                const bio = document.createElement('p');
+                bio.className = 'character-bio';
+                bio.textContent = char.bio;
+
+                card.appendChild(imgWrap);
+                card.appendChild(name);
+                card.appendChild(bio);
+                skinsGrid.appendChild(card);
+            });
+        }
+
+        showSkin(0);
     }
 
 })();

@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" href="../img/star-favicon.png">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css?v=4">
+    <link rel="stylesheet" href="../css/style.css?v=5">
 </head>
 <body class="page-starboys">
     <!-- Shooting stars -->
@@ -164,7 +164,8 @@
     </section>
 
     <!-- About the Game -->
-    <section class="game-about">
+    <section class="game-about" style="position:relative;overflow:visible;">
+        <img src="../img/starboys/characters/mini-blue.png" alt="" class="mini-char mini-char-blue">
         <div class="container">
             <div class="section-header">
                 <h2>What is Starboys?</h2>
@@ -182,84 +183,22 @@
         </div>
     </section>
 
-    <!-- Meet the Characters -->
-    <section class="characters-section">
+    <!-- Characters & Skins -->
+    <section class="characters-section" style="position:relative;overflow:visible;">
+        <img src="../img/starboys/characters/mini-black.png" alt="" class="mini-char mini-char-black">
         <div class="container">
             <div class="section-header">
                 <h2>Meet the Characters</h2>
             </div>
             
-            <div class="characters-group">
-                <img src="../img/starboys/characters/group.png" alt="The Starboys cast" class="characters-group-img">
-            </div>
-            
-            <div class="characters-grid">
-                <div class="character-card" data-character="arcadia">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Arcadia</span>
-                </div>
-                <div class="character-card" data-character="antheia">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Antheia</span>
-                </div>
-                <div class="character-card" data-character="athena">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Athena</span>
-                </div>
-                <div class="character-card" data-character="astraea">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Astraea</span>
-                </div>
-                <div class="character-card" data-character="apollo">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Apollo</span>
-                </div>
-                <div class="character-card" data-character="artemis">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Artemis</span>
-                </div>
-                <div class="character-card" data-character="asteria">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Asteria</span>
-                </div>
-                <div class="character-card" data-character="atlas">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Atlas</span>
-                </div>
-                <div class="character-card" data-character="ares">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Ares</span>
-                </div>
-                <div class="character-card" data-character="aether">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Aether</span>
-                </div>
-                <div class="character-card" data-character="aion">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Aion</span>
-                </div>
-                <div class="character-card" data-character="alastor">
-                    <div class="character-placeholder"><i class="fas fa-user"></i></div>
-                    <span class="character-name">Alastor</span>
-                </div>
-            </div>
+            <div class="characters-grid" id="skinsGrid"></div>
+            <div class="skins-tabs" id="skinsTabs"></div>
         </div>
     </section>
 
-    <!-- Character Modal -->
-    <div class="character-modal" id="characterModal">
-        <div class="character-modal-content">
-            <button class="character-modal-close" aria-label="Close">&times;</button>
-            <img src="" alt="" class="character-modal-img" id="modalImg">
-            <div class="character-modal-info">
-                <h3 id="modalName"></h3>
-                <p id="modalBio"></p>
-            </div>
-        </div>
-    </div>
-
     <!-- Level Builder -->
-    <section class="game-feature-section">
+    <section class="game-feature-section" style="position:relative;overflow:visible;">
+        <img src="../img/starboys/characters/mini-red.png" alt="" class="mini-char mini-char-red">
         <div class="container">
             <div class="section-header">
                 <h2>Level Builder</h2>
@@ -283,7 +222,8 @@
     </section>
 
     <!-- Development Status -->
-    <section class="dev-status">
+    <section class="dev-status" style="position:relative;overflow:visible;">
+        <img src="../img/starboys/characters/mini-white.png" alt="" class="mini-char mini-char-white">
         <div class="container">
             <div class="section-header">
                 <h2>Development</h2>
@@ -309,6 +249,6 @@
     <div id="site-roadmap"></div>
     <div id="site-footer"></div>
 
-    <script src="../js/main.js?v=4"></script>
+    <script src="../js/main.js?v=5"></script>
 </body>
 </html>

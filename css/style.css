@@ -2069,6 +2069,7 @@ section {
 .characters-section {
     padding: var(--space-4xl) 0;
     background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
 }
 
 .characters-group {
@@ -2106,15 +2107,11 @@ section {
 .character-card {
     position: relative;
     border-radius: var(--radius-md);
-    overflow: hidden;
-    transition: transform var(--transition-normal), border-color var(--transition-normal);
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-}
-
-.character-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--border-visible);
+    overflow: visible;
+    transition: transform 0.25s ease;
+    background: none;
+    border: none;
+    text-align: center;
 }
 
 .character-card img {
@@ -2122,6 +2119,25 @@ section {
     aspect-ratio: 1;
     object-fit: cover;
     display: block;
+}
+
+.character-skin-img {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.character-skin-img img {
+    object-fit: contain;
+    filter: drop-shadow(0 0 0px transparent);
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.character-card:hover .character-skin-img img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px rgba(77, 182, 172, 0.45));
 }
 
 .character-placeholder {
@@ -2140,12 +2156,82 @@ section {
 
 .character-name {
     display: block;
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-sm) 0 var(--space-xs);
     text-align: center;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 700;
+    font-size: 1rem;
     color: var(--text-primary);
-    background: var(--bg-elevated);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.character-bio {
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin: 0;
+    padding: 0 var(--space-xs);
+}
+
+/* Mini characters — scattered on page */
+.mini-char {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Atlas (blue) — sitting on top of the About section header, slight tilt */
+.mini-char-blue {
+    top: -20px;
+    right: 60px;
+    transform: rotate(8deg);
+}
+
+/* Ares (red) — clinging to the right side of level builder, upside-down */
+.mini-char-red {
+    top: 40px;
+    right: -10px;
+    transform: rotate(180deg) scaleX(-1);
+}
+
+/* Aether (white) — on the left wall of dev status, sideways */
+.mini-char-white {
+    bottom: 30px;
+    left: -15px;
+    transform: rotate(90deg);
+}
+
+/* Alastor (black) — perched on top of the characters section, casual lean */
+.mini-char-black {
+    top: -30px;
+    left: 40px;
+    transform: rotate(-5deg);
+}
+
+@media (max-width: 768px) {
+    .mini-char {
+        width: 50px;
+    }
+
+    .mini-char-blue {
+        right: 20px;
+    }
+
+    .mini-char-red {
+        right: -5px;
+    }
+
+    .mini-char-white {
+        left: -5px;
+    }
+
+    .mini-char-black {
+        left: 15px;
+    }
 }
 
 /* Character Modal */
@@ -2227,6 +2313,59 @@ section {
 .character-modal-info p {
     color: var(--text-secondary);
     line-height: 1.7;
+}
+
+/* ============================================
+   SKINS LIBRARY
+   ============================================ */
+
+.skins-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+}
+
+.skins-tab {
+    padding: 8px 20px;
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.skins-tab:hover {
+    color: var(--text-primary);
+    border-color: var(--border-visible);
+}
+
+.skins-tab--active {
+    color: var(--bg-primary);
+    background: var(--starboys-accent);
+    border-color: var(--starboys-accent);
+}
+
+.skins-tab--active:hover {
+    color: var(--bg-primary);
+}
+
+@media (max-width: 500px) {
+    .skins-tabs {
+        gap: var(--space-xs);
+    }
+
+    .skins-tab {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+    }
 }
 
 /* ============================================
@@ -2370,14 +2509,6 @@ section {
     background: transparent;
 }
 
-.page-starboys .character-card {
-    background: none;
-    border-color: rgba(77, 182, 172, 0.2);
-}
-
-.page-starboys .character-card:hover {
-    border-color: var(--starboys-accent);
-}
 
 /* Strip card boxes — content floats on the space background */
 .page-starboys .info-card,
@@ -2438,6 +2569,25 @@ section {
 .page-starboys .game-feature-section {
     border-top-color: rgba(77, 182, 172, 0.2);
 }
+
+.page-starboys .characters-section {
+    border-top-color: rgba(77, 182, 172, 0.2);
+}
+
+.page-starboys .skins-tab {
+    background: none;
+    border-color: rgba(77, 182, 172, 0.25);
+}
+
+.page-starboys .skins-tab:hover {
+    border-color: var(--starboys-accent);
+}
+
+.page-starboys .skins-tab--active {
+    background: var(--starboys-accent);
+    border-color: var(--starboys-accent);
+}
+
 
 /* ============================================
    BLOODRUST PAGE BACKGROUND
