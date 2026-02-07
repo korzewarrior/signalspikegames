@@ -44,6 +44,9 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-social">
+                    <a href="https://store.steampowered.com/app/3756250/Starboys/" target="_blank" rel="noopener" class="social-link" aria-label="Steam">
+                        <i class="fab fa-steam"></i>
+                    </a>
                     <a href="https://discord.gg/GJuGbG2RzB" target="_blank" rel="noopener" class="social-link" aria-label="Discord">
                         <i class="fab fa-discord"></i>
                     </a>

@@ -392,6 +392,17 @@ section {
     color: var(--accent-primary);
 }
 
+.btn-steam {
+    background: #171a21;
+    color: #c7d5e0;
+    border: 1px solid #2a475e;
+}
+
+.btn-steam:hover {
+    background: #2a475e;
+    color: #fff;
+}
+
 .btn-discord {
     background: var(--discord-blurple);
     color: #fff;
