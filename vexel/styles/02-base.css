@@ -1,0 +1,108 @@
+/* Base */
+*{ box-sizing:border-box; }
+
+html,
+body{ height:100%; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  min-height:100dvh;
+  display:grid;
+  grid-template-rows:minmax(0, 1fr);
+  font-family:"Bahnschrift", "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+.card{ padding:8px; }
+
+.ui-surface{
+  border:1px solid var(--surface-border);
+  border-radius:var(--radius-surface);
+  background:var(--surface-bg);
+  box-shadow:0 0 0 1px rgba(255,255,255,.06), var(--surface-shadow);
+  backdrop-filter:blur(3px);
+}
+
+.ui-surface-subtle{
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--radius-subtle);
+  background:var(--surface-soft-bg);
+  box-shadow:0 0 0 1px rgba(255,255,255,.04), inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+.btn{
+  padding:7px 8px;
+  border:1px solid var(--line);
+  border-radius:2px;
+  background:transparent;
+  color:var(--ink);
+  font-size:10px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transform:translateY(0);
+  transition:border-color .12s var(--ease), background .12s var(--ease), transform .12s var(--ease), box-shadow .12s var(--ease);
+}
+
+.btn:hover{
+  border-color:#fff;
+  transform:translateY(-1px);
+}
+
+.btn:active{ transform:translateY(0) scale(.98); }
+
+.btn.flash-press{ animation:btnPress .22s var(--ease); }
+
+.btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.btn.ui-control,
+.pieceBtn.ui-control:not(.selected){
+  border:1px solid var(--control-border);
+  border-radius:var(--radius-control);
+  background:var(--control-bg);
+  box-shadow:var(--control-shadow);
+  backdrop-filter:blur(2px);
+}
+
+.btn.ui-control:hover:not(:disabled),
+.pieceBtn.ui-control:not(.selected):hover:not(:disabled){
+  border-color:rgba(255,255,255,.86);
+  background:var(--control-bg-hover);
+  box-shadow:var(--control-shadow-hover);
+}
+
+.btn.ui-control:active:not(:disabled),
+.pieceBtn.ui-control:not(.selected):active:not(:disabled){
+  transform:translateY(0) scale(.985);
+}
+
+.btn.ui-control:disabled,
+.pieceBtn.ui-control:disabled{
+  border-color:rgba(255,255,255,.24);
+  background:rgba(255,255,255,.018);
+  box-shadow:none;
+}
+
+.btn-primary{
+  background:#fff;
+  color:#000;
+}
+
+.btn-primary:hover{
+  background:#fff;
+  color:#000;
+  box-shadow:0 0 14px -10px rgba(255,255,255,.65);
+}

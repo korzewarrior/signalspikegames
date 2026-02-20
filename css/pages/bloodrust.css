@@ -1,0 +1,178 @@
+/* ============================================
+   BLOODRUST - Page-Specific Styles
+   ============================================ */
+
+/* ============================================
+   BLOODRUST PAGE - Body & Background
+   ============================================ */
+
+.page-bloodrust {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../../bloodrust/img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0e0e0;
+}
+
+/* Particle dots overlay */
+.page-bloodrust::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 12% 18%, rgba(196, 80, 48, 0.5), transparent),
+        radial-gradient(2px 2px at 48% 5%, rgba(180, 60, 40, 0.45), transparent),
+        radial-gradient(2.5px 2.5px at 30% 68%, rgba(196, 80, 48, 0.55), transparent),
+        radial-gradient(2px 2px at 85% 90%, rgba(160, 50, 30, 0.4), transparent),
+        radial-gradient(2px 2px at 72% 30%, rgba(140, 40, 20, 0.35), transparent),
+        radial-gradient(2.5px 2.5px at 18% 82%, rgba(196, 80, 48, 0.45), transparent),
+        radial-gradient(2px 2px at 90% 25%, rgba(180, 60, 40, 0.4), transparent),
+        radial-gradient(1.5px 1.5px at 22% 40%, rgba(140, 40, 20, 0.3), transparent),
+        radial-gradient(1.5px 1.5px at 75% 48%, rgba(120, 30, 15, 0.25), transparent),
+        radial-gradient(1.5px 1.5px at 58% 58%, rgba(140, 40, 20, 0.3), transparent),
+        radial-gradient(1.5px 1.5px at 85% 70%, rgba(120, 30, 15, 0.25), transparent),
+        radial-gradient(1.5px 1.5px at 8% 52%, rgba(140, 40, 20, 0.3), transparent),
+        radial-gradient(1px 1px at 65% 22%, rgba(100, 20, 10, 0.2), transparent),
+        radial-gradient(1px 1px at 90% 8%, rgba(80, 15, 5, 0.15), transparent),
+        radial-gradient(1px 1px at 18% 62%, rgba(100, 20, 10, 0.18), transparent),
+        radial-gradient(1px 1px at 50% 72%, rgba(80, 15, 5, 0.15), transparent);
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Ambient glow overlay */
+.page-bloodrust::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 120% 70% at 50% 50%, rgba(10, 5, 3, 0.4), transparent),
+        radial-gradient(ellipse 100% 60% at 25% 15%, rgba(196, 80, 48, 0.15), transparent),
+        radial-gradient(ellipse 80% 50% at 75% 80%, rgba(140, 30, 15, 0.12), transparent),
+        radial-gradient(ellipse 50% 30% at 80% 35%, rgba(160, 50, 30, 0.1), transparent),
+        radial-gradient(ellipse 40% 25% at 15% 65%, rgba(100, 20, 10, 0.08), transparent);
+    pointer-events: none;
+    z-index: -1;
+    animation: rustDrift 30s ease-in-out infinite alternate;
+}
+
+@keyframes rustDrift {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.85;
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   BLOODRUST - Rising Embers
+   ============================================ */
+
+.bloodrust-embers {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bloodrust-ember {
+    position: absolute;
+    left: var(--x, 50%);
+    bottom: -4px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(196, 80, 48, 0.8);
+    animation: bloodrustEmberRise var(--dur, 7s) var(--delay, 0s) ease-out infinite;
+}
+
+.bloodrust-ember--bright {
+    background: rgba(240, 120, 60, 0.95);
+    box-shadow: 0 0 4px rgba(220, 90, 40, 0.7);
+}
+
+@keyframes bloodrustEmberRise {
+    0%   { transform: translateY(0) translateX(0); opacity: 0; }
+    8%   { opacity: 0.8; }
+    60%  { opacity: 0.4; }
+    85%  { opacity: 0.1; }
+    100% { transform: translateY(-70vh) translateX(var(--sway, 10px)); opacity: 0; }
+}
+
+/* ============================================
+   BLOODRUST PAGE - Theme Overrides
+   ============================================ */
+
+/* Transparent sections so background shows through */
+.page-bloodrust .game-hero {
+    background: transparent;
+}
+
+/* Strip card boxes - raw content on the dark background */
+.page-bloodrust .info-card,
+.page-bloodrust .story-panel,
+.page-bloodrust .status-item,
+.page-bloodrust .collaborator-card {
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+/* Accent overrides */
+.page-bloodrust .info-card h3 {
+    color: var(--bloodrust-accent);
+}
+
+.page-bloodrust .feature-item i {
+    color: var(--bloodrust-accent);
+}
+
+.page-bloodrust .story-panel h3 {
+    color: var(--bloodrust-accent);
+}
+
+.page-bloodrust .story-panel p {
+    color: var(--text-secondary);
+    opacity: 0.9;
+}
+
+.page-bloodrust .status-item.current h3::before {
+    color: var(--bloodrust-accent);
+}
+
+.page-bloodrust .spec-row {
+    border-bottom-color: rgba(196, 80, 48, 0.15);
+}
+
+.page-bloodrust .badge-alpha {
+    color: var(--bloodrust-accent);
+    border-color: var(--bloodrust-accent);
+}
+
+.page-bloodrust .badge-released {
+    color: var(--bloodrust-accent);
+    border-color: var(--bloodrust-accent);
+}
+
+.page-bloodrust .game-about {
+    border-top-color: rgba(196, 80, 48, 0.2);
+}
+
+.page-bloodrust .game-collaborators {
+    border-top-color: rgba(196, 80, 48, 0.2);
+}
+
+.page-bloodrust .dev-status {
+    border-top-color: rgba(196, 80, 48, 0.2);
+}
+
+.page-bloodrust .section-header h2 {
+    color: var(--bloodrust-accent);
+}

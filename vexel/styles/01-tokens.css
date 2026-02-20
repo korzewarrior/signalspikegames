@@ -1,0 +1,31 @@
+/* Tokens */
+:root{
+  --bg:#000;
+  --ink:#f4f7ff;
+  --muted:#8f97a8;
+  --line:rgba(255,255,255,.28);
+  --line-soft:rgba(255,255,255,.14);
+  --ease:cubic-bezier(.2,.7,.2,1);
+
+  --p0:#ff1a2e;
+  --p1:#43d8ff;
+  --p2:#baff58;
+  --p3:#ba8dff;
+  --p0-rgb:255,26,46;
+  --p1-rgb:67,216,255;
+  --p2-rgb:186,255,88;
+  --p3-rgb:186,141,255;
+
+  --radius-surface:12px;
+  --radius-subtle:10px;
+  --radius-control:10px;
+  --surface-border:rgba(255,255,255,.24);
+  --surface-bg:linear-gradient(165deg, rgba(255,255,255,.055), rgba(255,255,255,.016));
+  --surface-soft-bg:rgba(255,255,255,.03);
+  --surface-shadow:0 14px 34px rgba(0,0,0,.28);
+  --control-border:rgba(255,255,255,.46);
+  --control-bg:rgba(255,255,255,.04);
+  --control-bg-hover:rgba(255,255,255,.08);
+  --control-shadow:0 0 0 1px rgba(255,255,255,.08), 0 0 18px -14px rgba(255,255,255,.75);
+  --control-shadow-hover:0 0 0 1px rgba(255,255,255,.2), 0 0 22px -12px rgba(255,255,255,.8);
+}

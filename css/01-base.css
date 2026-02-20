@@ -1,0 +1,105 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-main);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-body);
+    color: var(--ink-body);
+    background: var(--bg-page);
+    position: relative;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Shared atmospheric background, intentionally subtle. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgba(39, 29, 85, 0.045) 0 1px, transparent 1px 40px),
+        repeating-linear-gradient(90deg, rgba(39, 29, 85, 0.045) 0 1px, transparent 1px 40px),
+        radial-gradient(circle at 16% 18%, var(--brand-accent-soft), transparent 36%),
+        radial-gradient(circle at 82% 84%, rgba(126, 102, 255, 0.09), transparent 40%),
+        linear-gradient(180deg, #fefefe, var(--bg-page) 70%, #f2f4fa);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 12px;
+    z-index: -1;
+    pointer-events: none;
+    border: 1px solid var(--line-subtle);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    color: var(--brand-accent);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-standard);
+}
+
+a:hover {
+    color: var(--brand-accent-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 var(--space-md);
+    line-height: var(--line-height-tight);
+    color: var(--ink-strong);
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.12rem;
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 var(--space-md);
+    color: var(--ink-body);
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+/* Base focus ring */
+:focus-visible {
+    outline: 2px solid var(--line-focus);
+    outline-offset: 2px;
+}

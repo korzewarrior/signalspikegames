@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vexel</title>
+  <script>
+    (() => {
+      const key = "vexel-visual-theme-v1";
+      let theme = "light";
+      try {
+        const raw = localStorage.getItem(key);
+        if (raw === "dark" || raw === "classic"){
+          theme = "dark";
+        } else if (raw === "light"){
+          theme = "light";
+        }
+      } catch (_) {}
+      document.documentElement.setAttribute("data-vexel-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../styles/01-tokens.css" />
+  <link rel="stylesheet" href="../styles/02-base.css" />
+  <link rel="stylesheet" href="../styles/03-background.css" />
+  <link rel="stylesheet" href="../styles/04-game-ui.css" />
+  <link rel="stylesheet" href="../styles/05-modals.css" />
+  <link rel="stylesheet" href="../styles/06-motion-responsive.css" />
+  <link rel="stylesheet" href="../styles/07-light-theme.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="starfield starfield-a"></div>
+    <div class="starfield starfield-b"></div>
+    <div class="starfield starfield-c"></div>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="shooting shooting-a"></div>
+    <div class="shooting shooting-b"></div>
+    <div class="shooting shooting-c"></div>
+    <div class="shooting shooting-d"></div>
+    <div class="shooting shooting-e"></div>
+    <div class="shooting shooting-f"></div>
+    <div class="grain"></div>
+  </div>
+
+  <main class="layout">
+    <section class="card infoCard ui-surface">
+      <div id="scoreList" class="scoreList"></div>
+    </section>
+
+    <section class="stage">
+      <div class="stageFrame">
+        <canvas id="board" width="900" height="900" aria-label="Vexel board"></canvas>
+        <div class="stageOverlay">
+          <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card pieces">
+      <div id="pieceGrid" class="pieceGrid" aria-label="piece bank"></div>
+      <div class="pieceActions">
+        <div class="transformControls">
+          <button id="btnRotateLeft" class="btn btn-ghost ctrl-btn ui-control" title="Rotate left" aria-label="Rotate left">
+            <span class="ctrlIcon" aria-hidden="true">
+              <img class="ctrlIconImg" src="../img/rotate-left.png" alt="" />
+            </span>
+          </button>
+          <button id="btnRotateRight" class="btn btn-ghost ctrl-btn ui-control" title="Rotate right" aria-label="Rotate right">
+            <span class="ctrlIcon" aria-hidden="true">
+              <img class="ctrlIconImg ctrlIconMirrorX" src="../img/rotate-left.png" alt="" />
+            </span>
+          </button>
+          <button id="btnFlip" class="btn btn-ghost ctrl-btn ui-control" title="Mirror shape" aria-label="Mirror shape">
+            <span class="ctrlIcon" aria-hidden="true">
+              <img class="ctrlIconImg" src="../img/flip.png" alt="" />
+            </span>
+          </button>
+        </div>
+        <button id="btnPass" class="btn btn-ghost btn-pass-rail ui-control" title="Pass turn">Pass turn</button>
+        <button id="btnUndo" class="btn btn-ghost btn-rail ui-control" title="Undo last move">Undo</button>
+        <div class="sliderFrame">
+          <div class="sliderRail">
+            <label class="sliderLabel" for="musicVolume">Music</label>
+            <input id="musicVolume" class="volSlider" type="range" min="0" max="100" step="1" value="72" aria-label="Music volume" />
+          </div>
+          <div class="sliderRail">
+            <label class="sliderLabel" for="sfxVolume">SFX</label>
+            <input id="sfxVolume" class="volSlider" type="range" min="0" max="100" step="1" value="58" aria-label="Sound effects volume" />
+          </div>
+        </div>
+        <div class="themeSwitchWrap">
+          <button
+            id="themeTogglePlay"
+            class="themeSwitch"
+            type="button"
+            role="switch"
+            aria-checked="true"
+            aria-label="Use dark mode visual theme"
+          >
+            <span class="themeSwitchOption themeSwitchOptionLight">Light Mode</span>
+            <span class="themeSwitchOption themeSwitchOptionDark">Dark Mode</span>
+            <span class="themeSwitchKnob" aria-hidden="true"></span>
+          </button>
+        </div>
+        <button id="btnNew" class="btn btn-ghost btn-rail ui-control" title="Restart">New game</button>
+      </div>
+      <div class="columnFooter">
+        <div class="rules">
+          <span class="rulesHint" tabindex="0">How to play</span>
+          <div class="rulesPopup" role="note">
+            <p>Start by covering your corner.</p>
+            <p>After that, your color may only touch at corners.</p>
+            <p>Your own pieces cannot touch side-to-side.</p>
+            <p>Use Turn and Flip buttons (or R and F keys) to change a shape.</p>
+            <p>If you cannot place anything, click Pass.</p>
+            <p>The game ends when everyone passes in a row.</p>
+            <div id="statusText" class="statusText">Pick a piece to begin.</div>
+          </div>
+        </div>
+        <div class="infoBrand" aria-label="Vexel">
+          <span aria-hidden="true">V</span>
+          <span aria-hidden="true">E</span>
+          <span aria-hidden="true">X</span>
+          <span aria-hidden="true">E</span>
+          <span aria-hidden="true">L</span>
+        </div>
+        <a class="subtleHomeLink" href="/" aria-label="Back to Signal Spike Games home">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modalCard">
+      <div class="modalHeader">
+        <div class="modalTitle" id="modalTitle">Game Over</div>
+        <button class="btn btn-ghost" id="modalClose">Close</button>
+      </div>
+      <div class="modalBody" id="modalBody"></div>
+      <div class="modalFooter">
+        <button class="btn btn-primary" id="modalNew">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="setupModal" class="modal" hidden>
+    <div class="modalCard setupCard">
+      <div class="modalHeader">
+        <div class="modalTitle">New Game</div>
+        <button class="btn btn-ghost" id="setupClose">Close</button>
+      </div>
+      <div class="modalBody setupBody">
+        <p class="setupText">Cycle each color between Player, Bot, and Off. Keep at least two colors enabled.</p>
+        <div class="setupField">Player Colors</div>
+        <div class="setupPicker" id="setupHumanPicker" role="group" aria-label="Player color toggles">
+          <button type="button" class="humanPick is-active" data-player="0" data-mode="human" aria-pressed="true" aria-label="Red player">
+            <svg class="pickGlyph glyph-human" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <circle cx="12" cy="7.5" r="3.2"></circle>
+              <path d="M5 19c0-3.7 3-6.5 7-6.5s7 2.8 7 6.5"></path>
+            </svg>
+            <svg class="pickGlyph glyph-bot" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <rect x="6" y="7" width="12" height="10" rx="2"></rect>
+              <path d="M12 7V4"></path>
+              <path d="M10 4h4"></path>
+              <circle cx="10" cy="12" r="1"></circle>
+              <circle cx="14" cy="12" r="1"></circle>
+              <path d="M9 15h6"></path>
+            </svg>
+            <span class="pickMeta">
+              <span class="pickColor">Red</span>
+              <span class="pickMode">Player</span>
+            </span>
+          </button>
+          <button type="button" class="humanPick is-bot" data-player="3" data-mode="bot" aria-pressed="false" aria-label="Purple bot">
+            <svg class="pickGlyph glyph-human" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <circle cx="12" cy="7.5" r="3.2"></circle>
+              <path d="M5 19c0-3.7 3-6.5 7-6.5s7 2.8 7 6.5"></path>
+            </svg>
+            <svg class="pickGlyph glyph-bot" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <rect x="6" y="7" width="12" height="10" rx="2"></rect>
+              <path d="M12 7V4"></path>
+              <path d="M10 4h4"></path>
+              <circle cx="10" cy="12" r="1"></circle>
+              <circle cx="14" cy="12" r="1"></circle>
+              <path d="M9 15h6"></path>
+            </svg>
+            <span class="pickMeta">
+              <span class="pickColor">Purple</span>
+              <span class="pickMode">Bot</span>
+            </span>
+          </button>
+          <button type="button" class="humanPick is-bot" data-player="1" data-mode="bot" aria-pressed="false" aria-label="Blue bot">
+            <svg class="pickGlyph glyph-human" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <circle cx="12" cy="7.5" r="3.2"></circle>
+              <path d="M5 19c0-3.7 3-6.5 7-6.5s7 2.8 7 6.5"></path>
+            </svg>
+            <svg class="pickGlyph glyph-bot" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <rect x="6" y="7" width="12" height="10" rx="2"></rect>
+              <path d="M12 7V4"></path>
+              <path d="M10 4h4"></path>
+              <circle cx="10" cy="12" r="1"></circle>
+              <circle cx="14" cy="12" r="1"></circle>
+              <path d="M9 15h6"></path>
+            </svg>
+            <span class="pickMeta">
+              <span class="pickColor">Blue</span>
+              <span class="pickMode">Bot</span>
+            </span>
+          </button>
+          <button type="button" class="humanPick is-bot" data-player="2" data-mode="bot" aria-pressed="false" aria-label="Green bot">
+            <svg class="pickGlyph glyph-human" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <circle cx="12" cy="7.5" r="3.2"></circle>
+              <path d="M5 19c0-3.7 3-6.5 7-6.5s7 2.8 7 6.5"></path>
+            </svg>
+            <svg class="pickGlyph glyph-bot" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <rect x="6" y="7" width="12" height="10" rx="2"></rect>
+              <path d="M12 7V4"></path>
+              <path d="M10 4h4"></path>
+              <circle cx="10" cy="12" r="1"></circle>
+              <circle cx="14" cy="12" r="1"></circle>
+              <path d="M9 15h6"></path>
+            </svg>
+            <span class="pickMeta">
+              <span class="pickColor">Green</span>
+              <span class="pickMode">Bot</span>
+            </span>
+          </button>
+        </div>
+        <div id="setupSummary" class="setupSummary">Players 1 (Red) | Bots 3 | Off 0</div>
+      </div>
+      <div class="modalFooter">
+        <button class="btn btn-primary" id="setupStart">Start Game</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal" hidden>
+    <div class="modalCard confirmCard">
+      <div class="modalHeader">
+        <div class="modalTitle">Start New Game</div>
+        <button class="btn btn-ghost" id="confirmClose">Close</button>
+      </div>
+      <div class="modalBody confirmBody">
+        <p class="confirmText">Start a new game? Current progress will be lost.</p>
+      </div>
+      <div class="modalFooter">
+        <button class="btn btn-ghost" id="confirmCancel">Cancel</button>
+        <button class="btn btn-primary" id="confirmProceed">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../app.js"></script>
+</body>
+</html>

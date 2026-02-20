@@ -1,0 +1,653 @@
+/* Vexel light theme conversion (landing page) */
+
+.page-vexel .vexel-theme-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.page-vexel .vexel-theme-toggle {
+  --track-bg: rgba(255, 255, 255, 0.06);
+  --track-border: rgba(255, 255, 255, 0.32);
+  --track-text: rgba(255, 255, 255, 0.84);
+  --knob-bg: #ffffff;
+  --knob-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25), 0 5px 14px rgba(0, 0, 0, 0.45);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-width: 250px;
+  min-height: 34px;
+  padding: 3px;
+  border: 1px solid var(--track-border);
+  border-radius: 4px;
+  background: var(--track-bg);
+  color: var(--track-text);
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.page-vexel .vexel-theme-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.56);
+}
+
+html[data-vexel-theme="light"] .page-vexel .vexel-theme-toggle:hover {
+  border-color: rgba(128, 104, 255, 0.86);
+}
+
+.page-vexel .vexel-theme-toggle:focus-visible {
+  outline: 2px solid rgba(128, 104, 255, 0.65);
+  outline-offset: 2px;
+}
+
+.page-vexel .vexel-theme-option {
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  color: #3d3367;
+}
+
+.page-vexel .vexel-theme-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  border-radius: 2px;
+  background: var(--knob-bg);
+  box-shadow: var(--knob-shadow);
+  transition: transform 0.16s ease;
+}
+
+.page-vexel .vexel-theme-toggle[aria-checked="false"] .vexel-theme-knob {
+  transform: translateX(100%);
+}
+
+.page-vexel .vexel-theme-toggle[aria-checked="true"] {
+  --track-bg: rgba(126, 102, 255, 0.2);
+  --track-border: rgba(152, 130, 255, 0.72);
+  --track-text: #e5dcff;
+  --knob-bg: #f3efff;
+  --knob-shadow: 0 0 0 1px rgba(144, 121, 250, 0.52), 0 5px 14px rgba(34, 18, 90, 0.28);
+}
+
+.page-vexel .vexel-theme-toggle[aria-checked="false"] .vexel-theme-option-dark,
+.page-vexel .vexel-theme-toggle[aria-checked="true"] .vexel-theme-option-light {
+  color: #0f1218;
+  font-weight: 700;
+}
+
+.page-vexel .vexel-theme-toggle[aria-checked="false"] .vexel-theme-option-light,
+.page-vexel .vexel-theme-toggle[aria-checked="true"] .vexel-theme-option-dark {
+  color: rgba(71, 58, 112, 0.76);
+  font-weight: 500;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-theme-toggle {
+  --track-bg: rgba(17, 25, 52, 0.9);
+  --track-border: rgba(138, 159, 255, 0.42);
+  --track-text: rgba(220, 231, 255, 0.88);
+  --knob-bg: #dce6ff;
+  --knob-shadow: 0 0 0 1px rgba(121, 144, 255, 0.4), 0 5px 14px rgba(0, 0, 0, 0.45);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-theme-toggle[aria-checked="false"] .vexel-theme-option-dark {
+  color: #0f1322;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-theme-toggle[aria-checked="false"] .vexel-theme-option-light {
+  color: rgba(212, 222, 255, 0.76);
+}
+
+html[data-vexel-theme="dark"] body.page-vexel {
+  color: #d4deff;
+  background: #070b16;
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+html[data-vexel-theme="dark"] body.page-vexel::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(117, 137, 232, 0.1) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(90deg, rgba(117, 137, 232, 0.1) 0 1px, transparent 1px 42px),
+    radial-gradient(circle at 14% 20%, rgba(86, 110, 235, 0.28), transparent 34%),
+    radial-gradient(circle at 82% 82%, rgba(75, 99, 223, 0.24), transparent 36%),
+    linear-gradient(180deg, #0c1229, #090f21 68%, #070b17);
+}
+
+html[data-vexel-theme="dark"] body.page-vexel::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.22) 0 0.7px, transparent 0.75px),
+    radial-gradient(circle at 80% 76%, rgba(255, 255, 255, 0.2) 0 0.65px, transparent 0.72px);
+  background-size: 2px 2px, 3px 3px;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .announcement-bar {
+  background: rgba(20, 30, 67, 0.94);
+  color: #d8e2ff;
+  border-bottom: 1px solid rgba(120, 141, 237, 0.34);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .announcement-link,
+html[data-vexel-theme="dark"] .page-vexel .announcement-link:hover {
+  color: #c8d7ff;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .announcement-badge {
+  background: rgba(24, 35, 78, 0.94);
+  color: #d1ddff;
+  border: 1px solid rgba(130, 151, 244, 0.48);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav {
+  background: rgba(8, 12, 27, 0.92);
+  border-bottom: 1px solid rgba(121, 141, 228, 0.28);
+  backdrop-filter: blur(10px);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-logo,
+html[data-vexel-theme="dark"] .page-vexel .nav-logo:hover,
+html[data-vexel-theme="dark"] .page-vexel .nav-link,
+html[data-vexel-theme="dark"] .page-vexel .nav-link:hover {
+  color: #d9e2ff;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-logo .spike {
+  color: #88a2ff;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-toggle span {
+  background: #cddaff;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-links {
+  background: rgba(8, 12, 27, 0.98);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .container,
+html[data-vexel-theme="light"] .page-vexel .container {
+  max-width: 1280px;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-header-centered,
+html[data-vexel-theme="light"] .page-vexel .game-header-centered {
+  text-align: left;
+  padding-top: calc(var(--nav-height) + var(--announcement-height) + 2.5rem);
+  padding-bottom: 2rem;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-page-logo {
+  display: inline-flex;
+  margin-bottom: 0.85rem;
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: clamp(1.45rem, 4.3vw, 2.4rem);
+  letter-spacing: 0.08em;
+  color: #8aa2ff;
+  text-shadow: none;
+  opacity: 1;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-page-logo > span {
+  transform: none;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-header-tagline {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.26rem);
+  color: #dbe4ff;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-header-meta {
+  margin-top: 0.45rem;
+  color: #a7b6e8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-about {
+  border-top: 1px solid rgba(126, 147, 236, 0.32);
+  border-bottom: 1px solid rgba(126, 147, 236, 0.26);
+  background:
+    linear-gradient(180deg, rgba(12, 18, 41, 0.74), rgba(11, 16, 37, 0.8)),
+    repeating-linear-gradient(0deg, rgba(126, 147, 236, 0.06) 0 1px, transparent 1px 36px);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-about .section-header {
+  margin-bottom: 1.2rem;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-about .section-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #8aa2ff;
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .about-text,
+html[data-vexel-theme="light"] .page-vexel .about-text {
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .about-text p {
+  color: #d2ddff;
+  line-height: 1.62;
+  font-size: 1rem;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .btn {
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .btn-primary {
+  border: 1px solid rgba(139, 160, 255, 0.62);
+  background: rgba(26, 38, 86, 0.98);
+  color: #d8e3ff;
+  box-shadow: inset 1px 1px 0 1px rgba(203, 216, 255, 0.18), inset -1px -1px 0 1px rgba(8, 15, 37, 0.62);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .btn-primary:hover {
+  background: rgba(30, 44, 97, 0.98);
+  color: #e4ecff;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap-section,
+html[data-vexel-theme="dark"] .page-vexel .footer {
+  border-top: 1px solid rgba(126, 147, 236, 0.24);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap-step h3,
+html[data-vexel-theme="dark"] .page-vexel .roadmap-step .roadmap-status,
+html[data-vexel-theme="dark"] .page-vexel .footer-copy,
+html[data-vexel-theme="dark"] .page-vexel .footer-links a,
+html[data-vexel-theme="dark"] .page-vexel .social-link {
+  color: #b9c9ff;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap-dot {
+  border-color: rgba(136, 158, 255, 0.62);
+  background: #0b1022;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap::before {
+  background: rgba(126, 147, 236, 0.3);
+}
+
+html[data-vexel-theme="light"] body.page-vexel {
+  color: #0f1116;
+  background: #fbfbfb;
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+html[data-vexel-theme="light"] body.page-vexel::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(42, 31, 90, 0.035) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(90deg, rgba(42, 31, 90, 0.035) 0 1px, transparent 1px 42px),
+    radial-gradient(circle at 12% 18%, rgba(149, 122, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 78% 84%, rgba(126, 102, 255, 0.12), transparent 34%),
+    linear-gradient(180deg, #fefefe, #f7f8fb 68%, #f4f5fa);
+}
+
+html[data-vexel-theme="light"] body.page-vexel::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.28;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.17) 0 0.7px, transparent 0.75px),
+    radial-gradient(circle at 80% 76%, rgba(0, 0, 0, 0.14) 0 0.65px, transparent 0.72px);
+  background-size: 2px 2px, 3px 3px;
+}
+
+html[data-vexel-theme="light"] .page-vexel .announcement-bar {
+  background: #f2efff;
+  color: #2b2154;
+  border-bottom: 1px solid rgba(126, 102, 255, 0.24);
+}
+
+html[data-vexel-theme="light"] .page-vexel .announcement-link,
+html[data-vexel-theme="light"] .page-vexel .announcement-link:hover {
+  color: #573db8;
+}
+
+html[data-vexel-theme="light"] .page-vexel .announcement-badge {
+  background: #ffffff;
+  color: #654cc9;
+  border: 1px solid rgba(126, 102, 255, 0.34);
+}
+
+html[data-vexel-theme="light"] .page-vexel .nav {
+  background: rgba(251, 251, 251, 0.92);
+  border-bottom: 1px solid rgba(24, 32, 78, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+html[data-vexel-theme="light"] .page-vexel .nav-logo,
+html[data-vexel-theme="light"] .page-vexel .nav-logo:hover,
+html[data-vexel-theme="light"] .page-vexel .nav-link,
+html[data-vexel-theme="light"] .page-vexel .nav-link:hover {
+  color: #0f1634;
+}
+
+html[data-vexel-theme="light"] .page-vexel .nav-logo .spike {
+  color: #7a62ff;
+}
+
+html[data-vexel-theme="light"] .page-vexel .nav-toggle span {
+  background: #4f3a90;
+}
+
+html[data-vexel-theme="light"] .page-vexel .nav-links {
+  background: #fbfbfb;
+}
+
+html[data-vexel-theme="light"] .page-vexel .vexel-page-logo {
+  display: inline-flex;
+  margin-bottom: 0.85rem;
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: clamp(1.45rem, 4.3vw, 2.4rem);
+  letter-spacing: 0.08em;
+  color: #7a68ff;
+  text-shadow: none;
+  opacity: 1;
+}
+
+html[data-vexel-theme="light"] .page-vexel .vexel-page-logo > span {
+  transform: none;
+}
+
+html[data-vexel-theme="light"] .page-vexel .game-header-tagline {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.26rem);
+  color: #171d34;
+}
+
+html[data-vexel-theme="light"] .page-vexel .game-header-meta {
+  margin-top: 0.45rem;
+  color: #4d5677;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html[data-vexel-theme="light"] .page-vexel .game-about {
+  border-top: 1px solid rgba(57, 43, 117, 0.25);
+  border-bottom: 1px solid rgba(57, 43, 117, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.58)),
+    repeating-linear-gradient(0deg, rgba(57, 43, 117, 0.04) 0 1px, transparent 1px 36px);
+}
+
+html[data-vexel-theme="light"] .page-vexel .game-about .section-header {
+  margin-bottom: 1.2rem;
+}
+
+html[data-vexel-theme="light"] .page-vexel .game-about .section-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #7a62f6;
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html[data-vexel-theme="light"] .page-vexel .about-text p {
+  color: #131a31;
+  line-height: 1.62;
+  font-size: 1rem;
+}
+
+html[data-vexel-theme="light"] .page-vexel .btn {
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+}
+
+html[data-vexel-theme="light"] .page-vexel .btn-primary {
+  border: 1px solid rgba(83, 61, 168, 0.55);
+  background: #ffffff;
+  color: #5a43b0;
+  box-shadow: inset 1px 1px 0 1px rgba(255, 255, 255, 0.88), inset -1px -1px 0 1px rgba(95, 73, 188, 0.16);
+}
+
+html[data-vexel-theme="light"] .page-vexel .btn-primary:hover {
+  background: #f3efff;
+  color: #573db8;
+}
+
+html[data-vexel-theme="light"] .page-vexel .roadmap-section,
+html[data-vexel-theme="light"] .page-vexel .footer {
+  border-top: 1px solid rgba(57, 43, 117, 0.2);
+}
+
+html[data-vexel-theme="light"] .page-vexel .roadmap-step h3,
+html[data-vexel-theme="light"] .page-vexel .roadmap-step .roadmap-status,
+html[data-vexel-theme="light"] .page-vexel .footer-copy,
+html[data-vexel-theme="light"] .page-vexel .footer-links a,
+html[data-vexel-theme="light"] .page-vexel .social-link {
+  color: #443a78;
+}
+
+html[data-vexel-theme="light"] .page-vexel .roadmap-dot {
+  border-color: rgba(126, 102, 255, 0.6);
+  background: #fbfbfb;
+}
+
+html[data-vexel-theme="light"] .page-vexel .roadmap::before {
+  background: rgba(57, 43, 117, 0.24);
+}
+
+@media (max-width: 900px) {
+  html[data-vexel-theme="dark"] .page-vexel .about-text,
+  html[data-vexel-theme="light"] .page-vexel .about-text {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  html[data-vexel-theme="dark"] .page-vexel .game-header-centered,
+  html[data-vexel-theme="light"] .page-vexel .game-header-centered {
+    text-align: center;
+  }
+
+  html[data-vexel-theme="dark"] .page-vexel .about-text,
+  html[data-vexel-theme="light"] .page-vexel .about-text {
+    column-count: 1;
+  }
+
+  .page-vexel .vexel-theme-row {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    margin-inline: auto;
+  }
+
+  .page-vexel .vexel-theme-toggle {
+    min-width: 228px;
+  }
+}
+
+/* Black dark-mode refinement */
+html[data-vexel-theme="dark"] body.page-vexel {
+  color: #ececf0;
+  background: #030304;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-theme-toggle {
+  --track-bg: rgba(6, 6, 8, 0.94);
+  --track-border: rgba(255, 255, 255, 0.2);
+  --track-text: rgba(230, 230, 236, 0.9);
+  --knob-bg: #e9e9ed;
+  --knob-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3), 0 5px 14px rgba(0, 0, 0, 0.5);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-theme-toggle[aria-checked="false"] .vexel-theme-option-dark {
+  color: #09090a;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-theme-toggle[aria-checked="false"] .vexel-theme-option-light {
+  color: rgba(220, 220, 226, 0.76);
+}
+
+html[data-vexel-theme="dark"] body.page-vexel::before {
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 42px),
+    radial-gradient(circle at 14% 20%, rgba(255, 255, 255, 0.05), transparent 34%),
+    radial-gradient(circle at 82% 82%, rgba(255, 255, 255, 0.04), transparent 36%),
+    linear-gradient(180deg, #070708, #040405 68%, #020203);
+}
+
+html[data-vexel-theme="dark"] body.page-vexel::after {
+  opacity: 0.16;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.16) 0 0.7px, transparent 0.75px),
+    radial-gradient(circle at 80% 76%, rgba(255, 255, 255, 0.14) 0 0.65px, transparent 0.72px);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .announcement-bar {
+  background: rgba(10, 10, 13, 0.95);
+  color: #e2e2e7;
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .announcement-link,
+html[data-vexel-theme="dark"] .page-vexel .announcement-link:hover {
+  color: #f0f0f4;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .announcement-badge {
+  background: rgba(16, 16, 21, 0.94);
+  color: #e8e8ec;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav {
+  background: rgba(5, 5, 7, 0.94);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-logo,
+html[data-vexel-theme="dark"] .page-vexel .nav-logo:hover,
+html[data-vexel-theme="dark"] .page-vexel .nav-link,
+html[data-vexel-theme="dark"] .page-vexel .nav-link:hover {
+  color: #ececf0;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-logo .spike {
+  color: #f3f3f6;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-toggle span {
+  background: #ececf0;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .nav-links {
+  background: rgba(8, 8, 10, 0.98);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .vexel-page-logo {
+  color: #f0f0f4;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-header-tagline {
+  color: #ededf1;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-header-meta {
+  color: #bdbdc6;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-about {
+  border-top-color: rgba(255, 255, 255, 0.16);
+  border-bottom-color: rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(180deg, rgba(9, 9, 12, 0.76), rgba(7, 7, 10, 0.82)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 36px);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .game-about .section-header h2 {
+  color: #e2e2e8;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .about-text p {
+  color: #dedee4;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .btn-primary {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(14, 14, 19, 0.98);
+  color: #ededf1;
+  box-shadow: inset 1px 1px 0 1px rgba(255, 255, 255, 0.14), inset -1px -1px 0 1px rgba(0, 0, 0, 0.66);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .btn-primary:hover {
+  background: rgba(20, 20, 26, 0.98);
+  color: #f4f4f8;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap-section,
+html[data-vexel-theme="dark"] .page-vexel .footer {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap-step h3,
+html[data-vexel-theme="dark"] .page-vexel .roadmap-step .roadmap-status,
+html[data-vexel-theme="dark"] .page-vexel .footer-copy,
+html[data-vexel-theme="dark"] .page-vexel .footer-links a,
+html[data-vexel-theme="dark"] .page-vexel .social-link {
+  color: #d2d2da;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap-dot {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #060608;
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap::before {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+html[data-vexel-theme="light"] .page-vexel .roadmap-step:not(:last-child)::after {
+  background: rgba(57, 43, 117, 0.24);
+}
+
+html[data-vexel-theme="dark"] .page-vexel .roadmap-step:not(:last-child)::after {
+  background: rgba(255, 255, 255, 0.14);
+}

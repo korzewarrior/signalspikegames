@@ -1,0 +1,62 @@
+/* ============================================
+   ABOUT - Page-Specific Styles
+   ============================================ */
+
+.about-content {
+    padding-top: calc(var(--nav-height) + var(--announcement-height) + var(--space-xl));
+    padding-bottom: var(--space-2xl);
+}
+
+.about-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section {
+    padding-bottom: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-section--last {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.about-logo {
+    display: block;
+    max-width: 240px;
+    height: auto;
+    margin-bottom: var(--space-lg);
+}
+
+.about-section h1 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-md);
+}
+
+.about-section h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    margin-bottom: var(--space-md);
+}
+
+.about-links {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-sm);
+}
+
+.about-links li + li {
+    margin-top: var(--space-xs);
+}
+
+.prior-teams {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-sm);
+    color: var(--text-secondary);
+}
+
+.prior-teams li + li {
+    margin-top: var(--space-xs);
+}

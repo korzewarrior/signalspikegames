@@ -1,0 +1,100 @@
+/* ============================================
+   PRO FISHING - Page-Specific Styles
+   ============================================ */
+
+.page-profishing {
+    --profishing-accent: #9dc4a0;
+    background-color: #020806; /* deep lake dark */
+}
+
+/* Dappled light through water surface */
+.page-profishing::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 35% at 15% 25%, rgba(100, 180, 120, 0.07), transparent),
+        radial-gradient(ellipse 50% 25% at 78% 55%, rgba(60, 140, 90, 0.05), transparent),
+        radial-gradient(ellipse 90% 45% at 50% 95%, rgba(20, 70, 45, 0.08), transparent),
+        radial-gradient(ellipse 40% 20% at 85% 18%, rgba(80, 160, 100, 0.04), transparent);
+    pointer-events: none;
+    z-index: -2;
+    animation: fishingLight 25s ease-in-out infinite alternate;
+}
+
+@keyframes fishingLight {
+    0%   { opacity: 0.7; transform: scale(1) translateY(0); }
+    100% { opacity: 1.0; transform: scale(1.1) translateY(-8px); }
+}
+
+/* Deep water ambient glow rising from below */
+.page-profishing::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 100% 55% at 50% 115%, rgba(10, 55, 32, 0.55), transparent),
+        radial-gradient(ellipse 60% 40% at 20% 85%, rgba(8, 45, 28, 0.3), transparent),
+        radial-gradient(ellipse 40% 20% at 80% 8%, rgba(15, 65, 38, 0.12), transparent);
+    pointer-events: none;
+    z-index: -1;
+    animation: fishingDeep 35s ease-in-out infinite alternate;
+}
+
+@keyframes fishingDeep {
+    0%   { opacity: 0.75; }
+    100% { opacity: 1.0; }
+}
+
+/* ============================================
+   PRO FISHING - Rising Bubbles
+   ============================================ */
+
+.fishing-bubbles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.fishing-bubble {
+    position: absolute;
+    left: var(--x, 50%);
+    bottom: -16px;
+    width: var(--sz, 8px);
+    height: var(--sz, 8px);
+    border-radius: 50%;
+    background: rgba(157, 196, 160, 0.08);
+    border: 1px solid rgba(157, 196, 160, 0.55);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.25);
+    animation: fishingBubbleRise var(--dur, 15s) var(--delay, 0s) ease-in infinite;
+}
+
+@keyframes fishingBubbleRise {
+    0%   { transform: translateY(0) translateX(0); opacity: 0; }
+    6%   { opacity: 0.8; }
+    80%  { opacity: 0.4; }
+    100% { transform: translateY(-105vh) translateX(var(--sway, 40px)); opacity: 0; }
+}
+
+/* ============================================
+   PRO FISHING - Theme Overrides
+   ============================================ */
+
+.page-profishing .info-card {
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.page-profishing .info-card h3 {
+    color: var(--profishing-accent);
+}
+
+.page-profishing .feature-item i {
+    color: var(--profishing-accent);
+}
+
+.page-profishing .section-header h2 {
+    color: var(--profishing-accent);
+}

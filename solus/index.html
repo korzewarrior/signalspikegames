@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solus - Signal Spike Games</title>
+    <meta name="description"
+        content="Solus - A space exploration & survival game. Drifting away from the ISS, you need to find your way back to safety before time runs out.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/star-favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css?v=6">
+    <link rel="stylesheet" href="../css/pages/solus.css?v=6">
+</head>
+
+<body class="page-solus">
+    <div id="site-header"></div>
+
+    <!-- Drifting debris - alone in space -->
+    <div class="solus-debris" aria-hidden="true">
+        <span class="solus-debris-piece" style="--x:14%;--y:22%;--dx:18px;--dy:8px;--delay:0s;--dur:35s"></span>
+        <span class="solus-debris-piece" style="--x:83%;--y:38%;--dx:-14px;--dy:22px;--delay:8s;--dur:42s"></span>
+        <span class="solus-debris-piece" style="--x:48%;--y:68%;--dx:10px;--dy:-18px;--delay:3s;--dur:30s"></span>
+        <span class="solus-debris-piece" style="--x:67%;--y:54%;--dx:-22px;--dy:-10px;--delay:16s;--dur:45s"></span>
+        <span class="solus-debris-piece solus-debris-piece--bright" style="--x:28%;--y:44%;--dx:14px;--dy:-14px;--delay:6s;--dur:38s"></span>
+    </div>
+
+    <!-- Game Details -->
+    <section class="game-details game-details-top">
+        <div class="container">
+            <div class="details-grid">
+                <div class="game-media">
+                    <div class="game-screenshot main-screenshot">
+                        <img src="img/solo-mainscreen.webp" alt="Solus gameplay screenshot">
+                    </div>
+
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb gallery-thumb--active">
+                            <img src="img/solo-mainscreen.webp" alt="Solus Main Screen">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/solus-earth.webp" alt="Solus Earth View">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/solus-hud.webp" alt="Solus HUD">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/screenshot1.png" alt="Solus screenshot 1">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/screenshot2.png" alt="Solus screenshot 2">
+                        </div>
+                    </div>
+
+                    <div class="game-intro">
+                        <div class="game-title-row">
+                            <span class="badge badge-jam">Game Jam</span>
+                        </div>
+
+                        <p class="game-genre">Space Survival</p>
+
+                        <p class="game-description">
+                            You are a Colonel turned Astronaut working on interstellar missions for NASA. During routine
+                            maintenance, a mistake leaves you drifting away from the ISS. Can you find your way back to
+                            safety before time runs out?
+                        </p>
+
+                        <div class="game-actions">
+                            <a href="https://popdaddygames.itch.io/solus" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-windows"></i> Windows
+                            </a>
+                            <a href="https://popdaddygames.itch.io/solus" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-apple"></i> macOS
+                            </a>
+                            <a href="https://popdaddygames.itch.io/solus" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-linux"></i> Linux
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="game-info">
+                    <img src="img/logo.png" alt="Solus Logo" class="game-logo">
+                    <div class="info-card">
+                        <h3>Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-rocket"></i>
+                                <div>
+                                    <strong>Zero-G Movement</strong>
+                                    <p>Navigating in space is tricky. Master momentum to survive.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-satellite"></i>
+                                <div>
+                                    <strong>Space Setting</strong>
+                                    <p>Drift through the void near the ISS and Earth.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <div>
+                                    <strong>Time Pressure</strong>
+                                    <p>Oxygen is limited. Make every movement count.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Tech Specs</h3>
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">Unity</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Mode</span>
+                                <span class="spec-value">Single-Player</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform</span>
+                                <span class="spec-value">Windows, macOS, Linux</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Theme</span>
+                                <span class="spec-value">Deeper and Deeper</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Released</span>
+                                <span class="spec-value">April 27, 2021</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Status</span>
+                                <span class="spec-value">Game Jam (Released 2021)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Story -->
+    <section class="game-about game-story">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Story</h2>
+            </div>
+
+            <div class="about-text" style="column-count: 1;">
+
+                <p>Your name is Roy Grant Buchanan IV. You are a Colonel turned Astronaut working on interstellar
+                    missions
+                    for NASA. During some routine maintenance on a Solar Panel, you decide to disconnect your safety
+                    harness so you can get just a tiny bit closer to your work. This is obviously a terrible
+                    mistake. Now- you’re drifting away, rapidly, from the International Space Station… and your home
+                    planet of Earth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Game -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+
+            <div class="about-text">
+                <p>Solus was created for Ludum Dare 48 in April 2021. The theme was "Deeper and Deeper". In this
+                    survival game, you must navigate the perilous vacuum of space using your suit's thrusters to return
+                    to the safety of the ISS.</p>
+
+                <p>The controls are purposefully difficult. The challenge lies in manipulating these controls and
+                    managing your maneuvering within this complex movement environment-a deliberate contrast to the
+                    expected freedom of open space.</p>
+
+                <p>The project was a collaborative effort during the game jam. Work was done in tandem with
+                    <a href="https://atmcmusic.co" target="_blank" rel="noopener"><strong>Joshua Damian</strong></a>,
+                    who handled voice work, SFX, music, soundscape, and sound design. The
+                    result is an atmospheric experience that relies heavily on audio cues and immersion.
+                </p>
+
+                <p>Assets Used: ISS & Astronaut models from Sketchfab. Solar System environment from Unity Asset Store.
+                    Sun sounds
+                    from NASA.</p>
+
+                <p><em>Psst. Keep an eye out. There might be some cheeky easter eggs for future (or past?) projects
+                        hidden in the build.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reception -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reception</h2>
+            </div>
+            <div class="about-text">
+                <p><em>"This one is particularly well crafted. The visuals are beautiful, voice acting impactful, and
+                        the mechanics are in total servitude to the story and mood of everything. Stunning
+                        work."</em><br><strong>- SecretJuice</strong></p>
+
+                <p><em>"Y’all really have a talent for crafting an atmosphere and mood. I reeeeeaaaallly enjoyed this
+                        one, for sure... It’s one of my biggest irrational nightmares, and y’all captured the
+                        helplessness of that so well."</em><br><strong>- ColeSlaughter</strong></p>
+
+                <p><em>"This game is a beauty to look at and to listen to... This is a true storytelling masterpiece and
+                        I love it. If you don’t win for Audio, I don’t know who will… Really astonishing
+                        work!"</em><br><strong>- AndideBob</strong></p>
+
+                <p><em>"The audio and mood are beautifully and masterfully put together. The game also really captures
+                        the feeling of loneliness being out in space. The graphics and narration reinforce everything
+                        beautifully."</em><br><strong>- Aditya Kumar</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- In Memoriam -->
+    <section class="game-about tribute-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>In Memoriam</h2>
+            </div>
+
+            <div class="about-text">
+                <p><strong>Lt. Col. Eric "Doc" Schultz</strong><br>
+                    <em>November 20, 1973 – September 5, 2017</em>
+                </p>
+
+                <p>The guiding voice in Solus is named "Doc" in honor of Lt. Col. Eric Schultz, a test pilot and
+                    squadron commander I had the privilege of working with.</p>
+
+                <p>On September 5, 2017, Doc was piloting a classified mission over the Nevada Test and Training Range.
+                    During a critical flight maneuver, the aircraft settled onto the desert floor and nearly tumbled.
+                    Facing insurmountable odds, Doc managed to wrestle the aircraft back into the air just long enough
+                    to allow his backseat Weapons Systems Officer to eject and survive.</p>
+
+                <p>Tragically, due to a malfunction with his own ejection seat, Doc was unable to separate from the
+                    aircraft. He sacrificed everything to save his crewmate, and for his heroism, he was posthumously
+                    awarded the Distinguished Flying Cross.</p>
+
+                <p>He was a brilliant pilot, a dedicated father of five, and a good man. He was honorable, respectful,
+                    and always an amazing mentor and guide. This small nod is my personal way of keeping his name and
+                    his story in our orbit.</p>
+                <p><a href="https://www.twz.com/area-51-test-pilots-mysterious-death-happened-heroically-flying-an-su-27-report"
+                        target="_blank" rel="noopener">Read the full account.</a></p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js?v=6"></script>
+</body>
+
+</html>

@@ -1,0 +1,1256 @@
+/* Light theme visual conversion (play page) */
+
+.themeSwitchWrap {
+  width: 100%;
+  display: grid;
+  gap: 0;
+  margin: 0 0 10px 0;
+}
+
+.themeSwitch {
+  --track-bg: rgba(255, 255, 255, 0.04);
+  --track-border: rgba(255, 255, 255, 0.28);
+  --track-text: rgba(255, 255, 255, 0.88);
+  --knob-bg: #ffffff;
+  --knob-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 5px 16px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 30px;
+  padding: 2px;
+  border: 1px solid var(--track-border);
+  border-radius: 4px;
+  background: var(--track-bg);
+  color: var(--track-text);
+  cursor: pointer;
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.themeSwitch:hover {
+  border-color: rgba(255, 255, 255, 0.54);
+}
+
+[data-vexel-theme="light"] .themeSwitch:hover {
+  border-color: rgba(131, 108, 244, 0.86);
+}
+
+.themeSwitch:focus-visible {
+  outline: 1px solid rgba(131, 108, 244, 0.85);
+  outline-offset: 2px;
+}
+
+.themeSwitchOption {
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  color: #3f3365;
+}
+
+.themeSwitchKnob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(50% - 2px);
+  height: calc(100% - 4px);
+  border-radius: 2px;
+  background: var(--knob-bg);
+  box-shadow: var(--knob-shadow);
+  transition: transform 0.16s var(--ease);
+}
+
+.themeSwitch[aria-checked="false"] .themeSwitchKnob {
+  transform: translateX(100%);
+}
+
+.themeSwitch[aria-checked="true"] {
+  --track-bg: rgba(126, 102, 255, 0.22);
+  --track-border: rgba(153, 130, 255, 0.7);
+  --track-text: #e5dcff;
+  --knob-bg: #f3efff;
+  --knob-shadow: 0 0 0 1px rgba(144, 121, 250, 0.52), 0 5px 16px rgba(35, 19, 91, 0.3);
+}
+
+.themeSwitch[aria-checked="false"] .themeSwitchOptionDark,
+.themeSwitch[aria-checked="true"] .themeSwitchOptionLight {
+  color: #111520;
+  font-weight: 700;
+}
+
+.themeSwitch[aria-checked="false"] .themeSwitchOptionLight,
+.themeSwitch[aria-checked="true"] .themeSwitchOptionDark {
+  color: rgba(70, 57, 112, 0.76);
+  font-weight: 500;
+}
+
+[data-vexel-theme="light"] body {
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  color: #131824;
+  background: #fbfbfb;
+}
+
+[data-vexel-theme="light"] .bg {
+  background:
+    repeating-linear-gradient(0deg, rgba(39, 29, 85, 0.05) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(90deg, rgba(39, 29, 85, 0.05) 0 1px, transparent 1px 38px),
+    radial-gradient(circle at 14% 18%, rgba(136, 110, 246, 0.12), transparent 32%),
+    radial-gradient(circle at 84% 82%, rgba(126, 102, 255, 0.1), transparent 36%),
+    linear-gradient(180deg, #fefefe, #f7f8fb 70%, #f3f5fa);
+}
+
+[data-vexel-theme="light"] .bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.22) 0 0.7px, transparent 0.75px),
+    radial-gradient(circle at 76% 74%, rgba(0, 0, 0, 0.17) 0 0.7px, transparent 0.75px);
+  background-size: 2px 2px, 3px 3px;
+}
+
+[data-vexel-theme="light"] .bg::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(68, 53, 139, 0.16);
+  pointer-events: none;
+}
+
+[data-vexel-theme="light"] .starfield,
+[data-vexel-theme="light"] .orb,
+[data-vexel-theme="light"] .shooting,
+[data-vexel-theme="light"] .grain {
+  display: none;
+}
+
+[data-vexel-theme="light"] .layout,
+[data-vexel-theme="dark"] .layout {
+  gap: 12px;
+  padding: 14px;
+}
+
+[data-vexel-theme="light"] .infoCard,
+[data-vexel-theme="light"] .pieces,
+[data-vexel-theme="dark"] .infoCard,
+[data-vexel-theme="dark"] .pieces {
+  padding: 0;
+}
+
+[data-vexel-theme="light"] .ui-surface-subtle,
+[data-vexel-theme="light"] .scoreRow,
+[data-vexel-theme="light"] .sliderFrame,
+[data-vexel-theme="light"] .pieceBtn.ui-control:not(.selected),
+[data-vexel-theme="light"] .btn.ui-control,
+[data-vexel-theme="light"] .modalCard,
+[data-vexel-theme="light"] .humanPick {
+  border: 1px solid rgba(48, 37, 95, 0.32);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.84),
+    inset -1px -1px 0 1px rgba(95, 74, 182, 0.12);
+  backdrop-filter: none;
+}
+
+[data-vexel-theme="light"] .infoCard.ui-surface {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-vexel-theme="light"] .scoreList,
+[data-vexel-theme="dark"] .scoreList {
+  gap: 7px;
+}
+
+[data-vexel-theme="light"] .scoreRow,
+[data-vexel-theme="dark"] .scoreRow {
+  min-height: 46px;
+  padding: 5px 6px;
+}
+
+[data-vexel-theme="light"] .scoreRow.active {
+  background: rgba(237, 242, 255, 0.95);
+  border-color: rgba(116, 91, 227, 0.65);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.88),
+    inset -1px -1px 0 1px rgba(100, 77, 209, 0.18),
+    0 0 0 1px rgba(116, 91, 227, 0.12);
+}
+
+[data-vexel-theme="light"] .scoreName,
+[data-vexel-theme="light"] .botTag,
+[data-vexel-theme="light"] .sliderLabel,
+[data-vexel-theme="light"] .rulesHint,
+[data-vexel-theme="light"] .pickColor,
+[data-vexel-theme="light"] .pickMode,
+[data-vexel-theme="light"] .setupField,
+[data-vexel-theme="light"] .setupSummary,
+[data-vexel-theme="light"] .modalTitle,
+[data-vexel-theme="light"] .btn,
+[data-vexel-theme="light"] .themeSwitch {
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  text-transform: uppercase;
+}
+
+[data-vexel-theme="light"] .scoreName,
+[data-vexel-theme="light"] .scoreVal,
+[data-vexel-theme="light"] .sliderLabel,
+[data-vexel-theme="light"] .rulesHint,
+[data-vexel-theme="light"] .statusText,
+[data-vexel-theme="light"] .rulesPopup p,
+[data-vexel-theme="light"] .toast,
+[data-vexel-theme="light"] .pickColor,
+[data-vexel-theme="light"] .pickMode,
+[data-vexel-theme="light"] .setupText,
+[data-vexel-theme="light"] .confirmText,
+[data-vexel-theme="light"] .modalBody {
+  color: #1a2342;
+}
+
+[data-vexel-theme="light"] .botTag {
+  border-color: rgba(85, 62, 171, 0.52);
+  color: #5b40ae;
+}
+
+[data-vexel-theme="light"] .btn {
+  border: 1px solid rgba(73, 55, 145, 0.5);
+  border-radius: 4px;
+  color: #432f6b;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.9),
+    inset -1px -1px 0 1px rgba(88, 65, 171, 0.14);
+}
+
+[data-vexel-theme="light"] .btn:hover {
+  border-color: rgba(95, 71, 178, 0.76);
+  background: rgba(242, 238, 255, 0.96);
+}
+
+[data-vexel-theme="light"] .btn.ui-control:hover:not(:disabled),
+[data-vexel-theme="light"] .pieceBtn.ui-control:not(.selected):hover:not(:disabled) {
+  border-color: rgba(104, 79, 187, 0.82);
+  background: rgba(248, 245, 255, 0.98);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.92),
+    inset -1px -1px 0 1px rgba(104, 79, 187, 0.16),
+    0 3px 12px rgba(67, 50, 129, 0.14);
+}
+
+[data-vexel-theme="light"] .btn.ui-control:active:not(:disabled),
+[data-vexel-theme="light"] .pieceBtn.ui-control:not(.selected):active:not(:disabled) {
+  background: rgba(240, 235, 255, 0.98);
+}
+
+[data-vexel-theme="light"] .btn-primary {
+  background: #f2eeff;
+  color: #5a43b4;
+  border-color: rgba(88, 66, 177, 0.68);
+}
+
+[data-vexel-theme="light"] .stage,
+[data-vexel-theme="dark"] .stage {
+  align-items: stretch;
+}
+
+[data-vexel-theme="light"] .stageFrame,
+[data-vexel-theme="dark"] .stageFrame {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-vexel-theme="light"] .toast {
+  border-color: rgba(50, 37, 101, 0.3);
+  background: rgba(252, 253, 255, 0.95);
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(53, 40, 106, 0.12);
+}
+
+[data-vexel-theme="light"] .rulesPopup {
+  border-color: rgba(52, 40, 103, 0.34);
+  border-radius: 4px;
+  background: rgba(248, 250, 255, 0.98);
+  box-shadow: 0 14px 24px rgba(56, 44, 108, 0.16);
+}
+
+[data-vexel-theme="light"] .rules .statusText {
+  border-top-color: rgba(55, 43, 110, 0.2);
+}
+
+[data-vexel-theme="light"] .rules:hover .rulesHint,
+[data-vexel-theme="light"] .rules:focus-within .rulesHint {
+  color: #4a3574;
+  text-shadow: none;
+}
+
+[data-vexel-theme="light"] .statusText[data-tone="warn"] {
+  color: #7a5300;
+  text-shadow: none;
+}
+
+[data-vexel-theme="light"] .statusText[data-tone="bad"] {
+  color: #923148;
+  text-shadow: none;
+}
+
+[data-vexel-theme="light"] .statusText[data-tone="good"] {
+  color: #6043ad;
+  text-shadow: none;
+}
+
+[data-vexel-theme="light"] .volSlider {
+  --slider-fill: rgba(122, 96, 232, 0.8);
+  --slider-empty: rgba(122, 96, 232, 0.26);
+}
+
+[data-vexel-theme="light"] .volSlider:focus-visible {
+  outline: 1px solid rgba(112, 87, 219, 0.8);
+}
+
+[data-vexel-theme="light"] .ctrlIcon .ctrlIconImg {
+  filter: none;
+  opacity: 0.9;
+}
+
+[data-vexel-theme="light"] .infoBrand {
+  color: rgba(122, 96, 232, 0.9);
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6),
+    0 0 1px rgba(44, 33, 92, 0.3);
+  opacity: 1;
+}
+
+[data-vexel-theme="light"] .pieceBtn.selected {
+  border-color: rgba(122, 96, 232, 0.85);
+  border-radius: var(--radius-control);
+  background: rgba(240, 235, 255, 0.95);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.9),
+    inset -1px -1px 0 1px rgba(95, 71, 182, 0.2),
+    0 0 0 1px rgba(122, 96, 232, 0.2);
+  animation: none;
+}
+
+[data-vexel-theme="light"] .pieceBtn.used {
+  opacity: 0.45;
+  filter: saturate(0.4);
+}
+
+[data-vexel-theme="light"] .swatch,
+[data-vexel-theme="light"] .resultSwatch {
+  background-color: rgba(var(--p0-rgb), 0.72);
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  border: 1px solid rgba(61, 44, 124, 0.35);
+  box-shadow: none;
+}
+
+[data-vexel-theme="light"] .swatch[data-player-idx="0"],
+[data-vexel-theme="light"] .resultSwatch[data-player-idx="0"] {
+  background-color: rgba(var(--p0-rgb), 0.74);
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0 2px, rgba(255, 255, 255, 0) 2px 7px);
+}
+
+[data-vexel-theme="light"] .swatch[data-player-idx="1"],
+[data-vexel-theme="light"] .resultSwatch[data-player-idx="1"] {
+  background-color: rgba(var(--p1-rgb), 0.74);
+  background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0 2px, rgba(255, 255, 255, 0) 2px 7px);
+}
+
+[data-vexel-theme="light"] .swatch[data-player-idx="2"],
+[data-vexel-theme="light"] .resultSwatch[data-player-idx="2"] {
+  background-color: rgba(var(--p2-rgb), 0.72);
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.48) 0 1.5px, rgba(255, 255, 255, 0) 1.6px);
+  background-size: 7px 7px;
+}
+
+[data-vexel-theme="light"] .swatch[data-player-idx="3"],
+[data-vexel-theme="light"] .resultSwatch[data-player-idx="3"] {
+  background-color: rgba(var(--p3-rgb), 0.74);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.34) 0 2px, rgba(255, 255, 255, 0) 2px 8px),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0 2px, rgba(255, 255, 255, 0) 2px 8px);
+}
+
+[data-vexel-theme="light"] .setupCard,
+[data-vexel-theme="light"] .confirmCard,
+[data-vexel-theme="light"] .modalCard {
+  background: rgba(248, 250, 255, 0.98);
+}
+
+[data-vexel-theme="light"] .humanPick {
+  color: rgba(var(--pick-rgb), 0.9);
+}
+
+[data-vexel-theme="light"] .humanPick .pickGlyph {
+  stroke-width: 2.1;
+}
+
+[data-vexel-theme="light"] .humanPick:not(.is-active) {
+  border-color: rgba(var(--pick-rgb), 0.5);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(var(--pick-rgb), 0.14));
+  color: rgba(var(--pick-rgb), 0.92);
+}
+
+[data-vexel-theme="light"] .humanPick:not(.is-active) .glyph-bot {
+  opacity: 1;
+}
+
+[data-vexel-theme="light"] .humanPick:hover {
+  border-color: rgba(var(--pick-rgb), 0.74);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(var(--pick-rgb), 0.22));
+  color: rgba(var(--pick-rgb), 1);
+}
+
+[data-vexel-theme="light"] .humanPick.is-active {
+  border-color: rgba(var(--pick-rgb), 0.9);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(var(--pick-rgb), 0.3));
+}
+
+[data-vexel-theme="light"] .humanPick .pickColor {
+  color: rgba(var(--pick-rgb), 1);
+}
+
+[data-vexel-theme="light"] .humanPick .pickMode {
+  color: rgba(var(--pick-rgb), 0.9);
+}
+
+[data-vexel-theme="light"] .modal {
+  background: rgba(245, 242, 255, 0.84);
+}
+
+[data-vexel-theme="light"] .modalHeader,
+[data-vexel-theme="light"] .modalFooter,
+[data-vexel-theme="light"] .table,
+[data-vexel-theme="light"] .table th,
+[data-vexel-theme="light"] .table td {
+  border-color: rgba(26, 40, 98, 0.24);
+}
+
+[data-vexel-theme="light"] .table th {
+  background: rgba(236, 231, 255, 0.9);
+  color: #563fae;
+}
+
+[data-vexel-theme="light"] .table tr:nth-child(odd) td {
+  background: rgba(255, 255, 255, 0.56);
+}
+
+[data-vexel-theme="light"] .table tr:nth-child(even) td {
+  background: rgba(242, 238, 255, 0.75);
+}
+
+[data-vexel-theme="light"] .resultPlayer,
+[data-vexel-theme="dark"] .resultPlayer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+[data-vexel-theme="light"] .resultSwatch,
+[data-vexel-theme="dark"] .resultSwatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+
+[data-vexel-theme="light"] .resultsLead,
+[data-vexel-theme="light"] .resultsNote {
+  color: #1b2442;
+}
+
+[data-vexel-theme="light"] .resultsNote {
+  font-size: 12px;
+}
+
+[data-vexel-theme="light"] .subtleHomeLink {
+  color: rgba(74, 60, 132, 0.72);
+  text-shadow: none;
+}
+
+[data-vexel-theme="light"] .subtleHomeLink:hover,
+[data-vexel-theme="light"] .subtleHomeLink:focus-visible {
+  color: rgba(90, 70, 177, 0.96);
+  text-shadow: none;
+}
+
+[data-vexel-theme="dark"] body {
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  color: #d7e0ff;
+  background: #070b16;
+}
+
+[data-vexel-theme="dark"] .themeSwitch {
+  --track-bg: rgba(18, 26, 52, 0.92);
+  --track-border: rgba(139, 160, 255, 0.36);
+  --track-text: rgba(221, 231, 255, 0.88);
+  --knob-bg: #dce6ff;
+  --knob-shadow: 0 0 0 1px rgba(146, 167, 255, 0.36), 0 5px 16px rgba(0, 0, 0, 0.48);
+}
+
+[data-vexel-theme="dark"] .themeSwitch[aria-checked="false"] .themeSwitchOptionDark {
+  color: #0f1322;
+  font-weight: 700;
+}
+
+[data-vexel-theme="dark"] .themeSwitch[aria-checked="false"] .themeSwitchOptionLight {
+  color: rgba(209, 220, 255, 0.74);
+  font-weight: 500;
+}
+
+[data-vexel-theme="dark"] .bg {
+  background:
+    repeating-linear-gradient(0deg, rgba(128, 149, 246, 0.11) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(90deg, rgba(128, 149, 246, 0.11) 0 1px, transparent 1px 38px),
+    radial-gradient(circle at 16% 18%, rgba(88, 113, 236, 0.28), transparent 36%),
+    radial-gradient(circle at 84% 82%, rgba(79, 103, 225, 0.26), transparent 38%),
+    linear-gradient(180deg, #0c1229, #090f21 66%, #070b17);
+}
+
+[data-vexel-theme="dark"] .bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.26;
+  background-image:
+    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.24) 0 0.7px, transparent 0.75px),
+    radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.2) 0 0.7px, transparent 0.75px);
+  background-size: 2px 2px, 3px 3px;
+}
+
+[data-vexel-theme="dark"] .bg::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(126, 146, 238, 0.24);
+  pointer-events: none;
+}
+
+[data-vexel-theme="dark"] .starfield,
+[data-vexel-theme="dark"] .orb,
+[data-vexel-theme="dark"] .shooting,
+[data-vexel-theme="dark"] .grain {
+  display: none;
+}
+
+[data-vexel-theme="dark"] .ui-surface-subtle,
+[data-vexel-theme="dark"] .scoreRow,
+[data-vexel-theme="dark"] .sliderFrame,
+[data-vexel-theme="dark"] .pieceBtn.ui-control:not(.selected),
+[data-vexel-theme="dark"] .btn.ui-control,
+[data-vexel-theme="dark"] .modalCard,
+[data-vexel-theme="dark"] .humanPick {
+  border: 1px solid rgba(120, 141, 234, 0.36);
+  border-radius: 4px;
+  background: rgba(13, 20, 44, 0.84);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(183, 201, 255, 0.13),
+    inset -1px -1px 0 1px rgba(6, 12, 30, 0.54);
+  backdrop-filter: none;
+}
+
+[data-vexel-theme="dark"] .infoCard.ui-surface {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-vexel-theme="dark"] .scoreRow.active {
+  background: rgba(28, 40, 87, 0.96);
+  border-color: rgba(132, 155, 255, 0.7);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(186, 203, 255, 0.16),
+    inset -1px -1px 0 1px rgba(8, 15, 36, 0.6),
+    0 0 0 1px rgba(105, 129, 236, 0.22);
+}
+
+[data-vexel-theme="dark"] .scoreName,
+[data-vexel-theme="dark"] .botTag,
+[data-vexel-theme="dark"] .sliderLabel,
+[data-vexel-theme="dark"] .rulesHint,
+[data-vexel-theme="dark"] .pickColor,
+[data-vexel-theme="dark"] .pickMode,
+[data-vexel-theme="dark"] .setupField,
+[data-vexel-theme="dark"] .setupSummary,
+[data-vexel-theme="dark"] .modalTitle,
+[data-vexel-theme="dark"] .btn,
+[data-vexel-theme="dark"] .themeSwitch {
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  text-transform: uppercase;
+}
+
+[data-vexel-theme="dark"] .scoreName,
+[data-vexel-theme="dark"] .scoreVal,
+[data-vexel-theme="dark"] .sliderLabel,
+[data-vexel-theme="dark"] .rulesHint,
+[data-vexel-theme="dark"] .statusText,
+[data-vexel-theme="dark"] .rulesPopup p,
+[data-vexel-theme="dark"] .toast,
+[data-vexel-theme="dark"] .pickColor,
+[data-vexel-theme="dark"] .pickMode,
+[data-vexel-theme="dark"] .setupText,
+[data-vexel-theme="dark"] .confirmText,
+[data-vexel-theme="dark"] .modalBody {
+  color: #d6dfff;
+}
+
+[data-vexel-theme="dark"] .botTag {
+  border-color: rgba(153, 173, 255, 0.56);
+  color: #b7c8ff;
+}
+
+[data-vexel-theme="dark"] .btn {
+  border: 1px solid rgba(129, 150, 240, 0.56);
+  border-radius: 4px;
+  color: #d8e2ff;
+  background: rgba(17, 25, 56, 0.84);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(186, 203, 255, 0.15),
+    inset -1px -1px 0 1px rgba(8, 14, 33, 0.58);
+}
+
+[data-vexel-theme="dark"] .btn:hover {
+  border-color: rgba(155, 175, 255, 0.8);
+  background: rgba(24, 34, 74, 0.96);
+}
+
+[data-vexel-theme="dark"] .btn.ui-control:hover:not(:disabled),
+[data-vexel-theme="dark"] .pieceBtn.ui-control:not(.selected):hover:not(:disabled) {
+  border-color: rgba(158, 178, 255, 0.84);
+  background: rgba(26, 37, 81, 0.98);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(201, 216, 255, 0.2),
+    inset -1px -1px 0 1px rgba(8, 15, 36, 0.64),
+    0 3px 12px rgba(4, 9, 24, 0.42);
+}
+
+[data-vexel-theme="dark"] .btn.ui-control:active:not(:disabled),
+[data-vexel-theme="dark"] .pieceBtn.ui-control:not(.selected):active:not(:disabled) {
+  background: rgba(21, 31, 68, 0.98);
+}
+
+[data-vexel-theme="dark"] .btn-primary {
+  background: rgba(33, 48, 106, 0.98);
+  color: #dce5ff;
+  border-color: rgba(148, 169, 255, 0.72);
+}
+
+[data-vexel-theme="dark"] .toast {
+  border-color: rgba(132, 153, 244, 0.35);
+  background: rgba(14, 21, 47, 0.94);
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(4, 9, 25, 0.42);
+}
+
+[data-vexel-theme="dark"] .rulesPopup {
+  border-color: rgba(129, 151, 243, 0.36);
+  border-radius: 4px;
+  background: rgba(12, 19, 45, 0.97);
+  box-shadow: 0 14px 24px rgba(3, 8, 22, 0.54);
+}
+
+[data-vexel-theme="dark"] .rules .statusText {
+  border-top-color: rgba(130, 151, 239, 0.24);
+}
+
+[data-vexel-theme="dark"] .statusText[data-tone="warn"] {
+  color: #f1c77e;
+  text-shadow: none;
+}
+
+[data-vexel-theme="dark"] .statusText[data-tone="bad"] {
+  color: #f3a1ba;
+  text-shadow: none;
+}
+
+[data-vexel-theme="dark"] .statusText[data-tone="good"] {
+  color: #a9bbff;
+  text-shadow: none;
+}
+
+[data-vexel-theme="dark"] .volSlider {
+  --slider-fill: rgba(120, 142, 255, 0.92);
+  --slider-empty: rgba(120, 142, 255, 0.34);
+}
+
+[data-vexel-theme="dark"] .volSlider:focus-visible {
+  outline: 1px solid rgba(140, 161, 255, 0.86);
+}
+
+[data-vexel-theme="dark"] .infoBrand {
+  color: rgba(126, 146, 255, 0.95);
+  text-shadow: none;
+  opacity: 1;
+}
+
+[data-vexel-theme="dark"] .pieceBtn.selected {
+  border-color: rgba(130, 151, 250, 0.88);
+  background: rgba(28, 41, 92, 0.96);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(205, 219, 255, 0.2),
+    inset -1px -1px 0 1px rgba(7, 14, 33, 0.62),
+    0 0 0 1px rgba(106, 131, 246, 0.28);
+  animation: none;
+}
+
+[data-vexel-theme="dark"] .pieceBtn.used {
+  opacity: 0.5;
+  filter: saturate(0.56);
+}
+
+[data-vexel-theme="dark"] .swatch,
+[data-vexel-theme="dark"] .resultSwatch {
+  background-color: rgba(var(--p0-rgb), 0.82);
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  border: 1px solid rgba(166, 184, 255, 0.42);
+  box-shadow: none;
+}
+
+[data-vexel-theme="dark"] .swatch[data-player-idx="0"],
+[data-vexel-theme="dark"] .resultSwatch[data-player-idx="0"] {
+  background-color: rgba(var(--p0-rgb), 0.84);
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0 2px, rgba(255, 255, 255, 0) 2px 7px);
+}
+
+[data-vexel-theme="dark"] .swatch[data-player-idx="1"],
+[data-vexel-theme="dark"] .resultSwatch[data-player-idx="1"] {
+  background-color: rgba(var(--p1-rgb), 0.84);
+  background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.28) 0 2px, rgba(255, 255, 255, 0) 2px 7px);
+}
+
+[data-vexel-theme="dark"] .swatch[data-player-idx="2"],
+[data-vexel-theme="dark"] .resultSwatch[data-player-idx="2"] {
+  background-color: rgba(var(--p2-rgb), 0.82);
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.34) 0 1.5px, rgba(255, 255, 255, 0) 1.6px);
+  background-size: 7px 7px;
+}
+
+[data-vexel-theme="dark"] .swatch[data-player-idx="3"],
+[data-vexel-theme="dark"] .resultSwatch[data-player-idx="3"] {
+  background-color: rgba(var(--p3-rgb), 0.84);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.24) 0 2px, rgba(255, 255, 255, 0) 2px 8px),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0 2px, rgba(255, 255, 255, 0) 2px 8px);
+}
+
+[data-vexel-theme="dark"] .setupCard,
+[data-vexel-theme="dark"] .confirmCard,
+[data-vexel-theme="dark"] .modalCard {
+  background: rgba(9, 15, 35, 0.98);
+}
+
+[data-vexel-theme="dark"] .humanPick {
+  color: rgba(var(--pick-rgb), 0.94);
+}
+
+[data-vexel-theme="dark"] .humanPick .pickGlyph {
+  stroke-width: 2.1;
+}
+
+[data-vexel-theme="dark"] .humanPick:not(.is-active) {
+  border-color: rgba(var(--pick-rgb), 0.56);
+  background:
+    linear-gradient(180deg, rgba(14, 14, 18, 0.96), rgba(var(--pick-rgb), 0.18));
+  color: rgba(var(--pick-rgb), 0.96);
+}
+
+[data-vexel-theme="dark"] .humanPick:not(.is-active) .glyph-bot {
+  opacity: 1;
+}
+
+[data-vexel-theme="dark"] .humanPick:hover {
+  border-color: rgba(var(--pick-rgb), 0.86);
+  background:
+    linear-gradient(180deg, rgba(18, 18, 23, 0.98), rgba(var(--pick-rgb), 0.28));
+  color: rgba(var(--pick-rgb), 1);
+}
+
+[data-vexel-theme="dark"] .humanPick.is-active {
+  border-color: rgba(var(--pick-rgb), 0.94);
+  background:
+    linear-gradient(180deg, rgba(20, 20, 26, 0.98), rgba(var(--pick-rgb), 0.34));
+}
+
+[data-vexel-theme="dark"] .humanPick .pickColor {
+  color: rgba(var(--pick-rgb), 1);
+}
+
+[data-vexel-theme="dark"] .humanPick .pickMode {
+  color: rgba(var(--pick-rgb), 0.92);
+}
+
+[data-vexel-theme="dark"] .modal {
+  background: rgba(7, 11, 26, 0.84);
+}
+
+[data-vexel-theme="dark"] .modalHeader,
+[data-vexel-theme="dark"] .modalFooter,
+[data-vexel-theme="dark"] .table,
+[data-vexel-theme="dark"] .table th,
+[data-vexel-theme="dark"] .table td {
+  border-color: rgba(120, 141, 228, 0.28);
+}
+
+[data-vexel-theme="dark"] .table th {
+  background: rgba(27, 38, 84, 0.94);
+  color: #c9d8ff;
+}
+
+[data-vexel-theme="dark"] .table tr:nth-child(odd) td {
+  background: rgba(17, 25, 57, 0.72);
+}
+
+[data-vexel-theme="dark"] .table tr:nth-child(even) td {
+  background: rgba(13, 20, 46, 0.82);
+}
+
+[data-vexel-theme="dark"] .resultsLead,
+[data-vexel-theme="dark"] .resultsNote {
+  color: #d2dcff;
+}
+
+[data-vexel-theme="dark"] .resultsNote {
+  font-size: 12px;
+}
+
+[data-vexel-theme="dark"] .subtleHomeLink {
+  color: rgba(221, 221, 228, 0.72);
+}
+
+[data-vexel-theme="dark"] .subtleHomeLink:hover,
+[data-vexel-theme="dark"] .subtleHomeLink:focus-visible {
+  color: rgba(241, 241, 246, 0.95);
+}
+
+@media (max-width: 860px) {
+  [data-vexel-theme="light"] .layout,
+  [data-vexel-theme="dark"] .layout {
+    padding: 10px;
+  }
+
+  [data-vexel-theme="light"] .themeSwitchWrap,
+  [data-vexel-theme="dark"] .themeSwitchWrap {
+    margin-bottom: 12px;
+  }
+}
+
+/* Black dark-mode refinement */
+[data-vexel-theme="dark"] body {
+  color: #ececf0;
+  background: #030304;
+}
+
+[data-vexel-theme="dark"] .themeSwitch {
+  --track-bg: rgba(6, 6, 8, 0.94);
+  --track-border: rgba(255, 255, 255, 0.18);
+  --track-text: rgba(227, 227, 233, 0.88);
+  --knob-bg: #e8e8ec;
+  --knob-shadow: 0 0 0 1px rgba(255, 255, 255, 0.26), 0 5px 16px rgba(0, 0, 0, 0.52);
+}
+
+[data-vexel-theme="dark"] .themeSwitchOption {
+  color: rgba(225, 225, 231, 0.78);
+}
+
+[data-vexel-theme="dark"] .themeSwitch[aria-checked="false"] .themeSwitchOptionDark {
+  color: #0a0a0b;
+}
+
+[data-vexel-theme="dark"] .themeSwitch[aria-checked="false"] .themeSwitchOptionLight {
+  color: rgba(216, 216, 222, 0.74);
+}
+
+[data-vexel-theme="dark"] .bg {
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 38px),
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.05), transparent 34%),
+    radial-gradient(circle at 84% 82%, rgba(255, 255, 255, 0.04), transparent 36%),
+    linear-gradient(180deg, #070708, #040405 68%, #020203);
+}
+
+[data-vexel-theme="dark"] .bg::before {
+  opacity: 0.18;
+  background-image:
+    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.18) 0 0.7px, transparent 0.75px),
+    radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.14) 0 0.7px, transparent 0.75px);
+}
+
+[data-vexel-theme="dark"] .bg::after {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-vexel-theme="dark"] .ui-surface-subtle,
+[data-vexel-theme="dark"] .scoreRow,
+[data-vexel-theme="dark"] .sliderFrame,
+[data-vexel-theme="dark"] .pieceBtn.ui-control:not(.selected),
+[data-vexel-theme="dark"] .btn.ui-control,
+[data-vexel-theme="dark"] .modalCard,
+[data-vexel-theme="dark"] .humanPick {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(9, 9, 11, 0.9);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 0 1px rgba(0, 0, 0, 0.6);
+}
+
+[data-vexel-theme="dark"] .scoreRow.active {
+  background: rgba(18, 18, 22, 0.96);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.12),
+    inset -1px -1px 0 1px rgba(0, 0, 0, 0.62),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+[data-vexel-theme="dark"] .scoreName,
+[data-vexel-theme="dark"] .scoreVal,
+[data-vexel-theme="dark"] .sliderLabel,
+[data-vexel-theme="dark"] .rulesHint,
+[data-vexel-theme="dark"] .statusText,
+[data-vexel-theme="dark"] .rulesPopup p,
+[data-vexel-theme="dark"] .toast,
+[data-vexel-theme="dark"] .pickColor,
+[data-vexel-theme="dark"] .pickMode,
+[data-vexel-theme="dark"] .setupText,
+[data-vexel-theme="dark"] .confirmText,
+[data-vexel-theme="dark"] .modalBody {
+  color: #e0e0e5;
+}
+
+[data-vexel-theme="dark"] .botTag {
+  border-color: rgba(255, 255, 255, 0.34);
+  color: #d1d1d8;
+}
+
+[data-vexel-theme="dark"] .btn {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ececf0;
+  background: rgba(11, 11, 14, 0.9);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.11),
+    inset -1px -1px 0 1px rgba(0, 0, 0, 0.62);
+}
+
+[data-vexel-theme="dark"] .btn:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(18, 18, 23, 0.98);
+}
+
+[data-vexel-theme="dark"] .btn.ui-control:hover:not(:disabled),
+[data-vexel-theme="dark"] .pieceBtn.ui-control:not(.selected):hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.36);
+  background: rgba(20, 20, 25, 0.98);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.15),
+    inset -1px -1px 0 1px rgba(0, 0, 0, 0.66),
+    0 3px 12px rgba(0, 0, 0, 0.5);
+}
+
+[data-vexel-theme="dark"] .btn-primary {
+  background: rgba(18, 18, 23, 0.98);
+  color: #ececf0;
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+[data-vexel-theme="dark"] .toast {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(9, 9, 12, 0.96);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-vexel-theme="dark"] .rulesPopup {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(8, 8, 11, 0.97);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.6);
+}
+
+[data-vexel-theme="dark"] .rules .statusText {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+[data-vexel-theme="dark"] .volSlider {
+  --slider-fill: rgba(228, 228, 233, 0.9);
+  --slider-empty: rgba(228, 228, 233, 0.28);
+}
+
+[data-vexel-theme="dark"] .volSlider:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.62);
+}
+
+[data-vexel-theme="dark"] .infoBrand {
+  color: rgba(240, 240, 246, 0.92);
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.72),
+    0 0 2px rgba(0, 0, 0, 0.42);
+}
+
+[data-vexel-theme="dark"] .pieceBtn.selected {
+  border-color: rgba(255, 255, 255, 0.32);
+  border-radius: var(--radius-control);
+  background: rgba(19, 19, 24, 0.96);
+  box-shadow:
+    inset 1px 1px 0 1px rgba(255, 255, 255, 0.14),
+    inset -1px -1px 0 1px rgba(0, 0, 0, 0.68),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+[data-vexel-theme="dark"] .swatch,
+[data-vexel-theme="dark"] .resultSwatch {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-vexel-theme="dark"] .setupCard,
+[data-vexel-theme="dark"] .confirmCard,
+[data-vexel-theme="dark"] .modalCard {
+  background: rgba(7, 7, 10, 0.98);
+}
+
+[data-vexel-theme="dark"] .humanPick:not(.is-active) {
+  border-color: rgba(var(--pick-rgb), 0.56);
+  background:
+    linear-gradient(180deg, rgba(13, 13, 15, 0.95), rgba(var(--pick-rgb), 0.2));
+  color: rgba(var(--pick-rgb), 0.96);
+}
+
+[data-vexel-theme="dark"] .humanPick:hover {
+  border-color: rgba(var(--pick-rgb), 0.86);
+  background:
+    linear-gradient(180deg, rgba(20, 20, 24, 0.96), rgba(var(--pick-rgb), 0.3));
+  color: rgba(var(--pick-rgb), 1);
+}
+
+[data-vexel-theme="dark"] .humanPick.is-active {
+  border-color: rgba(var(--pick-rgb), 0.94);
+  background:
+    linear-gradient(180deg, rgba(24, 24, 29, 0.98), rgba(var(--pick-rgb), 0.36));
+}
+
+[data-vexel-theme="dark"] .humanPick .pickColor {
+  color: rgba(var(--pick-rgb), 1);
+}
+
+[data-vexel-theme="dark"] .humanPick .pickMode {
+  color: rgba(var(--pick-rgb), 0.92);
+}
+
+[data-vexel-theme="dark"] .modal {
+  background: rgba(4, 4, 6, 0.88);
+}
+
+[data-vexel-theme="dark"] .modalHeader,
+[data-vexel-theme="dark"] .modalFooter,
+[data-vexel-theme="dark"] .table,
+[data-vexel-theme="dark"] .table th,
+[data-vexel-theme="dark"] .table td {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-vexel-theme="dark"] .table th {
+  background: rgba(18, 18, 23, 0.94);
+  color: #d8d8df;
+}
+
+[data-vexel-theme="dark"] .table tr:nth-child(odd) td {
+  background: rgba(11, 11, 15, 0.74);
+}
+
+[data-vexel-theme="dark"] .table tr:nth-child(even) td {
+  background: rgba(8, 8, 11, 0.84);
+}
+
+/* Keep piece button geometry stable across hover/selected states. */
+[data-vexel-theme="light"] .pieceBtn,
+[data-vexel-theme="light"] .pieceBtn.selected,
+[data-vexel-theme="dark"] .pieceBtn,
+[data-vexel-theme="dark"] .pieceBtn.selected {
+  border-radius: 4px;
+}
+
+/* Setup picker buttons: match player brick look (no gradients). */
+[data-vexel-theme="light"] .setupPicker .humanPick {
+  --pick-fill-alpha: 0.2;
+  --pick-border-alpha: 0.58;
+  --pick-line-alpha: 0.36;
+  border-color: rgba(var(--pick-rgb), var(--pick-border-alpha));
+  background-color: rgba(var(--pick-rgb), var(--pick-fill-alpha));
+  background-repeat: repeat;
+  background-size: 8px 8px;
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick:hover {
+  --pick-fill-alpha: 0.28;
+  --pick-border-alpha: 0.76;
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick.is-active {
+  --pick-fill-alpha: 0.36;
+  --pick-border-alpha: 0.92;
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick {
+  --pick-fill-alpha: 0.24;
+  --pick-border-alpha: 0.62;
+  --pick-line-alpha: 0.3;
+  border-color: rgba(var(--pick-rgb), var(--pick-border-alpha));
+  background-color: rgba(var(--pick-rgb), var(--pick-fill-alpha));
+  background-repeat: repeat;
+  background-size: 8px 8px;
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick:hover {
+  --pick-fill-alpha: 0.34;
+  --pick-border-alpha: 0.82;
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick.is-active {
+  --pick-fill-alpha: 0.42;
+  --pick-border-alpha: 0.96;
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick[data-player="0"],
+[data-vexel-theme="dark"] .setupPicker .humanPick[data-player="0"] {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, var(--pick-line-alpha)) 0 2px,
+    rgba(255, 255, 255, 0) 2px 7px
+  );
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick[data-player="1"],
+[data-vexel-theme="dark"] .setupPicker .humanPick[data-player="1"] {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, var(--pick-line-alpha)) 0 2px,
+    rgba(255, 255, 255, 0) 2px 7px
+  );
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick[data-player="2"],
+[data-vexel-theme="dark"] .setupPicker .humanPick[data-player="2"] {
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(255, 255, 255, calc(var(--pick-line-alpha) + 0.06)) 0 1.5px,
+    rgba(255, 255, 255, 0) 1.6px
+  );
+  background-size: 7px 7px;
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick[data-player="3"],
+[data-vexel-theme="dark"] .setupPicker .humanPick[data-player="3"] {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, calc(var(--pick-line-alpha) - 0.04)) 0 2px,
+      rgba(255, 255, 255, 0) 2px 8px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, calc(var(--pick-line-alpha) - 0.08)) 0 2px,
+      rgba(255, 255, 255, 0) 2px 8px
+    );
+}
+
+/* Bots: neutral setup buttons (no player tint/pattern). */
+[data-vexel-theme="light"] .setupPicker .humanPick:not(.is-active),
+[data-vexel-theme="light"] .setupPicker .humanPick:not(.is-active):hover {
+  border-color: rgba(38, 46, 78, 0.34);
+  background-color: rgba(248, 249, 252, 0.98);
+  background-image: none;
+  color: rgba(58, 66, 94, 0.82);
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick:not(.is-active) .pickColor,
+[data-vexel-theme="light"] .setupPicker .humanPick:not(.is-active) .pickMode {
+  color: rgba(58, 66, 94, 0.82);
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick:not(.is-active),
+[data-vexel-theme="dark"] .setupPicker .humanPick:not(.is-active):hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(10, 10, 13, 0.96);
+  background-image: none;
+  color: rgba(205, 206, 213, 0.88);
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick:not(.is-active) .pickColor,
+[data-vexel-theme="dark"] .setupPicker .humanPick:not(.is-active) .pickMode {
+  color: rgba(205, 206, 213, 0.88);
+}
+
+/* Setup picker readability + control spacing polish. */
+[data-vexel-theme="light"] .setupPicker .humanPick .pickMeta {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 0 0 1px rgba(15, 22, 46, 0.08);
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick .pickColor {
+  color: #101424;
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick .pickMode {
+  color: #2f3958;
+  opacity: 1;
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick .pickMeta {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.46);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick .pickColor {
+  color: #f1f2f6;
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick .pickMode {
+  color: #d7d8de;
+  opacity: 1;
+}
+
+[data-vexel-theme="light"] .pieceActions .themeSwitchWrap,
+[data-vexel-theme="dark"] .pieceActions .themeSwitchWrap {
+  margin: 0;
+}
+
+/* Off state: dimmer than bot for clearer setup intent. */
+[data-vexel-theme="light"] .setupPicker .humanPick.is-off,
+[data-vexel-theme="light"] .setupPicker .humanPick.is-off:hover {
+  border-color: rgba(70, 78, 108, 0.24);
+  background-color: rgba(245, 247, 252, 0.92);
+  color: rgba(95, 103, 132, 0.68);
+}
+
+[data-vexel-theme="light"] .setupPicker .humanPick.is-off .pickColor,
+[data-vexel-theme="light"] .setupPicker .humanPick.is-off .pickMode {
+  color: rgba(95, 103, 132, 0.68);
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick.is-off,
+[data-vexel-theme="dark"] .setupPicker .humanPick.is-off:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background-color: rgba(8, 8, 11, 0.9);
+  color: rgba(168, 170, 178, 0.66);
+}
+
+[data-vexel-theme="dark"] .setupPicker .humanPick.is-off .pickColor,
+[data-vexel-theme="dark"] .setupPicker .humanPick.is-off .pickMode {
+  color: rgba(168, 170, 178, 0.66);
+}

@@ -1,0 +1,107 @@
+/* ============================================
+   QWT - Page-Specific Styles
+   ============================================ */
+
+/* ============================================
+   QWT PAGE - Body & Background
+   ============================================ */
+
+.page-qwt {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../../qwt/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0e0e0;
+}
+
+/* Energy field - power pulsing through the dungeon */
+.page-qwt::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 30% at 50% 50%, rgba(168, 220, 232, 0.06), transparent),
+        radial-gradient(ellipse 40% 20% at 18% 30%, rgba(100, 190, 220, 0.04), transparent),
+        radial-gradient(ellipse 40% 20% at 82% 70%, rgba(80, 170, 210, 0.04), transparent);
+    pointer-events: none;
+    z-index: -2;
+    animation: qwtPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes qwtPulse {
+    0%   { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+
+/* Electric glow from the floor */
+.page-qwt::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 25% at 50% 115%, rgba(100, 210, 240, 0.22), transparent),
+        radial-gradient(ellipse 35% 15% at 8% 95%, rgba(80, 190, 230, 0.1), transparent);
+    pointer-events: none;
+    z-index: -1;
+    animation: qwtGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes qwtGlow {
+    0%   { opacity: 0.5; transform: scale(1) translateY(0); }
+    100% { opacity: 1.0; transform: scale(1.08) translateY(-6px); }
+}
+
+/* ============================================
+   QWT - Electrical Sparks
+   ============================================ */
+
+.qwt-sparks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.qwt-spark {
+    position: absolute;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    width: 2px;
+    height: 2px;
+    background: rgba(168, 220, 232, 0.95);
+    box-shadow: 0 0 4px rgba(168, 220, 232, 0.9), 0 0 8px rgba(100, 200, 240, 0.4);
+    animation: qwtSparkFlash var(--dur, 3s) var(--delay, 0s) ease-out infinite;
+}
+
+@keyframes qwtSparkFlash {
+    0%   { transform: translate(0, 0); opacity: 0; }
+    6%   { opacity: 1.0; }
+    80%  { opacity: 0.1; }
+    100% { transform: translate(var(--dx, 15px), var(--dy, -15px)); opacity: 0; }
+}
+
+/* ============================================
+   QWT PAGE - Theme Overrides
+   ============================================ */
+
+.page-qwt .info-card,
+.page-qwt .game-about {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+.page-qwt .game-about {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+}
+
+/* Pale ice-blue accent - matches pixelated cyan logo */
+.page-qwt .section-header h2,
+.page-qwt .info-card h3 {
+    color: #a8dce8;
+}

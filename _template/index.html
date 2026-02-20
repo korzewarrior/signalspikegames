@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FILL IN: Page title -->
+    <title>GAME_NAME - Signal Spike Games</title>
+
+    <!-- FILL IN: Meta description (keep under 160 chars) -->
+    <meta name="description" content="GAME_NAME. A brief description of the game.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/star-favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css?v=6">
+    <!-- FILL IN: Create css/pages/GAME_SLUG.css for any page-specific overrides, then uncomment: -->
+    <!-- <link rel="stylesheet" href="../css/pages/GAME_SLUG.css?v=6"> -->
+</head>
+
+<!-- FILL IN: Replace GAME_SLUG with the game's folder name (e.g. page-starboys, page-bloodrust) -->
+<body class="page-GAME_SLUG">
+
+    <!-- Injected by main.js - do not edit -->
+    <div id="site-header"></div>
+
+    <!-- =============================================
+         SECTION 1: GAME DETAILS (top hero section)
+         Contains: screenshot gallery + info sidebar
+         ============================================= -->
+    <section class="game-details game-details-top">
+        <div class="container">
+            <div class="details-grid">
+
+                <!-- LEFT COLUMN: Media + intro text -->
+                <div class="game-media">
+
+                    <!-- Main screenshot (click-to-zoom, syncs with gallery thumbs) -->
+                    <div class="game-screenshot main-screenshot">
+                        <!-- FILL IN: Hero/first screenshot -->
+                        <img src="img/screenshot-1.png" alt="GAME_NAME screenshot">
+                    </div>
+
+                    <!-- Screenshot thumbnails (at least 1 required for gallery JS to activate) -->
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb gallery-thumb--active">
+                            <img src="img/screenshot-1.png" alt="Screenshot 1">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/screenshot-2.png" alt="Screenshot 2">
+                        </div>
+                        <!-- Add more .gallery-thumb divs as needed -->
+                    </div>
+
+                    <!-- Game intro blurb -->
+                    <div class="game-intro">
+                        <div class="game-title-row">
+                            <!--
+                                BADGE OPTIONS (pick one):
+                                badge-alpha     = In alpha
+                                badge-dev       = In development
+                                badge-released  = Released / free
+                                badge-jam       = Game jam
+                            -->
+                            <span class="badge badge-dev">In Development</span>
+                        </div>
+                        <!-- FILL IN: Genre -->
+                        <p class="game-genre">Genre / Platform</p>
+                        <!-- FILL IN: Platform(s) -->
+                        <p class="game-platforms">Windows &bull; Mac &bull; Linux</p>
+                        <!-- FILL IN: Short description (1–2 sentences) -->
+                        <p class="game-description">Short description of the game goes here.</p>
+
+                        <!-- CTA buttons -->
+                        <div class="game-actions">
+                            <!--
+                                BUTTON OPTIONS:
+                                btn-steam      = Steam (green)
+                                btn-primary    = Primary action
+                                btn-secondary  = Secondary action
+                                btn-discord    = Discord (blurple)
+                                btn-disabled   = Grayed-out / coming soon
+                            -->
+                            <a href="#" class="btn btn-primary">Play Free</a>
+                            <a href="#" class="btn btn-secondary">Wishlist on Steam</a>
+                        </div>
+                    </div>
+                </div><!-- /game-media -->
+
+                <!-- RIGHT COLUMN: Logo + info cards -->
+                <div class="game-info">
+
+                    <!-- FILL IN: Game logo image -->
+                    <img src="img/logo.png" alt="GAME_NAME logo" class="game-logo">
+
+                    <!-- Features card -->
+                    <div class="info-card">
+                        <h3>Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <!-- Font Awesome icon -->
+                                <i class="fas fa-gamepad"></i>
+                                <div>
+                                    <strong>Feature Name</strong>
+                                    <p>Brief description of this feature.</p>
+                                </div>
+                            </div>
+                            <!-- Repeat .feature-item as needed -->
+                        </div>
+                    </div>
+
+                    <!-- Tech / Game Specs card -->
+                    <div class="info-card">
+                        <h3>Game Info</h3>
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">Unity</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Players</span>
+                                <span class="spec-value">1–4</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Status</span>
+                                <span class="spec-value">In Development</span>
+                            </div>
+                            <!-- Add more .spec-row as needed -->
+                        </div>
+                    </div>
+
+                </div><!-- /game-info -->
+
+            </div><!-- /details-grid -->
+        </div><!-- /container -->
+    </section>
+
+    <!-- =============================================
+         SECTION 2: ABOUT (required)
+         A deeper description of the game.
+         ============================================= -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About GAME_NAME</h2>
+            </div>
+            <div class="about-text">
+                <p>Full description paragraph one.</p>
+                <p>Full description paragraph two.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 3: STORY (optional)
+         Use story panels for narrative-driven games.
+         ============================================= -->
+    <!--
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header"><h2>The Story</h2></div>
+            <div class="story-panels">
+                <div class="story-panel">
+                    <h3>Act I</h3>
+                    <p>Story text...</p>
+                </div>
+                <div class="story-panel">
+                    <h3>Act II</h3>
+                    <p>Story text...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- =============================================
+         SECTION 4: DEV STATUS (optional)
+         Show what's done, what's in progress, what's next.
+         Add class="current" to the active step.
+         ============================================= -->
+    <!--
+    <section class="dev-status">
+        <div class="container">
+            <div class="section-header"><h2>Development Status</h2></div>
+            <div class="status-grid">
+                <div class="status-item">
+                    <h3>Prototype</h3>
+                    <p>Core mechanics locked in.</p>
+                </div>
+                <div class="status-item current">
+                    <h3>Alpha</h3>
+                    <p>Currently in active development.</p>
+                </div>
+                <div class="status-item">
+                    <h3>Beta</h3>
+                    <p>Coming soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- =============================================
+         SECTION 5: FEATURE SHOWCASE (optional)
+         Highlight a key mechanic with an image + text.
+         ============================================= -->
+    <!--
+    <section class="game-feature-section">
+        <div class="container">
+            <div class="feature-showcase">
+                <div class="feature-showcase-media">
+                    <img src="img/feature.png" alt="Feature screenshot">
+                </div>
+                <div class="feature-showcase-text">
+                    <h2>Feature Title</h2>
+                    <p>Description of this standout feature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- =============================================
+         SECTION 6: RECEPTION / PRESS QUOTES (optional)
+         ============================================= -->
+    <!--
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header"><h2>Reception</h2></div>
+            <div class="about-text">
+                <p>"Quote from a player or press outlet." - <em>Source</em></p>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- =============================================
+         SECTION 7: COLLABORATORS / CREDITS (optional)
+         ============================================= -->
+    <!--
+    <section class="game-collaborators">
+        <div class="container">
+            <div class="section-header"><h2>Credits</h2></div>
+            <div class="collaborators-grid">
+                <div class="collaborator-card">
+                    <h3>Role</h3>
+                    <p>Person Name</p>
+                    <p><a href="#">website</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Injected by main.js - do not edit -->
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js?v=6"></script>
+
+</body>
+</html>

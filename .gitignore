@@ -1,0 +1,19 @@
+# .gitignore for Signal Spike Games
+
+# Build artifacts
+solus/builds/
+*.zip
+*.rar
+*.7z
+*.exe
+*.app
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Stray assets
+ssg-logo-black.png

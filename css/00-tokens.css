@@ -1,0 +1,88 @@
+:root {
+    color-scheme: light;
+
+    /* Core palette */
+    --bg-page: #f6f7fb;
+    --bg-surface: rgba(255, 255, 255, 0.82);
+    --bg-surface-soft: rgba(255, 255, 255, 0.7);
+    --bg-elevated: #ffffff;
+
+    --ink-strong: #1a2342;
+    --ink-body: #334066;
+    --ink-muted: #636d90;
+
+    --line-subtle: rgba(68, 53, 139, 0.16);
+    --line-strong: rgba(68, 53, 139, 0.28);
+    --line-focus: rgba(93, 71, 178, 0.72);
+
+    --brand-accent: #5a43b4;
+    --brand-accent-hover: #463393;
+    --brand-accent-soft: rgba(90, 67, 180, 0.16);
+    --brand-accent-border: rgba(88, 66, 177, 0.5);
+    --brand-on-accent: #ffffff;
+
+    --success: #2f9a6e;
+    --warning: #c38b17;
+    --danger: #bb3d4f;
+
+    /* Card system */
+    --card-radius: 10px;
+    --card-radius-sm: 8px;
+    --card-border: 1px solid var(--line-strong);
+    --card-border-soft: 1px solid var(--line-subtle);
+    --card-fill: linear-gradient(172deg, rgba(255, 255, 255, 0.88), rgba(251, 252, 255, 0.7));
+    --card-fill-soft: linear-gradient(172deg, rgba(255, 255, 255, 0.74), rgba(249, 250, 255, 0.64));
+    --card-shadow:
+        inset 1px 1px 0 1px rgba(255, 255, 255, 0.84),
+        inset -1px -1px 0 1px rgba(95, 74, 182, 0.1),
+        0 14px 30px rgba(56, 44, 108, 0.1);
+    --card-shadow-hover:
+        inset 1px 1px 0 1px rgba(255, 255, 255, 0.9),
+        inset -1px -1px 0 1px rgba(95, 74, 182, 0.14),
+        0 18px 34px rgba(56, 44, 108, 0.14);
+
+    /* Typography */
+    --font-main: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --font-mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+    --font-size-xs: 0.72rem;
+    --font-size-sm: 0.84rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.16rem;
+    --font-size-xl: clamp(1.45rem, 2.4vw, 2rem);
+    --font-size-2xl: clamp(2rem, 4.6vw, 3.2rem);
+
+    --line-height-tight: 1.2;
+    --line-height-body: 1.72;
+
+    /* Spacing */
+    --space-2xs: 0.2rem;
+    --space-xs: 0.35rem;
+    --space-sm: 0.6rem;
+    --space-md: 1rem;
+    --space-lg: 1.4rem;
+    --space-xl: 2rem;
+    --space-2xl: 2.8rem;
+    --space-3xl: 3.6rem;
+    --space-4xl: 5rem;
+
+    /* Layout */
+    --max-width: 1180px;
+    --max-width-narrow: 820px;
+    --announcement-height: 36px;
+    --nav-height: 64px;
+    --section-gap: var(--space-3xl);
+
+    /* Motion */
+    --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --dur-fast: 0.14s;
+    --dur-mid: 0.24s;
+    --dur-slow: 0.46s;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-gap: var(--space-2xl);
+    }
+}

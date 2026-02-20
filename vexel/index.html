@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel - Signal Spike Games</title>
+    <meta name="description"
+        content="Vexel - a tactical tile-placement board game for 1 to 4 players, playable in your browser.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="../img/star-favicon.png">
+
+    <link rel="stylesheet" href="../css/style.css?v=6">
+    <link rel="stylesheet" href="../css/pages/vexel.css?v=6">
+</head>
+
+<body class="page-vexel">
+    <div id="site-header"></div>
+
+    <!-- Floating game tiles drifting across the board -->
+    <div class="vexel-tiles" aria-hidden="true">
+        <span class="vexel-tile vexel-tile--a" style="--x:8%;--y:22%;--dx:28px;--dy:14px;--delay:0s;--dur:22s"></span>
+        <span class="vexel-tile vexel-tile--b" style="--x:76%;--y:14%;--dx:-32px;--dy:20px;--delay:5s;--dur:19s"></span>
+        <span class="vexel-tile vexel-tile--c" style="--x:88%;--y:68%;--dx:-22px;--dy:-28px;--delay:9s;--dur:26s"></span>
+        <span class="vexel-tile vexel-tile--d" style="--x:18%;--y:82%;--dx:38px;--dy:-18px;--delay:2s;--dur:21s"></span>
+        <span class="vexel-tile vexel-tile--a" style="--x:52%;--y:38%;--dx:-18px;--dy:32px;--delay:13s;--dur:17s"></span>
+        <span class="vexel-tile vexel-tile--b" style="--x:62%;--y:88%;--dx:22px;--dy:-38px;--delay:7s;--dur:24s"></span>
+        <span class="vexel-tile vexel-tile--c" style="--x:35%;--y:55%;--dx:30px;--dy:-20px;--delay:3s;--dur:28s"></span>
+    </div>
+
+    <section class="game-details game-details-top">
+        <div class="container">
+            <div class="details-grid">
+                <div class="game-media">
+                    <div class="game-screenshot main-screenshot">
+                        <img src="img/screenshot1.webp" alt="Vexel Gameplay - Board State">
+                    </div>
+
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb gallery-thumb--active">
+                            <img src="img/screenshot1.webp" alt="Board State">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="img/screenshot2.webp" alt="Victory Screen">
+                        </div>
+                    </div>
+
+                    <div class="game-intro">
+                        <div class="game-title-row">
+                            <span class="badge badge-released">Released</span>
+                        </div>
+
+                        <p class="game-genre">Strategy Board Game</p>
+
+                        <p class="game-description">
+                            Tactical tile placement. Corner contact only. Place polyomino pieces to claim territory and
+                            block opponents. Play solo against bots or with friends.
+                        </p>
+
+                        <div class="game-actions">
+                            <a href="/vexel/play/" class="btn btn-primary">
+                                <span>Play Now</span>
+                                <i class="fas fa-play" style="font-size: 0.7em;"></i>
+                            </a>
+                        </div>
+                        <p class="game-free-note">Free to play in browser. No
+                            install. No
+                            ads.</p>
+                    </div>
+                </div>
+
+                <div class="game-info">
+                    <div class="vexel-page-logo" aria-label="Vexel">
+                        <span aria-hidden="true">V</span>
+                        <span aria-hidden="true">E</span>
+                        <span aria-hidden="true">X</span>
+                        <span aria-hidden="true">E</span>
+                        <span aria-hidden="true">L</span>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-shapes"></i>
+                                <div>
+                                    <strong>Polyomino Pieces</strong>
+                                    <p>Classic shapes interact in new ways.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chess-board"></i>
+                                <div>
+                                    <strong>Corner Contact</strong>
+                                    <p>Strict placement rules drive deep strategy.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>Bot Support</strong>
+                                    <p>Fill empty slots with AI opponents.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-globe"></i>
+                                <div>
+                                    <strong>Browser Based</strong>
+                                    <p>Instant play on any device.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Tech Specs</h3>
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">Custom JS</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Players</span>
+                                <span class="spec-value">1-4</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Platform</span>
+                                <span class="spec-value">Web Browser</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Status</span>
+                                <span class="spec-value">Released</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+
+            <div class="about-text">
+                <p>Vexel is a clean, turn-based territory game where every move is about shape, space, and timing. You
+                    place polyomino pieces onto the board to claim territory and block opponents before they box you
+                    out.</p>
+
+                <p>The core rule set is intentionally strict. Your first piece must touch your corner. After that, your
+                    color can only connect at corners, never edge-to-edge. That single constraint creates most of the
+                    strategy.</p>
+
+                <p>Each color has the same piece bank, so advantage comes from placement order, rotations, and mirror
+                    choices. You can rotate and flip pieces every turn, undo when needed, and pass when no legal move
+                    remains.</p>
+
+                <p>You can play with 1 to 4 human colors and fill the rest with bots. The game ends when everyone passes
+                    in sequence, then scoring is based on covered tiles. It runs directly in the browser with no
+                    install.</p>
+
+                <p>Vexel is built as a self-contained web game and now lives directly on this site. Open the play page
+                    and start immediately.</p>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Started</h2>
+            </div>
+
+            <div class="about-text">
+                <p>My brother-in-law introduced me to this style of game while he was visiting, and we played it
+                    together with our kids.</p>
+
+                <p>What stuck with me was how well it worked across ages. The kids could jump in quickly, and the adults
+                    still had plenty to think about every turn.</p>
+
+                <p>After that visit, I wanted a version we could get to anytime without setup. No unpacking a box, no
+                    clearing a table, no extra friction.</p>
+
+                <p>That is why I built Vexel as a browser game. Open it, start a game, play a few turns, close it, come
+                    back later.</p>
+
+                <p>I also wanted it to work whether people are available or not, so you can play solo when schedules do
+                    not line up, or play together when they do.</p>
+
+                <p>This project came from a real family moment, and the goal has stayed simple: keep that experience
+                    accessible, repeatable, and easy to share.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Attribution</h2>
+            </div>
+
+            <div class="about-text">
+                <p>The visual design of Vexel was heavily inspired by Dan Hollick's <a
+                        href="https://www.makingsoftware.com" target="_blank" rel="noopener">Making Software</a> book
+                    and site. His work has been a huge creative influence on this project.</p>
+
+                <p>I deeply admire the way he combines clarity, personality, and craft: strong typography, intentional
+                    color choices, tactile interface surfaces, and visual systems that feel both playful and precise.
+                </p>
+
+                <p>Several presentation choices on this page and in the game's UI were shaped by that influence, and
+                    this credit is given with genuine respect, gratitude, and love for his incredible design aesthetic
+                    and teaching.</p>
+
+                <p>Vexel is an independent browser game inspired by the polyomino territory-placement genre popularized
+                    by Blokus. Blokus is a trademark of its respective owner, and Vexel is not affiliated with, endorsed
+                    by, or sponsored by that owner.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js?v=6"></script>
+</body>
+
+</html>

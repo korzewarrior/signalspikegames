@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Fishing - Signal Spike Games</title>
+    <meta name="description"
+        content="Pro Fishing: The Fishing Mini-Game Game - Explore the world of Pro Fishing in this Ludum Dare 46 entry.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/star-favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css?v=6">
+    <link rel="stylesheet" href="../css/pages/pro-fishing.css?v=6">
+</head>
+
+<body class="page-profishing">
+    <div id="site-header"></div>
+
+    <!-- Rising bubbles from the depths -->
+    <div class="fishing-bubbles" aria-hidden="true">
+        <span class="fishing-bubble" style="--x:5%;--sz:5px;--delay:0s;--dur:14s;--sway:40px"></span>
+        <span class="fishing-bubble" style="--x:12%;--sz:9px;--delay:3s;--dur:18s;--sway:-50px"></span>
+        <span class="fishing-bubble" style="--x:19%;--sz:4px;--delay:7s;--dur:11s;--sway:35px"></span>
+        <span class="fishing-bubble" style="--x:27%;--sz:12px;--delay:1s;--dur:22s;--sway:-45px"></span>
+        <span class="fishing-bubble" style="--x:34%;--sz:6px;--delay:5s;--dur:16s;--sway:60px"></span>
+        <span class="fishing-bubble" style="--x:42%;--sz:8px;--delay:9s;--dur:19s;--sway:-35px"></span>
+        <span class="fishing-bubble" style="--x:50%;--sz:5px;--delay:12s;--dur:13s;--sway:50px"></span>
+        <span class="fishing-bubble" style="--x:57%;--sz:14px;--delay:4s;--dur:25s;--sway:-60px"></span>
+        <span class="fishing-bubble" style="--x:63%;--sz:7px;--delay:8s;--dur:17s;--sway:45px"></span>
+        <span class="fishing-bubble" style="--x:70%;--sz:4px;--delay:2s;--dur:12s;--sway:-40px"></span>
+        <span class="fishing-bubble" style="--x:77%;--sz:10px;--delay:6s;--dur:21s;--sway:55px"></span>
+        <span class="fishing-bubble" style="--x:83%;--sz:6px;--delay:11s;--dur:15s;--sway:-45px"></span>
+        <span class="fishing-bubble" style="--x:90%;--sz:8px;--delay:0.5s;--dur:20s;--sway:35px"></span>
+        <span class="fishing-bubble" style="--x:96%;--sz:5px;--delay:14s;--dur:14s;--sway:-50px"></span>
+        <span class="fishing-bubble" style="--x:15%;--sz:11px;--delay:10s;--dur:24s;--sway:65px"></span>
+        <span class="fishing-bubble" style="--x:38%;--sz:5px;--delay:13s;--dur:11s;--sway:-30px"></span>
+        <span class="fishing-bubble" style="--x:48%;--sz:13px;--delay:6.5s;--dur:26s;--sway:70px"></span>
+        <span class="fishing-bubble" style="--x:60%;--sz:4px;--delay:2.5s;--dur:13s;--sway:-55px"></span>
+        <span class="fishing-bubble" style="--x:74%;--sz:9px;--delay:15s;--dur:22s;--sway:40px"></span>
+        <span class="fishing-bubble" style="--x:88%;--sz:6px;--delay:4.5s;--dur:17s;--sway:-65px"></span>
+    </div>
+
+    <!-- Game Details -->
+    <section class="game-details game-details-top">
+        <div class="container">
+            <div class="details-grid">
+                <div class="game-media">
+                    <div class="game-screenshot main-screenshot">
+                        <img src="header.gif" alt="Pro Fishing gameplay screenshot">
+                    </div>
+
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb gallery-thumb--active">
+                            <img src="header.gif" alt="Pro Fishing Main Screen">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="gif1.gif" alt="Pro Fishing Gameplay 1">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="gif2.gif" alt="Pro Fishing Gameplay 2">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="gif3.gif" alt="Pro Fishing Gameplay 3">
+                        </div>
+                    </div>
+
+                    <div class="game-intro">
+                        <div class="game-title-row">
+                            <span class="badge badge-jam">Game Jam</span>
+                        </div>
+
+                        <p class="game-genre">Arcade Fishing</p>
+
+                        <p class="game-description">
+                            Can You Catch All The Fish? Explore The World Of Pro Fishing! Discover 5+ Rods, 20+ Lures,
+                            30+ Fish across 4 Unique Regions! Each with its own unique soundtrack!
+                        </p>
+
+                        <div class="game-actions">
+                            <a href="https://gentoogames.itch.io/pro-fishing" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-windows"></i> Download on itch.io
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="game-info">
+                    <img src="logo.png" alt="Pro Fishing Logo" class="game-logo">
+                    <div class="info-card">
+                        <h3>Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-fish"></i>
+                                <div>
+                                    <strong>30+ Fish</strong>
+                                    <p>Catch a wide variety of fish with unique behaviors.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <div>
+                                    <strong>4 Regions</strong>
+                                    <p>Explore distinct environments with their own soundtracks.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-tools"></i>
+                                <div>
+                                    <strong>Gear Up</strong>
+                                    <p>Unlock 5+ rods and 20+ lures to catch 'em all.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Tech Specs</h3>
+                        <div class="specs-list">
+                        <div class="spec-row">
+                            <span class="spec-label">Engine</span>
+                            <span class="spec-value">GameMaker</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Mode</span>
+                            <span class="spec-value">Single-Player</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Platform</span>
+                            <span class="spec-value">Windows</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Theme</span>
+                            <span class="spec-value">Keep it alive</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Released</span>
+                            <span class="spec-value">April 20, 2020</span>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Game -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+            <div class="about-text">
+                <p>Pro Fishing: The Fishing Mini-Game Game was created in 72 hours for the Ludum Dare 46 Game Jam
+                    Competition! The theme was "Keep it alive".</p>
+
+                <p>The goal is simple: Aim for the bubbles, wait for a bite, and catch all the fish! Use WASD to move,
+                    Left Mouse to place and aim your rod, and try to complete your collection.</p>
+
+                <p>For this entry, I assisted with creating pixel art for items and fish, and helped balance the game's
+                    stats and systems. Unlike previous game jam attempts where we collaborated closely on code, I took a
+                    back seat in programming and development for Pro Fishing. Alex Reyes took the lead, successfully
+                    putting together an incredible game during the 72-hour effort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Credits</h2>
+            </div>
+            <div class="about-text">
+                <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-weight: 400;">
+                    <li>Concept & Programming: Alex Reyes</li>
+                    <li>Music: Joshua Damian</li>
+                    <li>Original Art: Kenney</li>
+                    <li>Additional Art & Design/Balancing: James Tusha</li>
+                    <li>Additional Art: Aerys</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reception -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reception</h2>
+            </div>
+            <div class="about-text">
+                <p><em>"Awesome game, amazing graphics, lots of fun to play. Incredible work. Well
+                        done!"</em><br><strong>-
+                        workshopcraft</strong></p>
+
+                <p><em>"Love this chill fishing game. Really enjoyed the different fish jokes and find it amazing how
+                        distinct you were able to get each area feeling with 1-bit color and music."</em><br><strong>-
+                        aevek</strong></p>
+
+                <p><em>"This is one of the best fishing games I have played and you only made it in this short amount of
+                        time."</em><br><strong>- Thanatos_Hades</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js?v=6"></script>
+</body>
+
+</html>

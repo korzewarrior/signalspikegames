@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QWT - Signal Spike Games</title>
+    <meta name="description"
+        content="QWT - A stylized dungeon shooter created in 72 hours for Ludum Dare 39. Survive in dampers for as long as possible.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/star-favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css?v=6">
+    <link rel="stylesheet" href="../css/pages/qwt.css?v=6">
+</head>
+
+<body class="page-qwt">
+    <div id="site-header"></div>
+
+    <!-- Electrical sparks - power dungeon -->
+    <div class="qwt-sparks" aria-hidden="true">
+        <span class="qwt-spark" style="--x:22%;--y:45%;--dx:15px;--dy:-20px;--delay:0s;--dur:2.5s"></span>
+        <span class="qwt-spark" style="--x:68%;--y:30%;--dx:-12px;--dy:-18px;--delay:1.2s;--dur:3s"></span>
+        <span class="qwt-spark" style="--x:45%;--y:70%;--dx:20px;--dy:-15px;--delay:0.5s;--dur:2.2s"></span>
+        <span class="qwt-spark" style="--x:82%;--y:55%;--dx:-18px;--dy:-22px;--delay:2s;--dur:3.5s"></span>
+        <span class="qwt-spark" style="--x:12%;--y:60%;--dx:14px;--dy:-12px;--delay:1.8s;--dur:2.8s"></span>
+        <span class="qwt-spark" style="--x:58%;--y:18%;--dx:-10px;--dy:-25px;--delay:0.3s;--dur:2.2s"></span>
+        <span class="qwt-spark" style="--x:35%;--y:85%;--dx:22px;--dy:-18px;--delay:3s;--dur:3.2s"></span>
+    </div>
+
+    <!-- Game Details -->
+    <section class="game-details game-details-top">
+        <div class="container">
+            <div class="details-grid">
+                <div class="game-media">
+                    <div class="game-screenshot main-screenshot">
+                        <img src="screenshot1.png" alt="QWT Gameplay">
+                    </div>
+
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb gallery-thumb--active">
+                            <img src="screenshot1.png" alt="QWT Screenshot 1">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot2.png" alt="QWT Screenshot 2">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot3.png" alt="QWT Screenshot 3">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot4.png" alt="QWT Screenshot 4">
+                        </div>
+                    </div>
+
+                    <div class="game-intro">
+                        <div class="game-title-row">
+                            <span class="badge badge-jam">Game Jam</span>
+                        </div>
+
+                        <p class="game-genre">Dungeon Shooter</p>
+
+                        <p class="game-description">
+                            Welcome to QWT (pronounced "Omega", naturally). A stylized dungeon shooter
+                            where resource management is key. Use your Blue Gun to transfer
+                            energy to your automated turrets, keeping them supplied as they defend you. Use your Red Gun
+                            to directly engage and damage enemies.
+                        </p>
+                        <p class="game-description">
+                            This game was made in 72 hours for LD Jam 39.
+                        </p>
+
+                        <!-- Link removed as requested -->
+                    </div>
+
+                </div>
+
+
+                <div class="game-info">
+                    <img src="logo.png" alt="QWT Logo" class="game-logo">
+
+                    <div class="info-card">
+                        <h3>Tech Specs</h3>
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <span class="spec-label">Event</span>
+                                <span class="spec-value">Ludum Dare 39</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Theme</span>
+                                <span class="spec-value">Running out of Power</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Released</span>
+                                <span class="spec-value">July 31, 2017</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Status</span>
+                                <span class="spec-value">Prototype</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Genre</span>
+                                <span class="spec-value">Shooter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objective -->
+    <section class="game-about game-story">
+        <div class="container">
+            <div class="section-header">
+                <h2>Objective</h2>
+            </div>
+
+            <div class="about-text" style="column-count: 1;">
+                <p>Navigate the procedural dungeon layout, surviving as long as possible while finding your way deeper
+                    into the depths to confront the final boss. If you pick up large batteries, you can spend them on an
+                    automated turret to help hold back the horde.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Thoughts -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notes</h2>
+            </div>
+            <div class="about-text">
+                <p>This was our first game jam together. We had to struggle with learning many brand new tools while
+                    designing this game, but were glad to have the opportunity. Because of this, and because of a bit
+                    too much time on visuals and not enough on mechanics and content (most definitely due to over
+                    scoping) we were unable to 'finish' the game to our vision. There are many bugs to resolve, and a
+                    whole boat load of content to deliver.</p>
+                <p>Please enjoy our beautiful, stylized game - we look forward to releasing a full game sometime in the
+                    next several months.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Reception -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reception</h2>
+            </div>
+            <div class="about-text">
+                <p><em>"The visuals and music are great. I really liked the title theme. The animations and effects are
+                        very well done... I think if you build on this you can make this into a great
+                        game."</em><br><strong>- arch-a-type</strong></p>
+
+                <p><em>"Amazing game, especially considering it was your first team try. Good Job and good luck on your
+                        next LD! :)"</em><br><strong>- Sir Daniev</strong></p>
+
+                <p><em>"Nice game! I like how the glowing energy spotlight looks with the dark ambient. Shooting enemies
+                        was fun... pretty cool too."</em><br><strong>- franfox</strong></p>
+
+                <p><em>"Good game! Nice visuals and controls feedback."</em><br><strong>- Royoyo</strong></p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Credits -->
+    <section class="game-about tribute-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Credits</h2>
+            </div>
+
+            <div class="about-text">
+                <p>James Tusha (<a href="/">Signal Spike Games</a>) was responsible for the programming and
+                    implementation of the game.</p>
+                <p>Alex Reyes (<a href="https://twitter.com/GentooGames" target="_blank">@GentooGames</a>) created the
+                    visual art style and contributed to the music.</p>
+                <p>Joshua Damian (<a href="https://atmcmusic.co" target="_blank">@AtmcType</a>) worked on the music
+                    composition and sound design.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js?v=6"></script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+/* ============================================
+   NULL ONLINE - Page-Specific Styles
+   ============================================ */
+
+/* ============================================
+   NULL ONLINE PAGE - Body & Background
+   ============================================ */
+
+.page-null {
+    --null-dark-bg: #050505;
+    --null-dark-surface: #0a0a0a;
+    --null-dark-text: #eeeeee;
+    --null-dark-muted: #888888;
+    --null-dark-accent: #ffffff;
+
+    background: var(--null-dark-bg);
+    color: var(--null-dark-text);
+}
+
+/* Subtle center vignette */
+.page-null::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.015), transparent 65%);
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Ambient glow */
+.page-null::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 90% 55% at 20% 15%, rgba(200, 216, 232, 0.07), transparent),
+        radial-gradient(ellipse 70% 45% at 80% 80%, rgba(148, 163, 184, 0.05), transparent),
+        radial-gradient(ellipse 40% 30% at 60% 40%, rgba(255, 255, 255, 0.03), transparent);
+    pointer-events: none;
+    z-index: -1;
+    animation: nullDrift 30s ease-in-out infinite alternate;
+}
+
+@keyframes nullDrift {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* ============================================
+   NULL ONLINE - Pixel Players
+   Other players drifting in the void
+   ============================================ */
+
+.null-pixels {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.null-pixel {
+    position: absolute;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.65);
+    animation: nullPixelDrift var(--dur, 20s) var(--delay, 0s) ease-in-out infinite alternate;
+}
+
+/* The one gold pixel - supporter pack reference */
+.null-pixel--gold {
+    background: #f0c060;
+    box-shadow: 0 0 5px rgba(240, 192, 96, 0.7);
+}
+
+@keyframes nullPixelDrift {
+    from { transform: translate(0, 0); opacity: 0.55; }
+    to   { transform: translate(var(--dx, 30px), var(--dy, 20px)); opacity: 0.9; }
+}
+
+/* ============================================
+   NULL ONLINE PAGE - Layout & Theme Overrides
+   ============================================ */
+
+/* Centered game header */
+.game-header-centered {
+    text-align: center;
+    padding-top: calc(var(--nav-height) + var(--announcement-height) + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
+}
+
+.game-header-centered .null-page-logo {
+    max-width: 200px;
+    height: auto;
+    display: inline-block;
+    margin-bottom: var(--space-lg);
+}
+
+.game-header-tagline {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--null-accent);
+    margin-bottom: var(--space-sm);
+}
+
+/* Blinking cursor */
+.page-null .game-header-tagline::after {
+    content: '_';
+    animation: nullBlink 1.2s step-end infinite;
+}
+
+@keyframes nullBlink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+.game-header-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xl);
+}
+
+.game-header-centered .game-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* Strip containers - float on the void */
+.page-null .game-header-centered .container,
+.page-null .game-about .container {
+    background: none;
+    border: none;
+    backdrop-filter: none;
+}
+
+.page-null .game-header-centered {
+    padding-bottom: var(--space-xl);
+}
+
+/* Section dividers */
+.page-null .game-about {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.page-null .game-header-tagline {
+    color: #cccccc;
+}
+
+.page-null .section-header h2 {
+    color: #ffffff;
+}
+
+.page-null .game-header-meta {
+    color: var(--null-dark-muted);
+}
+
+.page-null .about-text p {
+    color: #cccccc;
+}
+
+.page-null .game-actions a {
+    color: #ffffff;
+}
+
+/* Ghost button - fits the void aesthetic */
+.page-null .btn-primary {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.page-null .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.65);
+    color: #ffffff;
+}
+
+.page-null .about-text .game-actions {
+    margin-top: var(--space-xl);
+}

@@ -1,0 +1,110 @@
+/* ============================================
+   CHIPPERTON - Page-Specific Styles
+   ============================================ */
+
+/* ============================================
+   CHIPPERTON PAGE - Body & Background
+   ============================================ */
+
+.page-chipperton {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../../chipperton/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0e0e0;
+}
+
+/* Warm lamplight glow - dusk over the town */
+.page-chipperton::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 80%, rgba(180, 130, 40, 0.14), transparent),
+        radial-gradient(ellipse 50% 30% at 20% 65%, rgba(200, 150, 50, 0.08), transparent),
+        radial-gradient(ellipse 40% 25% at 80% 45%, rgba(160, 110, 30, 0.07), transparent);
+    pointer-events: none;
+    z-index: -2;
+    animation: chippertonGlow 30s ease-in-out infinite alternate;
+}
+
+@keyframes chippertonGlow {
+    0%   { opacity: 0.7; }
+    100% { opacity: 1.0; }
+}
+
+/* Deep amber from below - warm earth */
+.page-chipperton::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 100% 35% at 50% 110%, rgba(140, 90, 20, 0.28), transparent),
+        radial-gradient(ellipse 50% 20% at 25% 95%, rgba(120, 75, 15, 0.15), transparent);
+    pointer-events: none;
+    z-index: -1;
+    animation: chippertonDeep 40s ease-in-out infinite alternate;
+}
+
+@keyframes chippertonDeep {
+    0%   { opacity: 0.75; transform: scale(1); }
+    100% { opacity: 1.0; transform: scale(1.05); }
+}
+
+/* ============================================
+   CHIPPERTON - Fireflies
+   ============================================ */
+
+.chipperton-fireflies {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.chipperton-firefly {
+    position: absolute;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 215, 90, 0.95);
+    box-shadow: 0 0 6px rgba(255, 190, 50, 0.8), 0 0 12px rgba(255, 190, 50, 0.3);
+    opacity: 0;
+    animation: chippertonBlink var(--dur, 5s) var(--delay, 0s) ease-in-out infinite;
+}
+
+@keyframes chippertonBlink {
+    0%   { opacity: 0; }
+    20%  { opacity: 0.9; }
+    48%  { opacity: 0.5; }
+    58%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* ============================================
+   CHIPPERTON PAGE - Theme Overrides
+   ============================================ */
+
+.page-chipperton .info-card,
+.page-chipperton .game-about {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+.page-chipperton .game-about {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+}
+
+/* Bright turquoise accent - matches "WELCOME TO CHIPPERTON" logo */
+.page-chipperton .section-header h2,
+.page-chipperton .info-card h3 {
+    color: #2dd4d4;
+}

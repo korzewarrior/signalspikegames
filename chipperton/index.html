@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chipperton - Signal Spike Games</title>
+    <meta name="description"
+        content="Welcome to Chipperton! One of the longest, most enduring communities in the midwest. A narrative adventure game created for Ludum Dare 47.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/star-favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css?v=6">
+    <link rel="stylesheet" href="../css/pages/chipperton.css?v=6">
+</head>
+
+<body class="page-chipperton">
+    <div id="site-header"></div>
+
+    <!-- Fireflies at dusk -->
+    <div class="chipperton-fireflies" aria-hidden="true">
+        <span class="chipperton-firefly" style="--x:15%;--y:40%;--delay:0s;--dur:5s"></span>
+        <span class="chipperton-firefly" style="--x:28%;--y:65%;--delay:1.5s;--dur:7s"></span>
+        <span class="chipperton-firefly" style="--x:55%;--y:30%;--delay:3s;--dur:4.5s"></span>
+        <span class="chipperton-firefly" style="--x:72%;--y:55%;--delay:0.8s;--dur:6s"></span>
+        <span class="chipperton-firefly" style="--x:85%;--y:72%;--delay:2.2s;--dur:5.5s"></span>
+        <span class="chipperton-firefly" style="--x:40%;--y:80%;--delay:4s;--dur:8s"></span>
+        <span class="chipperton-firefly" style="--x:62%;--y:48%;--delay:1s;--dur:6.5s"></span>
+        <span class="chipperton-firefly" style="--x:10%;--y:75%;--delay:3.5s;--dur:4.5s"></span>
+        <span class="chipperton-firefly" style="--x:90%;--y:25%;--delay:2s;--dur:7s"></span>
+    </div>
+
+    <!-- Game Details -->
+    <section class="game-details game-details-top">
+        <div class="container">
+            <div class="details-grid">
+                <div class="game-media">
+                    <div class="game-screenshot main-screenshot">
+                        <img src="screenshot1.jpg" alt="Chipperton Gameplay">
+                    </div>
+
+                    <div class="screenshot-gallery">
+                        <div class="gallery-thumb gallery-thumb--active">
+                            <img src="screenshot1.jpg" alt="Chipperton Screenshot 1">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot2.jpg" alt="Chipperton Screenshot 2">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot3.jpg" alt="Chipperton Screenshot 3">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot4.jpg" alt="Chipperton Screenshot 4">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot5.jpg" alt="Chipperton Screenshot 5">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot6.jpg" alt="Chipperton Screenshot 6">
+                        </div>
+                        <div class="gallery-thumb">
+                            <img src="screenshot7.jpg" alt="Chipperton Screenshot 7">
+                        </div>
+                    </div>
+
+                    <div class="game-intro">
+                        <div class="game-title-row">
+                            <span class="badge badge-jam">Game Jam</span>
+                        </div>
+
+                        <p class="game-genre">Narrative Adventure</p>
+
+                        <p class="game-description">
+                            Welcome to Chipperton! Chipperton thrives as one of the longest, most enduring communities
+                            in the midwest, being directly intertwined into the region’s history! The original
+                            Chippertonian families that founded this little haven were settlers with a penchant for
+                            exploration, a thirst for excitement, and a drive to solidarity.
+                        </p>
+
+                        <div class="game-actions">
+                            <!-- Link removed as requested -->
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="game-info">
+                    <img src="header.gif" alt="Chipperton Logo" class="game-logo">
+
+                    <div class="info-card">
+                        <h3>Fun Facts</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-mountain"></i>
+                                <div>
+                                    <strong>Highest Peak</strong>
+                                    <p>Rising over 4,139 feet from valley to the peak of Chipper Mountain!</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-utensils"></i>
+                                <div>
+                                    <strong>Chili Cook-Offs</strong>
+                                    <p>We started them! Home to the best sharpshooters too.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>Community</strong>
+                                    <p>A wonderful opportunity to simply live and enjoy life.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Tech Specs</h3>
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <span class="spec-label">Event</span>
+                                <span class="spec-value">Ludum Dare 47</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Theme</span>
+                                <span class="spec-value">Stuck in a Loop</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Released</span>
+                                <span class="spec-value">Oct 05, 2020</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Status</span>
+                                <span class="spec-value">Prototype</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Genre</span>
+                                <span class="spec-value">Role Playing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Goal -->
+    <section class="game-about game-story">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Goal</h2>
+            </div>
+
+            <div class="about-text" style="column-count: 1;">
+                <p>Try to leave a lasting impression!</p>
+                <p>Enjoy your time in this peaceful town. Have fun, listen to the music, and get to know everyone!
+                    Thanks
+                    for playing our game, and seriously; let us know what YOU think - we’re DYING to hear what you
+                    loved.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Reception -->
+    <section class="game-about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reception</h2>
+            </div>
+            <div class="about-text">
+                <p><em>"Wow that was amazing. The music, the voice acting, the graphics, the mood, the gameplay, it’s
+                        all super polished and well done. Great job with this one! It’s always nice to come across a
+                        relaxing LD submission every once in a while :)"</em><br><strong>- Ale</strong></p>
+
+                <p><em>"Woah definitely didn’t expect voice acting, that sfx and such a big world in a game jam game.
+                        The music was really good too... Anyway, great effort and really impressive for a game jam
+                        game."</em><br><strong>- Anant Ahuja</strong></p>
+
+                <p><em>"Awesome collection of assets for the short amount of time! The song in the background too is
+                        drastically enhancing the mood. Furthermore, I was in awe of the gigantic open map
+                        :O"</em><br><strong>- Trexxak</strong></p>
+
+                <p><em>"Super impressive... I’m amazed at how much game two people were able to churn out in 72 hours.
+                        It even has little details like the fireflies flying around which helps the mood... Fantastic
+                        job!!"</em><br><strong>- coderTrevor</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits -->
+    <section class="game-about tribute-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Credits</h2>
+            </div>
+
+            <div class="about-text" style="column-count: 1;">
+                <p>Developed as a collaborative effort. <strong>Joshua Damian</strong> (<a href="https://atmcmusic.co"
+                        target="_blank">@AtmcType</a>) worked on the music composition and sound design. 3D modeling
+                    provided with love by Synty Studios.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-roadmap"></div>
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js?v=6"></script>
+</body>
+
+</html>
